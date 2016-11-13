@@ -12,6 +12,10 @@
   }
 }
 
+.pure-menu-link:focus {
+  background-color: transparent;
+}
+
 a.pure-menu-heading.pure-menu-link {
   color: $site-link;
 }
