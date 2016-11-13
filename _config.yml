@@ -21,7 +21,7 @@ url: https://wingillis.github.io/ # the base hostname & protocol for your site, 
 twitter_username: DubGill
 github_username:  wingillis
 rss_enabled: true
-ga_analytics: UA-74958647-1 # Add your GA Tracking Id
+# ga_analytics: UA-74958647-1 # Add your GA Tracking Id
 discus_identifier: wingillis # Add your Disqus identifier
 
 assets:
