@@ -37,3 +37,42 @@ div.pure-g {
     }
   }
 }
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
+
+#email-icon {
+  border-radius: 4px;
+  background-color: #AD0513;
+}
+
+#github-icon {
+  border-radius: 4px;
+  background-color: #181717;
+}
+
+#google-play-icon {
+  background-color: #607D8B;
+  border-radius: 4px;
+}
+
+
+.inject {
+  margin: 4px;
+  fill: #fff;
+  transition: transform 0.4s;
+}
+
+.inject:hover {
+  transform: scale(0.75);
+}
+
+#svg-social-icons {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  padding-top: 10px;
+}

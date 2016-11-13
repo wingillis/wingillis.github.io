@@ -1,8 +1,8 @@
 @import "base";
 
 .header {
-  padding-bottom: 10px;
-  padding-top: 10px;
+  // padding-bottom: 10px;
+  // padding-top: 10px;
   background-color: rgba(0,0,0,0.70);
 }
 
@@ -18,6 +18,8 @@ a.pure-menu-heading.pure-menu-link {
 
 a.pure-menu-link {
   color: $link-color;
+  padding-bottom: 18px;
+  padding-top: 18px;
 }
 
 a.pure-menu-link:hover {
