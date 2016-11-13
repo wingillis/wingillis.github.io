@@ -1,0 +1,38 @@
+@import "base";
+
+a:link {
+  color: $link-color;
+  text-decoration: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+body {
+  background-color: rgb(0,0,0);
+  background-image: url("http://imgur.com/QFJeqBR.png");
+}
+
+div.text-content {
+  background-color: $content-background;
+  box-shadow: 0 0 20px 20px $content-background;
+}
+
+.content {
+  margin: auto;
+  margin-top: 50px;
+  max-width: 900px;
+}
+
+p, li {
+  color: $text-color;
+}
+
+div.pure-g {
+  div {
+    p {
+      padding: 0px 16px;
+    }
+  }
+}
