@@ -25,10 +25,6 @@ Now the concept has been described, what does this all mean I'm terms of an actu
 
 Most of my designs involve a gloved keyboard, where the inputs points are on the tips of the fingers. On each finger, there was a single button which was to be pressed during different finger combinations, and each combination makes to a different character (as stated before).
 
-**Pros**
-
-**Cons**
-
 ### Capacitive input
 
 This design uses metal strips on the gloved fingertips to detect touch. I can't use the fingertips themselves, because they would always be detected. To get around this problem, one could use a conductive material that is as long as the hand, that touches the palm. Then the use would tap the conductive material to register touches.
@@ -47,9 +43,9 @@ To reiterate, with this device, one would type letters by tapping combinations o
 
 Due to the overwhelming amount of key combinations possible, there has to be some sensible way to map keys to finger presses. My first thought was to map the most typed keys to easy-to-remember finger combos. The most typed letters would only require a one finger press, and the next most typed letters would require a symmetric two finger press (i.e. Right and left thumb make the letter 'b'). The rest of the keys are relatively haphazardly mapped.
 
-{% include image name='http://i.imgur.com/4l3EU9H.png' %}
-{% include image name='http://i.imgur.com/xEuLPlE.png' %}
-Above: example keyboard mappings for the alphabet and important keys
+{% include image name='http://i.imgur.com/4l3EU9H.png'  %}
+{% include image name='http://i.imgur.com/xEuLPlE.png'  %}
+Above: example keyboard mappings for the alphabet and important keys. Finger presses are green circles, and order goes from left pinky to thumb, then right thumb to pinky.
 
 In addition to just mapping characters to different finger combinations, one can imagine mapping 'functions' do different combinations, like 'quit application' or 'focus on chrome window', commonly written phrases like your email signature or 'Hello, It's been awhile, can we schedule a time to catch up', or even usernames and passwords. These could be implemented in a manner similar to [Better Touch Tool](https://www.boastr.net), or as a programming language like how [Hammerspoon](http://www.hammerspoon.org) uses Lua.
 
@@ -80,5 +76,6 @@ My prototypes for these gloves are pretty invasive to day-to-day activities. One
 
 My ultimate goal with this project originated from the desire to have a brain machine interface that is able to translate brain activity into legible text. In this spirit, one can imagine that the physical version of this finger keyboard is used to teach the machine the brain's representations for each finger combination. Then to type, the user would just have to think about moving fingers, sort of how our inner voice speaks when we are reading.
 
-
 #### More sophisticated typing interfaces
+
+Using this keyboard with existing shortcuts is doable, and shortcut sequences could easily programmed into the interface, but we could be limiting the potential to create a very powerful and productive tool. We could build the interface in a context-aware manner, like how Apple builds it's user interfaces for iOS, or as a modal interface like vim's system. One can imagine a finger combination that changes the 'state' of the keyboard from typing mode to sharing mode or application command mode (for things like preferences or quit) that are universal between programs. A simple use case would be to turn on and off the type tracking system with a slightly complex gesture, so it would not be pressed accidentally too often.

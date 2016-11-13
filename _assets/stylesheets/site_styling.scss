@@ -4,6 +4,13 @@ h1, h2, h3, h4, h5 {
   color: $text-color;
 }
 
+h1 {
+  padding-bottom: 10px;
+}
+h1 {
+  border-bottom: 1px solid $text-color;
+}
+
 a:link {
   color: $link-color;
   text-decoration: none;
@@ -66,7 +73,13 @@ div.pure-g {
 .icon {
   width: 40px;
   height: 40px;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#linkedin-icon {
+  border-radius: 4px;
+  background-color: #0077B5;
 }
 
 #email-icon {
@@ -114,7 +127,7 @@ p {
 }
 
 .article-item {
-  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .article-footer {
