@@ -8,7 +8,7 @@ Winthrop is a (first-year) PhD candidate in neuroscience at Harvard University. 
 
 Winthrop is interested in many things. These include:
 - Neural representation of sensory and motor information
-- Using modern techiques to understand the above subjects
+- Using modern techniques to understand the above subjects
 - Using machine learning principles to tease out meaningful information out of large swaths of data (imaging, electrophysiology, auditory, textual)
 - Programming, using languages like:
   - python

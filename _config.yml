@@ -21,7 +21,7 @@ url: https://wingillis.github.io # the base hostname & protocol for your site, e
 
 paginate: 20
 paginate_path: "blog/page:num/"
-permalink: /blog/:title/
+permalink: blog/:title/
 
 twitter_username: DubGill
 github_username:  wingillis
@@ -48,3 +48,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - processors/
+  - node_modules/
