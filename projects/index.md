@@ -5,7 +5,7 @@ layout: post
 ---
 ## Projects I am working on
 
-#### Research (Gardner Lab)
+#### Past Research (Gardner Lab)
 
 <b>Micro-scale cuff electrodes</b> for the peripheral nervous system.
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Finger Possible
+description: A portable, customizable, extremely efficient design proposition for a keyboard-like human-computer interface.
 ---
 
 # Finger Possible

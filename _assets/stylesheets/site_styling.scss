@@ -103,3 +103,12 @@ p {
     color: lighten($text-color, 13%);
   }
 }
+
+.article-item {
+  border-top: 1px solid white;
+}
+
+.article-footer {
+  font-size: 0.8em;
+  color: darken($text-color, 8%);
+}
