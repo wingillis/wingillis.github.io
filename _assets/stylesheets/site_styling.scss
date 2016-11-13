@@ -12,6 +12,8 @@ a:link {
 body {
   background-color: rgb(0,0,0);
   background-image: url("http://imgur.com/QFJeqBR.png");
+  background-position: center;
+  background-attachment: fixed;
 }
 
 div.text-content {
@@ -47,6 +49,11 @@ div.pure-g {
 #email-icon {
   border-radius: 4px;
   background-color: #AD0513;
+}
+
+#rss-icon {
+  border-radius: 4px;
+  background-color: #FF6C09;
 }
 
 #github-icon {

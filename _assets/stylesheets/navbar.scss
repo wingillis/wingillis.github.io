@@ -20,6 +20,7 @@ a.pure-menu-link {
   color: $link-color;
   padding-bottom: 18px;
   padding-top: 18px;
+  transition: background-color 0.2s;
 }
 
 a.pure-menu-link:hover {
