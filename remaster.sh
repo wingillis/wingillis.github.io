@@ -2,8 +2,10 @@
 
 set -e
 
-git branch -D old-master
-git branch -m master old-master
-git branch -m deploy master
+# git branch -D old-master
+# git branch -m master old-master
+# git branch -m deploy master
+git checkout master
+git merge deploy
 
-git push origin -f master
+git push origin master
