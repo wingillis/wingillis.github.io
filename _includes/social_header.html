@@ -24,4 +24,17 @@
       <img class="inject" src="{% asset_path 'rss.svg' %}" />
     </div>
   </a>
+  <div>
+    <h4>Share:</h4>
+  </div>
+  <a href="https://getpocket.com/save?url={{ site.url }}/{{ page.url }}" target="_blank">
+    <div class="icon" id="pocket-icon">
+      <img class="inject" src="{% asset_path 'pocket.svg' %}" />
+    </div>
+  </a>
+  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ site.url }}/{{ page.url }}">
+    <div class="icon" id="facebook-icon">
+      <img class="inject" src="{% asset_path 'facebook.svg' %}" />
+    </div>
+  </a>
 </div>

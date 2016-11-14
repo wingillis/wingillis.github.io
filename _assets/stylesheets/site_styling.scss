@@ -44,8 +44,8 @@ div.text-content {
 
 .content {
   margin: auto;
-  margin-top: 50px;
-  max-width: 900px;
+  margin-top: 45px;
+  max-width: 850px;
 }
 
 .extra-padding {
@@ -71,10 +71,27 @@ div.pure-g {
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
-  margin-left: 10px;
-  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+#pocket-icon {
+  background-color: #fff;
+  border-radius: 4px;
+  .inject {
+    fill: #E81611;
+  }
+}
+
+#facebook-icon {
+  background-color: #fff;
+  border-radius: 4px;
+  .inject {
+    fill: #2552DB;
+  }
+  // background-color: #0538FF;
 }
 
 #linkedin-icon {
@@ -102,7 +119,6 @@ div.pure-g {
   border-radius: 4px;
 }
 
-
 .inject {
   margin: 4px;
   fill: #fff;
@@ -115,8 +131,9 @@ div.pure-g {
 
 #svg-social-icons {
   display: flex;
-  height: 50px;
+  height: 40px;
   justify-content: center;
+  align-items: center;
   padding-top: 10px;
 }
 

@@ -8,7 +8,7 @@
         <div class="pure-u-1">
           {{ content }}
         </div>
-        {% if !(post.commentless == true) and page.url contains "blog" %}
+        {% if page.commentless != true and page.url contains "blog" %}
         <div class="pure-u-1">
 
           <div id="disqus_thread"></div>
