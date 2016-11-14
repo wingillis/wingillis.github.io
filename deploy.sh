@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
-if [`git branch | grep deploy`]
+set -e
+
+if [ `git branch | grep deploy` ]
 then
 	git branch -D deploy
 fi
