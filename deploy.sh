@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 
 if [`git branch | grep deploy`]
 then
