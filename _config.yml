@@ -23,6 +23,9 @@ paginate: 20
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
 
+author:
+  github: wingillis
+  
 twitter_username: DubGill
 github_username:  wingillis
 rss_enabled: true

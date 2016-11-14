@@ -12,28 +12,28 @@ description: Entries in this system are disorienting and disorganized
 </div>
 <div class="article-list">
   {% for post in paginator.posts %}
-    <div class="article-item">
-      <a href="{{ post.url }}" title="{{ post.title }}">
+    <a href="{{ post.url }}" title="{{ post.title }}">
+      <div class="article-item">
         <h3>
           {{ post.title }}
         </h3>
-      </a>
-      <p>
-        {{ post.description }}
-      </p>
-      <div>
-        <p class="article-footer">
-          Posted:
-          {{ post.date | date: "%B %-d, %Y" }}
-          Length:
-          {% capture words %}
-            {{ post.content | number_of_words }}
-          {% endcapture %}
-          {% unless words contains "-" %}
-            {{ words | plus: 250 | divided_by: 250 | append: " minute read" }}
-          {% endunless %}
+        <p>
+          {{ post.description }}
         </p>
-      </div>
+        <div>
+          <p class="article-footer">
+            Posted:
+            {{ post.date | date: "%B %-d, %Y" }}
+            Length:
+            {% capture words %}
+              {{ post.content | number_of_words }}
+            {% endcapture %}
+            {% unless words contains "-" %}
+              {{ words | plus: 250 | divided_by: 250 | append: " minute read" }}
+            {% endunless %}
+          </p>
+        </div>
+      </a>
     </div>
   {% endfor %}
   {% if paginator.total_pages > 1 %}

@@ -43,8 +43,8 @@ To reiterate, with this device, one would type letters by tapping combinations o
 
 Due to the overwhelming amount of key combinations possible, there has to be some sensible way to map keys to finger presses. My first thought was to map the most typed keys to easy-to-remember finger combos. The most typed letters would only require a one finger press, and the next most typed letters would require a symmetric two finger press (i.e. Right and left thumb make the letter 'b'). The rest of the keys are relatively haphazardly mapped.
 
-{% include image name='http://i.imgur.com/4l3EU9H.png'  %}
-{% include image name='http://i.imgur.com/xEuLPlE.png'  %}
+{% include image name='http://i.imgur.com/4l3EU9H.png' %}
+{% include image name='http://i.imgur.com/xEuLPlE.png' %}
 Above: example keyboard mappings for the alphabet and important keys. Finger presses are green circles, and order goes from left pinky to thumb, then right thumb to pinky.
 
 In addition to just mapping characters to different finger combinations, one can imagine mapping 'functions' do different combinations, like 'quit application' or 'focus on chrome window', commonly written phrases like your email signature or 'Hello, It's been awhile, can we schedule a time to catch up', or even usernames and passwords. These could be implemented in a manner similar to [Better Touch Tool](https://www.boastr.net), or as a programming language like how [Hammerspoon](http://www.hammerspoon.org) uses Lua.
