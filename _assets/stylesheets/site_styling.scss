@@ -147,6 +147,21 @@ p {
   }
 }
 
+figure {
+  width: 57%;
+  margin: auto;
+}
+
+figure {
+  img {
+    width: 100%;
+  }
+}
+
+figcaption {
+  color: $text-color;
+}
+
 .article-item {
   border-bottom: 1px solid white;
 }
