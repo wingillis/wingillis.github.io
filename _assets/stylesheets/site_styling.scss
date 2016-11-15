@@ -53,8 +53,8 @@ div.text-content {
 }
 
 .extra-padding {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .min-padding {
@@ -148,10 +148,14 @@ p {
 }
 
 figure {
-  margin-top: 10px;
   padding: 7px;
-  width: 57%;
-  margin: auto;
+  @media screen and (min-width: 30em) {
+    width: 85%;
+  }
+  @media screen and (min-width: 48em) {
+    width: 57%;
+  }
+  margin: 10px auto 0px auto;
   border-radius: 3px;
   background-color: rgba(227, 185, 255, 0.1);
 }
