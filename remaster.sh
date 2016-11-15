@@ -6,6 +6,6 @@ set -e
 # git branch -m master old-master
 # git branch -m deploy master
 git checkout master
-git merge deploy
+git merge -X theirs deploy
 
 git push origin master
