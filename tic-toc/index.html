@@ -1,0 +1,20 @@
+---
+title: tic-toc
+---
+
+<html>
+  <head>
+    {% include head.html %}
+    <link rel="icon" href="{% asset_path alarm.ico %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.lime-indigo.min.css">
+  </head>
+  <body>
+    <audio preload="auto" id="alarmAudio" src="{% asset_path alarm.opus %}" volume="0.7">
+    </audio>
+    <app></app>
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <script src="{% asset_path build.js %}"></script>
+  </body>
+
+</html>

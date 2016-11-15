@@ -18,7 +18,7 @@ Winthrop is interested in many things. These include:
   - java
   - C/arduino
   - clojure/clojurescript
-  - Software Development: [click here](/applications.html)
+  - Software Development: [click here](/software/)
 <!-- here is a reference to the micro leads website for the future -->
 <!-- http://www.micro-leads.com/#!products/j4cno -->
   - Electronics Development:

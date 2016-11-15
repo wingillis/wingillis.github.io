@@ -25,7 +25,7 @@ permalink: blog/:title/
 
 author:
   github: wingillis
-  
+
 twitter_username: DubGill
 github_username:  wingillis
 rss_enabled: true
@@ -40,6 +40,7 @@ assets:
     - _assets/stylesheets
     - _assets/images
     - _assets/scripts
+    - _assets/sound
 # Build settings
 markdown: kramdown
 theme: minima

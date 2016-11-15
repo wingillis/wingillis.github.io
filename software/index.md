@@ -7,7 +7,7 @@ I became interested in programming when I found a site called
 [Codecademy](https://www.codecademy.com/) in 2012-2013,
 which was just in its baby phase. It only offered a small amount of lessons in programming, but when I took the course in javascript fundamentals, it gave me the excitement, motivation and confidence to move forward with my education in software development. Since then, I have been able to develop the things showcased below.
 
-- [Tic-Toc](/tic-toc.html)
+- [Tic-Toc](/tic-toc/)
 - a web app for making serial timers
 - Bluetooth stimulator interface to conduct peripheral nerve studies
 - Various data analysis scripts written in python and MATLAB to make figures
