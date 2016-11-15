@@ -45,10 +45,12 @@ Entire circuitry of the keyboard and both gloves.
 </figcaption>
 </figure>
 
-
-
-![bluetooth fixed keyboard](http://imgur.com/qQjvg7Z.png)
+<figure>
+<img src="http://imgur.com/qQjvg7Z.png" alt="bluetooth keyboard">
+<figcaption>
 An example of what a potential fixed keyboard could look like. This was mainly a prototype to see if I could get it working in a more 'portable' (it doesn't actually look portable, does it) form. It's portability comes from the fact that it is powered by a battery and connects to a device as a bluetooth keyboard, sending commands wirelessly.
+</figcaption>
+</figure>
 
 ### Leap Motion input
 
