@@ -10,6 +10,7 @@ title: tic-toc
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.lime-indigo.min.css">
   </head>
   <body>
+    {% include navbar.html %}
     <audio preload="auto" id="alarmAudio" src="{% asset_path alarm.opus %}" volume="0.7">
     </audio>
     <app></app>
