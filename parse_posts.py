@@ -1,7 +1,7 @@
 import glob
 import re
 
-pattern = re.compile('!\[[\w ]+\]\((?P<url>http[\w:/\.]*)\)')
+pattern = re.compile('!\[[\w ]+\]\((?P<url>.*/[\w:/\.]*)\)')
 
 files = glob.glob('_posts/*.md')
 
@@ -10,7 +10,7 @@ for f in files:
     with open(f, 'r') as processor:
         lines = processor.read()
         matches = pattern.findall(lines)
-        print('Found ' + len(matches) + ' matches')
+        print('Found ' + str(len(matches)) + ' matches')
         export = pattern.sub(r'{% image name="\g<url>" %}', lines)
     with open(f, 'w') as processor:
         processor.write(export)
