@@ -3,21 +3,19 @@ layout: post
 title: Finger Possible
 description: A portable, customizable, extremely efficient design proposition for a keyboard-like human-computer interface.
 ---
-
 # Finger Possible
 
 This post is going to be about a small side project I worked on about a year ago.
 
 As I am going about my day, sometimes I have ideas that I really want to write down, or I need to remember something so I must write it into a to-do list. When I'm on the go, it is difficult to write in anything except my phone because that is usually all I bring with me. I really dislike typing things on my phone when I am moving - it is difficult to watch what is in front of me, and difficult to hit the right keys without looking at the phone.
 
-This, and the burning desire to accomplish my goal of programming while biking, has inspired me to think about different human computer input regimes. The keyboard is a slow and clunky device and is spatially limiting.
+This (and the burning desire to accomplish a goal of programming while biking) has inspired me to think about different human-computer input regimes. First of all, the keyboard is a slow and spatially limiting device. One has to sit down in front of it and place their fingers on precise areas on the keyboard to produce desired output. This regime does not work well for keyboard implementations on touch screens, because it is very difficult to make sure their fingers are in the right location without looking down.
 
-In my opinion a better approach would be to put the 'keyboard' on your fingers. This would require an entirely new standard of input interactions. Instead of hitting a key in a specific location of the keyboard to generate a character, that same character could be mapped to a combination of finger presses. For example, the letter 'a' would be mapped from a spatial location (to the left of the 'd' key) to a combination of finger presses (press your left pinky finger). There are many pros to this:
-- with two human hands, there are 1024 finger combinations
-- with just one hand there are 32 combinations, enough for the alphabet
-- you are not bound to the physical location of a keyboard
-- using hand taking technologies like leap motion, this is a more effective typing interface than spatial in air typing
-- pairing this with a phone means you can safely walk and type without having to look away from the road
+An alternative approach would putting the 'keyboard' onto the fingers. By tapping combinations of fingers, the same output can be achieved. Instead of hitting a key in a specific location of the keyboard to generate a character, that same character could be mapped to a combination of finger presses. For example, the letter 'a' would be mapped from a spatial location (to the left of the 'd' key on the keyboard) to a combination of finger presses (press your left middle finger). There are many pros to this:
+- with two human hands, there are 1023 finger combinations
+- with just one hand there are 31 combinations, enough to type all the letters, plus some
+- you are not bound by physical location
+- pairing this with a phone means safely walking, without diverting your eyes to a phone screen
 
 Now the concept has been described, what does this all mean I'm terms of an actual device? I have some thoughts and prototypes, but I don't necessarily know the best type of input to use. On that note, I'll enumerate my designs, and please write any comments on improvements or different designs. I built three different designs, but there are probably better solutions than the ones I came up with. Each design is basically built the same, but each differ in the mechanics of the device input (except for one design, which is totally different).
 
@@ -33,19 +31,54 @@ This design uses metal strips on the gloved fingertips to detect touch. I can't 
 
 This design takes advantage of the mechanical properties of piezoelectric devices which generate electricity when they vibrate at high frequencies. The user would tap their fingers to register a response.
 
+<figure>
+<img src="http://imgur.com/vT41I0x.png">
+<figcaption>
+Example of what my prototype of a piezo keyboard looked like on my hand.
+</figcaption>
+</figure>
+
+<figure>
+<img src="http://imgur.com/p2ctbK4.png">
+<figcaption>
+Entire circuitry of the keyboard and both gloves.
+</figcaption>
+</figure>
+
+
+
+![bluetooth fixed keyboard](http://imgur.com/qQjvg7Z.png)
+An example of what a potential fixed keyboard could look like. This was mainly a prototype to see if I could get it working in a more 'portable' (it doesn't actually look portable, does it) form. It's portability comes from the fact that it is powered by a battery and connects to a device as a bluetooth keyboard, sending commands wirelessly.
+
 ### Leap Motion input
 
-This system works radically different than the other three. It uses a device called the Leap Motion, which tracks finger and hand movements using an infrared light sensor. So there are no physical objects one would need to wear to use this - just put their hands over the Leap. Or, one could wear the Leap, and type anywhere in front of them.
+This system works radically different than the other three. It uses a device called the [Leap Motion](https://www.leapmotion.com/), which tracks finger and hand movements using an infrared (IR) light sensor. So there are no physical objects one would need to wear to use this - just put their hands over the Leap. Or, one could wear the Leap, and type anywhere in front of them. This version has an advantage over other keyboard implementations used in the leap motion software - the other versions use spatial mapping, which can take away from productivity and user experience.
+
+<figure>
+<img src="http://imgur.com/pnaYwd7.png">
+
+<figcaption>
+An example of leap motion keyboard. A hovered hand can press down finger combinations anywhere, and the leap will register a keypress. The purple LEDs in the device are actually the IR sensors.
+</figcaption>
+</figure>
 
 ### Typing mechanics
 
 To reiterate, with this device, one would type letters by tapping combinations of fingers at the same time. With this approach, there are 1023 theoretical finger input combinations.
 
-Due to the overwhelming amount of key combinations possible, there has to be some sensible way to map keys to finger presses. My first thought was to map the most typed keys to easy-to-remember finger combos. The most typed letters would only require a one finger press, and the next most typed letters would require a symmetric two finger press (i.e. Right and left thumb make the letter 'b'). The rest of the keys are relatively haphazardly mapped.
+Due to the overwhelming amount of key combinations possible, there has to be some sensible way to map keys to finger presses. My first thought was to map the most typed keys to easy-to-remember finger combos. The most typed letters would only require a one finger press, and the next most typed letters would require a symmetric two finger press (i.e. Right and left thumb make the letter 'd'). The rest of the keys are relatively haphazardly mapped.
 
-{% include image name='http://i.imgur.com/4l3EU9H.png' %}
-{% include image name='http://i.imgur.com/xEuLPlE.png' %}
-Above: example keyboard mappings for the alphabet and important keys. Finger presses are green circles, and order goes from left pinky to thumb, then right thumb to pinky.
+<figure>
+<div class="pure-u-1 pure-u-md-1-2">
+<img class="pure-img" src="http://i.imgur.com/4l3EU9H.png">
+</div>
+<div class="pure-u-1 pure-u-md-1-2">
+<img class="pure-img" src="http://i.imgur.com/xEuLPlE.png">
+</div>
+<figcaption>
+Example keyboard mappings for the alphabet and important keys. Finger presses are green circles, and order goes from left pinky to thumb, then right thumb to pinky.
+</figcaption>
+</figure>
 
 In addition to just mapping characters to different finger combinations, one can imagine mapping 'functions' do different combinations, like 'quit application' or 'focus on chrome window', commonly written phrases like your email signature or 'Hello, It's been awhile, can we schedule a time to catch up', or even usernames and passwords. These could be implemented in a manner similar to [Better Touch Tool](https://www.boastr.net), or as a programming language like how [Hammerspoon](http://www.hammerspoon.org) uses Lua.
 
@@ -61,6 +94,9 @@ Other options exist for microcontrollers to use as the keyboard. However, it cou
 
 I mentioned leap motion previously - this design exists as a computer program that detects the downward motion of fingers. This program works at a slightly slower speed than the hand keyboard due to its finger tracking. It detects the downward change of a fingertip relative to its palm. Once it reaches a certain threshold, it registers as a finger press.
 
+### Mouse input
+
+One might ask, 'where is the mouse'? This need not be abandoned. It can also undergo some fundamental changes in how it works - instead of moving your hand positionally around a table, you can rotate it. Tapping fingers together can be used to click the mouse. It is entirely possible that a mouse can be more or less neglected. If the interface and navigation are optimized, a mouse would not be needed to move from application to application. If one were thinking about interfacing this device to something like the Magic Leap, a traditional mouse and keyboard would be severely limiting in the ways and richness for interacting with the augmented reality system, where hand gestures and contextual manipulation seem more natural.
 
 ### Future directions
 
