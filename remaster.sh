@@ -9,3 +9,5 @@ git checkout master
 git merge -X theirs deploy
 
 git push origin master
+
+git checkout drafts
