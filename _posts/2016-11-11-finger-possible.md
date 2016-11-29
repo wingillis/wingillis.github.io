@@ -7,6 +7,9 @@ description: A portable, customizable, extremely efficient design proposition fo
 
 This post is going to be about a small side project I worked on about a year ago.
 
+* TOC
+{:toc}
+
 ## Problem
 
 As I am going about my day, sometimes I have ideas that I really want to write down, or I need to remember something so I must write it into a to-do list. When I'm on the go, it is difficult to write in anything except my phone because that is usually all I bring with me. I really dislike typing things on my phone when I am moving - it is difficult to watch what is in front of me, and difficult to hit the right keys without looking at the phone.
@@ -121,13 +124,13 @@ I mentioned leap motion previously - this design exists as a computer program th
 
 One might ask, 'where is the mouse'? This need not be abandoned. It can also undergo some fundamental changes in how it works - instead of moving your hand positionally around a table, you can rotate it. Tapping fingers together can be used to click the mouse. It is entirely possible that a mouse can be more or less neglected. If the interface and navigation are optimized, a mouse would not be needed to move from application to application. If one were thinking about interfacing this device to something like the Magic Leap, a traditional mouse and keyboard would be severely limiting in the ways and richness for interacting with the augmented reality system, where hand gestures and contextual manipulation seem more natural.
 
-### Future directions
+## Future directions
 
-#### Typing predictions
+### Typing predictions
 
 A unique feature that could be added to this system is something that Android and iOS use as a part of their keyboards - intelligent typing. It could be possible to infer a probability of a certain character based on which characters were already typed and the current typing combination. Then typing error could be automatically corrected.
 
-#### Brain/muscle computer interface
+### Brain/muscle computer interface
 
 My prototypes for these gloves are pretty invasive to day-to-day activities. One can imagine other prototypes developed utilizing other new technologies. For instance, one company is developing a device that relies on muscular activation to interface with a computer, called [myo](https://www.myo.com). An implementation strategy would be to utilize myo's abilities to detect EMG (electromyogram) signals for each individual finger to determine finger press combinations. Some complications:
 - For a full two-hand keyboard, there would have to me a myo on each arm, and they would have to be synchronized. One can get around this by building a simple one-handed keyboard. 2^5 (32) finger combos still gives one the full alphabetical range.
@@ -135,10 +138,10 @@ My prototypes for these gloves are pretty invasive to day-to-day activities. One
 
 My ultimate goal with this project originated from the desire to have a brain machine interface that is able to translate brain activity into legible text. In this spirit, one can imagine that the physical version of this finger keyboard is used to teach the machine the brain's representations for each finger combination. Then to type, the user would just have to think about moving fingers, sort of how our inner voice speaks when we are reading.
 
-#### More sophisticated typing interfaces
+### More sophisticated typing interfaces
 
 Using this keyboard with existing shortcuts is doable, and shortcut sequences could easily programmed into the interface, but we could be limiting the potential to create a very powerful and productive tool. We could build the interface in a context-aware manner, like how Apple builds it's user interfaces for iOS, or as a modal interface like vim's system. One can imagine a finger combination that changes the 'state' of the keyboard from typing mode to sharing mode or application command mode (for things like preferences or quit) that are universal between programs. A simple use case would be to turn on and off the type tracking system with a slightly complex gesture, so it would not be pressed accidentally too often.
 
-#### Integration with Magic Leap
+### Integration with Magic Leap
 
 One of the most promising computing devices ever (in my opinion) is called the [Magic Leap](https://www.magicleap.com/#/home). It will probably revolutionize they way we interact with computers. Briefly, it supposedly creates an augmented reality experience by projecting light onto the retina, creating realistic images in visual space without seriously obstructing field of view. One very useful application of my hand keyboard would be one mechanism of interfacing with this device, most importantly for textual input.
