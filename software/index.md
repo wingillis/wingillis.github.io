@@ -16,3 +16,5 @@ which was just in its baby phase. It only offered a small amount of lessons in p
 - This website
 - A genetic algorithm that tries to copy a sound
 - A web-based timer utilizing [Trello](https://trello.com) for task management
+- A [fun little art project](/software/fireworks/) for visualization
+  - <figure><a href="/software/fireworks"><img src="{% asset_path 'fireworks.png' %}"/><figcaption>Screenshot of the fireworks</figcaption></a></figure>
