@@ -7,6 +7,7 @@ images:
   - http://webnovawp.azurewebsites.net/wp-content/uploads/2015/04/ai.png
   - mousies.png
   - https://raw.githubusercontent.com/docker-library/docs/520519ad7db3ea9fd5d3590e836c839a0ffd6f19/julia/logo.png
+  - http://vuejs.org/images/logo.png
 ---
 
 I am a first year PhD candidate in neuroscience at Harvard Medical School.

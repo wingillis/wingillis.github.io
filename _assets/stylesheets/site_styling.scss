@@ -173,7 +173,13 @@ figure {
   }
 }
 
+.title-shadow {
+  box-shadow: 0px 25px 43px -17px #fff;
+}
+
 figcaption {
+  padding-top: 7px;
+  padding-left: 3px;
   color: $text-color;
 }
 
