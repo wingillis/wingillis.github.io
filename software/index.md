@@ -17,7 +17,10 @@ which was just in its baby phase. It only offered a small amount of lessons in p
     but you don't want to schedule a time to remember it, this app is for you!
     It will randomly remind you what you want in around a day, week, or month.
 - As a consultant with **Micro-Leads, Inc.**, I co-engineered a system to monitor and
-  control wireless (bluetooth) **peripheral nerve stimulators**
+  control wireless (bluetooth) **peripheral nerve stimulators**. I built both the
+  front-end (user interface for selecting stimulation patterns) and the back-end
+  (bluetooth device tracker and power-pad manager) to allow for semi-complex stimulation
+  patterns.
 <figure>
   <img src="{% asset_path 'stim.png' %}"/>
   <figcaption>A glimpse of the stimulator interface.</figcaption>
