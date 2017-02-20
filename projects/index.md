@@ -21,7 +21,7 @@ NIH Brain Initiative. 2015.
 
 ## Patents
 
-Gillis, Winthrop, Timothy Gardner, Charles Lissandrello, Alice White, Jun Shen, Bradley Holinski and Daniel Chew.
+Winthrop Gillis, Timothy Gardner, Charles Lissandrello, Alice White, Jun Shen, Bradley Holinski and Daniel Chew.
 [**Nerve Cuffs.**]()
 Provisional Patent PR66142P US. 28 July 2016. Print.
 
