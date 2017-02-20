@@ -167,6 +167,12 @@ figure {
   }
 }
 
+.desktop-img {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
 figcaption {
   color: $text-color;
 }
