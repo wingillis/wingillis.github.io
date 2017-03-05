@@ -19,6 +19,10 @@ Ben Pearre, Winthrop Gillis, Felix Deku, Alket Mertiri, Jun Shen, Sanne Moorman,
 [**High-Density Recording and Stimulation in Behaving Animals.**]()
 NIH Brain Initiative. 2015.
 
+Felix Deku, Yarden Cohen, Ben Pearre, Alexandra Joshi-Imre, Atefeh Ghazavi, Winthrop Gillis, Timothy Gardner, Stuart Cogan.
+[**Evaluation of Novel Amorphous Silicon Carbide Ultramicroelectrodes for Neural Interfacing.**]()
+BMES 2016 Annual Meeting. October 2016.
+
 ## Patents
 
 Winthrop Gillis, Timothy Gardner, Charles Lissandrello, Alice White, Jun Shen, Bradley Holinski and Daniel Chew.
