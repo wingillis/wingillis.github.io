@@ -144,4 +144,7 @@ Using this keyboard with existing shortcuts is doable, and shortcut sequences co
 
 ### Integration with Magic Leap
 
-One of the most promising computing devices ever (in my opinion) is called the [Magic Leap](https://www.magicleap.com/#/home). It will probably revolutionize they way we interact with computers. Briefly, it supposedly creates an augmented reality experience by projecting light onto the retina, creating realistic images in visual space without seriously obstructing field of view. One very useful application of my hand keyboard would be one mechanism of interfacing with this device, most importantly for textual input.
+In my opinion, one of the most promising computing paradigms is augmented reailty.
+It will probably revolutionize they way we interact with computers.
+Briefly, it creates an augmented reality experience by superimposing computer-generated images in visual space, without seriously obstructing field of view.
+One very useful application of my hand keyboard would be one mechanism of interfacing with devices built for augmented reality, most importantly for textual or procedural input.
