@@ -5,12 +5,14 @@ layout: post
 ---
 ## Press
 
-_To be revealed soon..._
+[**Printable nanoclip stimulates tiny nerves**](http://medicalphysicsweb.org/cws/article/research/68264)
+
+[**Flash Nano: Electrical "nerve cuff" could help treat chronic disease**](http://nanotechweb.org/cws/article/tech/68261)
 
 ## Papers
 
 Charles A. Lissandrello, Winthrop F. Gillis, Jun Shen, Ben W. Pearre, Flavia Vitale, Matteo Pasquali, Bradley J. Holinski, Daniel J. Chew, Alice E. White and Timothy J. Gardner.
-[**A micro-scale printable nanoclip for electrical stimulation and recording in small nerves.**]()
+[**A micro-scale printable nanoclip for electrical stimulation and recording in small nerves.**](http://iopscience.iop.org/article/10.1088/1741-2552/aa5a5b)
 Journal of Neural Engineering. _In Press._ 2017.
 
 ## Posters
