@@ -11,9 +11,13 @@ layout: post
 
 ## Papers
 
-Charles A. Lissandrello, Winthrop F. Gillis, Jun Shen, Ben W. Pearre, Flavia Vitale, Matteo Pasquali, Bradley J. Holinski, Daniel J. Chew, Alice E. White and Timothy J. Gardner.
+Charles A Lissandrello, Winthrop F Gillis, Jun Shen, Ben W Pearre, Flavia Vitale, Matteo Pasquali, Bradley J Holinski, Daniel J Chew, Alice E White and Timothy J Gardner.
 [**A micro-scale printable nanoclip for electrical stimulation and recording in small nerves.**](http://iopscience.iop.org/article/10.1088/1741-2552/aa5a5b)
-Journal of Neural Engineering. _In Press._ 2017.
+Journal of Neural Engineering. _In Press._ June 2017.
+
+Winthrop F Gillis, Charles A Lissandrello, Jun Shen, Ben W Pearre, Alket Mertiri, Felix Deku, Stuart Cogan, Bradley J Holinski, Daniel J Chew, Alice E White,  Timothy J Gardner and Timothy M Otchy.
+[**Carbon Fiber On Polyimide Ultra-Microelectrodes**](http://biorxiv.org/content/early/2017/04/04/123281).
+bioRxiv. _In Review_. 2017
 
 ## Posters
 
@@ -32,7 +36,5 @@ Winthrop Gillis, Timothy Gardner, Charles Lissandrello, Alice White, Jun Shen, B
 Provisional Patent PR66142P US. 28 July 2016. Print.
 
 ## Preparation
-
-**A 4-channel Carbon Fiber Electrode Array for Acute Recording and Stimulation.**
 
 **Acute and Chronic Recording in Small Diameter Peripheral Nerves.**
