@@ -11,6 +11,9 @@ layout: post
 
 ## Papers
 
+Winthrop F Gillis and Sandeep R Datta. [**Knowing where the nose is**](https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-017-0382-6)
+BMC Biology. 15 May 2017.
+
 Charles A Lissandrello, Winthrop F Gillis, Jun Shen, Ben W Pearre, Flavia Vitale, Matteo Pasquali, Bradley J Holinski, Daniel J Chew, Alice E White and Timothy J Gardner.
 [**A micro-scale printable nanoclip for electrical stimulation and recording in small nerves.**](http://iopscience.iop.org/article/10.1088/1741-2552/aa5a5b)
 Journal of Neural Engineering. _In Press._ June 2017.
