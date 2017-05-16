@@ -11,7 +11,7 @@ layout: post
 
 ## Papers
 
-Winthrop F Gillis and Sandeep R Datta. [**Knowing where the nose is**](https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-017-0382-6)
+Winthrop F Gillis and Sandeep R Datta. [**Knowing where the nose is.**](https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-017-0382-6)
 BMC Biology. 15 May 2017.
 
 Charles A Lissandrello, Winthrop F Gillis, Jun Shen, Ben W Pearre, Flavia Vitale, Matteo Pasquali, Bradley J Holinski, Daniel J Chew, Alice E White and Timothy J Gardner.
