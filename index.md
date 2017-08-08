@@ -3,6 +3,7 @@ layout: homepage
 title: Winthrop Gillis
 permalink: /
 images:
+  - hms-icon.png
   - http://a3.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fncaa%2F500%2F104.png
   - http://webnovawp.azurewebsites.net/wp-content/uploads/2015/04/ai.png
   - mousies.png
@@ -17,7 +18,7 @@ I got my B.A. in Behavioral Biology at BU, too.
 
 I am interested in many things. These include:
 - Neural representation of sensory and motor information
-- Using modern techniques to understand the above subjects
+- Experimental design of neuroscientific experiments
 - Using machine learning principles to tease out meaningful information out of large swaths of data (imaging, electrophysiology, auditory, textual)
 - Software development projects which involve languages like:
   - [python](https://www.python.org/) and all of its amazing, enabling packages!
