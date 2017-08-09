@@ -6,13 +6,12 @@ description: Tutorial on how to give all applications vim-like capabilities
 # Hammerspoon Vim Bindings
 
 If you're like me, you program a lot. And if you're like me, you program with
-vim a lot. Frequently I'm finding myself goofing while using other applications,
-such as Microsoft Word, or Evernote, and trying to select or delete regions of
-text and instead typing unnecessary characters into my document. When I learned
-of the power that [hammerspoon] provides me, I
-realized that I could add this feature.
+vim a lot. I've grown so accustomed to the vim commands for navigating and
+saving files that I'm frequently hitting these keys while using, Microsoft Word,
+Evernote, or other text-based apps. [Hammerspoon] provides the framework to
+implement a vim-like keymapping for other applications.
 
-**Note:** this software only works for the macOS.
+**Note:** this software only works for macOS.
 
 ## How to install
 
@@ -29,7 +28,7 @@ in the center of the screen. Basic navigation commands work, like: `j`, `k`,
 `l`, and `h` which code for: :arrow_down:, :arrow_up:, :arrow_right:, :arrow_left:, respectively.
 Below are a list of commands that you should know for application control:
 - `i`: exit 'normal' mode into regular computer mode
-- `i`: exit 'normal' mode into regular computer mode, and move cursor to right
+- `a`: exit 'normal' mode into regular computer mode, and move cursor to right
 - `o`: exit 'normal' mode into regular computer mode, and press enter
 - `O`: exit 'normal' mode into regular computer mode, move up, and press enter
 - `I`: exit 'normal' mode into regular computer mode, and go to line beginning
@@ -46,6 +45,13 @@ Below are a list of commands that you should know for application control:
 - `0`: go to the beginning of a line
 - `$`: go to the end of a line
 
+<figure>
+<img src="http://i.imgur.com/C9Hdhkc.gif">
+<figcaption>
+Activating vim mode
+</figcaption>
+</figure>
+
 Other things that work are basic navigation in visual mode, with copying,
 pasting, and deleting. If you want to get out of visual mode, you just have
 to hit escape, and you're back into normal mode. In the spirit of vim, the
@@ -58,23 +64,31 @@ the program.
 
 ## How to configure
 
-You can easily edit different aspects of the framework to customize your
+You can edit different aspects of the framework to customize your
 needs more effectively. For instance, you could change the keymap that triggers
 the transition into vim-mode to whatever bindings you wanted, or change which
 keys had what effect in normal or visual mode. This is as simple as changing
 which keys to refer to in the table lookup within the key event handler.
 
-The system generally watches out for keypress events, and depending on the state
-of the system, translates them from one set of keypress events to another,
+Generally, the system watches out for keypress events, and depending on the
+state of the system, translates them from one set of keypress events to another,
 corresponding to their actions in vim.
 
-## What I want to add in the future
+## Future improvements
 
 - repeatable actions via numbers
 - recording macros
 - ex mode: highly customized and gui-based; for saving files initially
   - you could save files using `:w` or quit applications using `:q`
   - you could make highly user-customizable commands as well like muting volume
+- adding a status bar in the menu to let the user know current vim state
+
+## You can contribute too!
+
+I am more than happy to accept help improving this package to be more comprehensive
+and feature-rich! Please fork this [repo][vim] and do whatever you please to
+improve it. Send a pull request if you feel your work should be included in the main
+branch.
 
 ## Caveats
 
