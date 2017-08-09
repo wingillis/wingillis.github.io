@@ -24,7 +24,8 @@ realized that I could add this feature.
 ## How to use
 
 The most important command to know is `option + escape` which is the entry into
-vim mode from any application. Basic navigation commands work, like: `j`, `k`,
+vim mode from any application. Once in vim mode, a notification will display
+in the center of the screen. Basic navigation commands work, like: `j`, `k`,
 `l`, and `h` which code for: :arrow_down:, :arrow_up:, :arrow_right:, :arrow_left:, respectively.
 Below are a list of commands that you should know for application control:
 - `i`: exit 'normal' mode into regular computer mode
@@ -62,6 +63,10 @@ needs more effectively. For instance, you could change the keymap that triggers
 the transition into vim-mode to whatever bindings you wanted, or change which
 keys had what effect in normal or visual mode. This is as simple as changing
 which keys to refer to in the table lookup within the key event handler.
+
+The system generally watches out for keypress events, and depending on the state
+of the system, translates them from one set of keypress events to another,
+corresponding to their actions in vim.
 
 ## What I want to add in the future
 
