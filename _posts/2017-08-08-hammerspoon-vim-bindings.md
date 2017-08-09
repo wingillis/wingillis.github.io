@@ -27,12 +27,29 @@ The most important command to know is `option + escape` which is the entry into
 vim mode from any application. Basic navigation commands work, like: `j`, `k`,
 `l`, and `h` which code for: :arrow_down:, :arrow_up:, :arrow_right:, :arrow_left:, respectively.
 Below are a list of commands that you should know for application control:
+- `i`: exit 'normal' mode into regular computer mode
+- `i`: exit 'normal' mode into regular computer mode, and move cursor to right
+- `o`: exit 'normal' mode into regular computer mode, and press enter
+- `O`: exit 'normal' mode into regular computer mode, move up, and press enter
+- `I`: exit 'normal' mode into regular computer mode, and go to line beginning
+- `A`: exit 'normal' mode into regular computer mode, and go to line end
 - `w`: go to beginning of word
-- `r`: replace letter in normal mode
 - `e`: go to end of word
 - `y`: copy text
+- `r`: replace letter in normal mode
 - `p`: paste text
-- `i`: exit
+- `v`: to go into pseudo-visual mode
+- `x`: delete a character and copy it
+- `d`: delete line, character, word, etc...
+- `c`: delete whatever, copy it, and go into insert mode
+- `0`: go to the beginning of a line
+- `$`: go to the end of a line
+
+Other things that work are basic navigation in visual mode, with copying,
+pasting, and deleting. If you want to get out of visual mode, you just have
+to hit escape, and you're back into normal mode. In the spirit of vim, the
+only ways to get out of normal mode are to use keys that put you into 'insert'
+mode, like `a`, `i`, `A`, `I`, `o`, `O`.
 
 If something goes horribly wrong, and your system becomes royally messed up,
 you can always reload your hammerspoon configuration to reset the state of
@@ -41,13 +58,18 @@ the program.
 ## How to configure
 
 You can easily edit different aspects of the framework to customize your
-needs more effectively.
+needs more effectively. For instance, you could change the keymap that triggers
+the transition into vim-mode to whatever bindings you wanted, or change which
+keys had what effect in normal or visual mode. This is as simple as changing
+which keys to refer to in the table lookup within the key event handler.
 
 ## What I want to add in the future
 
 - repeatable actions via numbers
 - recording macros
 - ex mode: highly customized and gui-based; for saving files initially
+  - you could save files using `:w` or quit applications using `:q`
+  - you could make highly user-customizable commands as well like muting volume
 
 ## Caveats
 
