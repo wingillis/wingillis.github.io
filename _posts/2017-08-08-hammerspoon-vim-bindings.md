@@ -23,9 +23,24 @@ realized that I could add this feature.
 
 ## How to use
 
+The most important command to know is `option + escape` which is the entry into
+vim mode from any application. Basic navigation commands work, like: `j`, `k`,
+`l`, and `h` which code for: :arrow_down:, :arrow_up:, :arrow_right:, :arrow_left:, respectively.
+Below are a list of commands that you should know for application control:
+- `w`: go to beginning of word
+- `r`: replace letter in normal mode
+- `e`: go to end of word
+- `y`: copy text
+- `p`: paste text
+- `i`: exit
+
+If something goes horribly wrong, and your system becomes royally messed up,
+you can always reload your hammerspoon configuration to reset the state of
+the program.
+
 ## How to configure
 
-You can easily edit different aspect of the current framework to customize your
+You can easily edit different aspects of the framework to customize your
 needs more effectively.
 
 ## What I want to add in the future
