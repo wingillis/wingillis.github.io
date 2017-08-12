@@ -13,6 +13,21 @@ implement a vim-like keymapping for other applications.
 
 **Note:** this software only works for macOS.
 
+### How about a brief overview
+
+Hammerspoon is an application that combines the lua language with
+the macOS operating system so that you can interact with the GUI in
+powerful programmatic ways. One of these ways is by added hotkeys to start
+user-defined events, like detecting keystrokes. I used this to implement
+vim bindings activated by the activating a shortcut. 
+
+These vim-like key bindings allow the user to use the same keys they would
+use in normal mode to navigate in other mac applications, like Word, Evernote,
+Google Docs, like I described above. You can also delete text in vim style
+as well! If you need to select text, a terse visual-mode has been
+implemented to support this. Much has been implemented, but it is still
+lacking, which is discussed briefly below.
+
 ## How to install
 
 1. Install [hammerspoon].
@@ -78,10 +93,17 @@ corresponding to their actions in vim.
 
 - repeatable actions via numbers
 - recording macros
-- ex mode: highly customized and gui-based; for saving files initially
-  - you could save files using `:w` or quit applications using `:q`
-  - you could make highly user-customizable commands as well like muting volume
+- ex mode
 - adding a status bar in the menu to let the user know current vim state
+
+### ex mode
+
+Because this is a semi-vim port layered on top of the OS, I can do some
+fancy things with our implementation of ex mode. Not only can I add
+application-specific commands like saving or quitting documents, but also
+I can add commands to switch between workspaces or to open specific sets
+of applications. I will try to build the ex-mode interface so that it can
+easily be customized by end users to do anything they want.
 
 ## You can contribute too!
 
