@@ -11,7 +11,7 @@ images:
   - http://vuejs.org/images/logo.png
 ---
 
-I am a first year PhD candidate in neuroscience at Harvard Medical School.
+I am a first year PhD candidate in neuroscience at Harvard Medical School in [Bob Datta's](http://datta.hms.harvard.edu/research_new2.html) lab.
 Previously, I was a research technician in [Dr. Timothy Gardner's](http://people.bu.edu/timothyg/) laboratory in Boston University.
 I got my B.A. in Behavioral Biology at BU, too.
 
