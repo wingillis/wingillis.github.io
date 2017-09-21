@@ -11,7 +11,8 @@ layout: post
 
 ## Papers
 
-Winthrop F Gillis and Sandeep R Datta. [**Knowing where the nose is.**](https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-017-0382-6)
+Winthrop F Gillis and Sandeep R Datta.
+[**Knowing where the nose is.**](https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-017-0382-6)
 BMC Biology. 15 May 2017.
 
 Charles A Lissandrello, Winthrop F Gillis, Jun Shen, Ben W Pearre, Flavia Vitale, Matteo Pasquali, Bradley J Holinski, Daniel J Chew, Alice E White and Timothy J Gardner.
@@ -19,8 +20,8 @@ Charles A Lissandrello, Winthrop F Gillis, Jun Shen, Ben W Pearre, Flavia Vitale
 Journal of Neural Engineering. _In Press._ June 2017.
 
 Winthrop F Gillis, Charles A Lissandrello, Jun Shen, Ben W Pearre, Alket Mertiri, Felix Deku, Stuart Cogan, Bradley J Holinski, Daniel J Chew, Alice E White,  Timothy J Gardner and Timothy M Otchy.
-[**Carbon Fiber On Polyimide Ultra-Microelectrodes**](http://biorxiv.org/content/early/2017/04/04/123281).
-bioRxiv. _In Review_. 2017
+[**Carbon Fiber On Polyimide Ultra-Microelectrodes.**](http://iopscience.iop.org/article/10.1088/1741-2552/aa8c88)
+Journal of Neural Engineering. _In Press._ September 2017.
 
 ## Posters
 
@@ -32,6 +33,11 @@ Felix Deku, Yarden Cohen, Ben Pearre, Alexandra Joshi-Imre, Atefeh Ghazavi, Wint
 [**Evaluation of Novel Amorphous Silicon Carbide Ultramicroelectrodes for Neural Interfacing.**]()
 BMES 2016 Annual Meeting. October 2016.
 
+T. Tan, K. Drummey, N. Bhagat, W. Gillis, J. Katon, K. Messemer, C. Dixon, J. Nguyen, S. R. Datta.
+[**Unique connectivity within the necklace subsystem suggests a novel function in olfactory processing.**]()
+Society for Neuroscience. November 2017.
+
+
 ## Patents
 
 Winthrop Gillis, Timothy Gardner, Charles Lissandrello, Alice White, Jun Shen, Bradley Holinski and Daniel Chew.
@@ -41,3 +47,5 @@ Provisional Patent PR66142P US. 28 July 2016. Print.
 ## Preparation
 
 **Acute and Chronic Recording in Small Diameter Peripheral Nerves.**
+
+**Some cool work in the basal ganglia.**
