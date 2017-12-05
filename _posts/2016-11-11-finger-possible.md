@@ -33,7 +33,7 @@ Can an actual device like this be built? Is this device practical or feasible? I
 Most of my designs involve a gloved keyboard, where the inputs points are on the tips of the fingers. On each finger, there was a single button which was to be pressed during different finger combinations, and each combination makes to a different character (as stated before).
 
 <figure>
-<img src="http://imgur.com/8IMTo1q.png">
+<img src="https://i.imgur.com/8IMTo1q.png">
 <figcaption>
 The button 'keyboard'. The black loops slip onto the tip of each finger. there are buttons on one side of the black loops, located on the finger tips.
 </figcaption>
@@ -45,7 +45,7 @@ The button 'keyboard'. The black loops slip onto the tip of each finger. there a
 This design uses metal strips on the gloved fingertips to detect touch. The metal senses a characteristic change in capacitance when it touches a hand or other similar object. The metal strips on each finger are isolated from the finger itself so it doesn't detect touch inputs all the time. To get around this problem, a conductive material that touches the palm and extends to the fingers can be tapped to register touches.
 
 <figure>
-<img src="http://imgur.com/2OzYh0F.png">
+<img src="https://i.imgur.com/2OzYh0F.png">
 <figcaption>
 The capacitive touch keyboard. Metal strips are located on the fingertips for detecting touches to skin or metal.
 </figcaption>
@@ -56,21 +56,21 @@ The capacitive touch keyboard. Metal strips are located on the fingertips for de
 This design takes advantage of the mechanical properties of piezoelectric devices; they generate electricity when they vibrate. Tapping fingers induces a detectable current for measuring a response.
 
 <figure>
-<img src="http://imgur.com/vT41I0x.png">
+<img src="https://i.imgur.com/vT41I0x.png">
 <figcaption>
 Example of what the piezo keyboard prototype looks like on my hand.
 </figcaption>
 </figure>
 
 <figure>
-<img src="http://imgur.com/p2ctbK4.png">
+<img src="https://i.imgur.com/p2ctbK4.png">
 <figcaption>
 Circuitry of the keyboard and both gloves. The board is an Arduino Leonardo.
 </figcaption>
 </figure>
 
 <figure>
-<img src="http://imgur.com/qQjvg7Z.png" alt="bluetooth keyboard">
+<img src="https://i.imgur.com/qQjvg7Z.png" alt="bluetooth keyboard">
 <figcaption>
 An example of what a fixed piezo keyboard could look like. This was mainly a prototype to see if I could get it working in a more 'portable' form. It's portability comes from the fact that it is powered by a battery and connects to a device as a bluetooth keyboard, sending commands wirelessly. However, it is quite large and is spatially limited which I previously ragged on.
 </figcaption>
@@ -81,7 +81,7 @@ An example of what a fixed piezo keyboard could look like. This was mainly a pro
 This system works radically different than the other three. It uses a device called the [Leap Motion](https://www.leapmotion.com/), which tracks finger and hand movements using an infrared (IR) light sensor. So there are no physical objects one would need to wear to use this - just put their hands over the Leap. Or, one could wear the Leap, and type anywhere in front of them. This version has an advantage over other keyboard implementations used in the leap motion software - the other versions use spatial mapping, which can take away from productivity and user experience.
 
 <figure>
-<img src="http://imgur.com/pnaYwd7.png">
+<img src="https://i.imgur.com/pnaYwd7.png">
 
 <figcaption>
 An example of leap motion keyboard. A hovered hand can press down finger combinations anywhere, and the leap will register a keypress. The purple LEDs in the device are actually the IR sensors.
@@ -96,10 +96,10 @@ Due to the overwhelming amount of key combinations possible, there has to be som
 
 <figure>
 <div class="pure-u-1 pure-u-md-1-2">
-<img class="pure-img" src="http://i.imgur.com/4l3EU9H.png">
+<img class="pure-img" src="https://i.imgur.com/4l3EU9H.png">
 </div>
 <div class="pure-u-1 pure-u-md-1-2">
-<img class="pure-img" src="http://i.imgur.com/xEuLPlE.png">
+<img class="pure-img" src="https://i.imgur.com/xEuLPlE.png">
 </div>
 <figcaption>
 Example keyboard mappings for the alphabet and important keys. Finger presses are green circles, and order goes from left pinky to thumb, then right thumb to pinky.
