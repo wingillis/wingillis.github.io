@@ -22,7 +22,7 @@ The researcher-company relationship can create constraints on the research, as w
 <figure>
 <img src="https://i.imgur.com/KbSSQ5x.png">
 <figcaption>
-The amount of people choosing science as a career is also increasing
+Fig 2: The amount of people choosing science as a career is also increasing
 </figcaption>
 </figure>
 
