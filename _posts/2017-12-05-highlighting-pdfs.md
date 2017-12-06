@@ -70,7 +70,7 @@ Fig 1: Example highlighted page
 For example, above is a highlighted page from an article (Fig 1). The yellow highlight is to remember for later, while the blue is to read/research later. The `notability-upload` program will detect the regions these highlights exist and crop them into a new Evernote note (Fig 2), with the included PDF for reference. One nice thing about Evernote is that it will perform optical character recognition (OCR) on any images in your notes (if you have Premium). This allows you to search for a word specifically in the highlighted regions. An additional use case for highlighting is to quickly save snippets of a paper. For instance, if there is a chart you’d like to keep in easy access, you could highlight a box around the chart, and it will automatically be grabbed (Fig 3).
 
 <figure>
-<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_c1cba85c0f3ade8d7493ebafd81890ea7e72f14a432fad5dd63ca577bb5c63f7_1512539215856_screen+shot+2017-12-06+at+12.46.26+am.png">
+<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_C1CBA85C0F3ADE8D7493EBAFD81890EA7E72F14A432FAD5DD63CA577BB5C63F7_1512539215856_Screen+Shot+2017-12-06+at+12.46.26+AM.png">
 <figcaption>
 Fig 2: Structure of the Evernote note
 </figcaption>
