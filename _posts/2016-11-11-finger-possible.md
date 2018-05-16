@@ -5,16 +5,14 @@ description: A portable, customizable, extremely efficient design proposition fo
 ---
 # Finger Possible
 
-This post is going to be about a small side project I worked on about a year ago.
+This post is on a project that I worked on in 2015-2016.
 
 * TOC
 {:toc}
 
 ## Problem
 
-As I am going about my day, sometimes I have ideas that I really want to write down, or I need to remember something so I must write it into a to-do list. When I'm on the go, it is difficult to write in anything except my phone because that is usually all I bring with me. I really dislike typing things on my phone when I am moving - it is difficult to watch what is in front of me, and difficult to hit the right keys without looking at the phone.
-
-This (and the burning desire to accomplish a goal of programming while biking) has inspired me to think about different human-computer input regimes. First of all, the keyboard is a slow, limiting device. One has to sit down in front of it and place their fingers on precise areas of the keyboard to produce coherent output. In my opinion, this does not work well for touch screen keyboards. There is no tactile feedback to say where hands should go - only visual feedback, meaning you have to look down while writing.
+Throughout the day I have ideas or to-dos I want to remember. However, I usually only carry my phone around with me. If I'm on the move, it's very difficult to write down my ideas on my phone and watch what's in front of me. This (and the desire to program while biking) has inspired me to think about different ways humans can interact with computers. One such interaction that could use updating is the keyboard. The keyboard is a slow, limiting device. One has to sit in front of it and place their fingers on precise points (the keys) to produce coherent output. In my experience, this is especially inefficient with touch screen keyboards. There is no tactile feedback - only visual feedback, meaning you have to look down while writing.
 
 ## Idea
 
