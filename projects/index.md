@@ -57,5 +57,3 @@ Provisional Patent PR66142P US. 28 July 2016. Print.
 ## Preparation
 
 **Acute and Chronic Recording in Small Diameter Peripheral Nerves.**
-
-**Some cool work in the basal ganglia.**
