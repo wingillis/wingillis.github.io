@@ -5,6 +5,8 @@ layout: post
 ---
 ## Press
 
+[**Decoding Body Language Reveals How the Brain Organizes Behavior**](https://www.simonsfoundation.org/2018/07/11/decoding-body-language-reveals-how-the-brain-organizes-behavior/)
+
 [**How the Brain Orchestrates Movement**](https://neurosciencenews.com/movement-orchestration-9073/)
 
 [**Printable nanoclip stimulates tiny nerves**](http://medicalphysicsweb.org/cws/article/research/68264)
