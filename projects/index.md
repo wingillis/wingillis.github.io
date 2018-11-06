@@ -35,6 +35,8 @@ Journal of Neural Engineering. September 2017.
 
 ## Posters
 
+J. E. MARKOWITZ, W. F. GILLIS, C. C. BERON, S. Q. NEUFELD, K. ROBERTSON, N. D. BHAGAT, R. E. PETERSON, E. PETERSON, M. HYUN, S. W. LINDERMAN, B. L. SABATINI, S. R. DATTA. **The striatum organizes 3D behavior via moment-to-moment action selection.** [Society for Neuroscience 2018](https://abstractsonline.com/pp8/#!/4649/presentation/29823)
+
 NIH Brain Initiative 2018.
 
 Cosyne 2018.
