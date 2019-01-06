@@ -21,6 +21,8 @@ Jeffrey E Markowitz, Winthrop F Gillis, Celia C Beron, Shay Q Neufeld, Keiramari
 [**The Striatum Organizes 3D Behavior via Moment-to-Moment Action Selection.**](https://www.cell.com/cell/fulltext/S0092-8674(18)30512-9)
 Cell. _In Press._ 17 May 2018.
 
+<span class="__dimensions_badge_embed__" data-id="pub.1104039317" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
 Winthrop F Gillis and Sandeep R Datta.
 [**Knowing where the nose is.**](https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-017-0382-6)
 BMC Biology. 15 May 2017.
