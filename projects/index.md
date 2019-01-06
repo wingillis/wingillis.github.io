@@ -29,6 +29,8 @@ Charles A Lissandrello, Winthrop F Gillis, Jun Shen, Ben W Pearre, Flavia Vitale
 [**A micro-scale printable nanoclip for electrical stimulation and recording in small nerves.**](http://iopscience.iop.org/article/10.1088/1741-2552/aa5a5b)
 Journal of Neural Engineering. June 2017.
 
+<span class="__dimensions_badge_embed__" data-id="pub.1084173495"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
 Winthrop F Gillis, Charles A Lissandrello, Jun Shen, Ben W Pearre, Alket Mertiri, Felix Deku, Stuart Cogan, Bradley J Holinski, Daniel J Chew, Alice E White, Timothy J Gardner and Timothy M Otchy.
 [**Carbon Fiber On Polyimide Ultra-Microelectrodes.**](http://iopscience.iop.org/article/10.1088/1741-2552/aa8c88)
 Journal of Neural Engineering. September 2017.
