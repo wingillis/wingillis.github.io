@@ -35,6 +35,8 @@ Winthrop F Gillis, Charles A Lissandrello, Jun Shen, Ben W Pearre, Alket Mertiri
 [**Carbon Fiber On Polyimide Ultra-Microelectrodes.**](http://iopscience.iop.org/article/10.1088/1741-2552/aa8c88)
 Journal of Neural Engineering. September 2017.
 
+<span class="__dimensions_badge_embed__" data-id="pub.1091757262" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
 ## Posters
 
 J. E. MARKOWITZ, W. F. GILLIS, C. C. BERON, S. Q. NEUFELD, K. ROBERTSON, N. D. BHAGAT, R. E. PETERSON, E. PETERSON, M. HYUN, S. W. LINDERMAN, B. L. SABATINI, S. R. DATTA. **The striatum organizes 3D behavior via moment-to-moment action selection.** [Society for Neuroscience 2018](https://abstractsonline.com/pp8/#!/4649/presentation/29823)
