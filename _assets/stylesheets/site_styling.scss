@@ -1,7 +1,12 @@
 @import "base";
 
+strong {
+  font-family: 'Roboto', sans-serif;
+}
+
 h1, h2, h3, h4, h5 {
   color: $text-color;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -14,11 +19,21 @@ h1 {
 a:link {
   color: $link-color;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 a:visited {
   color: $link-color;
   text-decoration: none;
+}
+
+a:hover {
+  color: lighten($link-color, 30%);
+  text-decoration: none;
+}
+
+a.pure-menu-link:hover {
+  color: $link-color;
 }
 
 .centered {
@@ -29,7 +44,8 @@ code {
 	background-color: $code-background;
 	padding: 2px;
 	margin: 1px;
-	border-radius: 3px;
+  border-radius: 3px;
+  font-weight: 600;
 }
 
 body {
@@ -37,12 +53,17 @@ body {
 	background-image: $skull;
   background-position: center, center;
   background-attachment: fixed, scroll;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
 }
 
 
 div.text-content {
-  background-color: $content-background;
-  box-shadow: 0 0 20px 20px $content-background;
+  text-align: justify;
+}
+
+blockquote {
+  border-left: 5px solid #A668A6;
 }
 
 .image-padding {
@@ -134,11 +155,11 @@ div.pure-g {
 .inject {
   margin: 4px;
   fill: #fff;
-  transition: transform 0.4s;
+  transition: transform 0.45s;
 }
 
 .inject:hover {
-  transform: scale(0.75);
+  transform: scale(0.7);
 }
 
 #svg-social-icons {
@@ -156,7 +177,7 @@ p {
 }
 
 figure {
-  padding: 7px;
+  padding: 11px;
   @media screen and (min-width: 30em) {
     width: 85%;
   }
@@ -165,7 +186,7 @@ figure {
   }
   margin: 10px auto 0px auto;
   border-radius: 3px;
-  background-color: rgba(252, 248, 255, 0.07);
+  background-color: rgba(darken($background-color, 15%), 0.4);
 }
 
 figure {
@@ -190,6 +211,7 @@ figcaption {
   color: $caption-color;
   font-weight: 300;
   font-style: italic;
+  font-family: 'Roboto', sans-serif;
 }
 
 .article-item {

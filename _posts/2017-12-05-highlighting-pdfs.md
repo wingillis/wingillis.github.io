@@ -84,6 +84,8 @@ Fig 3: A chart grabbed by the highlighter
 </figcaption>
 </figure>
 
+### References
+
 The paper used as the example highlighted document is found here:
 
 > Brown AEX, de Bivort B. The study of animal behaviour as a physical science. bioRxiv [Internet]. 2017; Available from: http://biorxiv.org/content/early/2017/11/17/220855.abstract

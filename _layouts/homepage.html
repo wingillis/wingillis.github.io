@@ -14,7 +14,7 @@
           {% if img contains 'http' %}
             <img class="pure-img desktop-img" src="{{ img }}" style="width: 60%; margin: auto;"/>
           {% else %}
-            <img class="pure-img desktop-img" src={% asset_path {{img}} %} style="width: 60%; margin: auto;"/>
+            <img class="pure-img desktop-img" src={% asset {{img}} %} style="width: 60%; margin: auto;"/>
           {% endif %}
         {% endfor %}
       </div>
@@ -26,7 +26,7 @@
       <br>
     </div>
     {% include javascripts.html %}
-    {% javascript rndm_img_padding.js %}
+    {% asset rndm_img_padding.js %}
     {% include footer.html %}
   </body>
 </html>

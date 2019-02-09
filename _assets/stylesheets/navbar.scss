@@ -6,9 +6,7 @@
 }
 
 .header {
-  // padding-bottom: 10px;
-  // padding-top: 10px;
-  background-color: rgba(0,0,0,0.70);
+  background-color: darken($background-color, 8%);
 }
 
 .adjust-height {

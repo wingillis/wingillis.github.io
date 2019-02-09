@@ -16,7 +16,7 @@
 title: Winthrop Gillis
 email: win.gillis@gmail.com
 description: Winthrop Gillis - travelling through space for the right ideas
-baseurl: / # the subpath of your site, e.g. /blog
+# baseurl: / # the subpath of your site, e.g. /blog
 url: https://wingillis.github.io # the base hostname & protocol for your site, e.g. http://example.com
 
 paginate: 20
@@ -32,6 +32,10 @@ rss_enabled: true
 ga_analytics: UA-74958647-1 # Add your GA Tracking Id
 discus_identifier: wingillis # Add your Disqus identifier
 
+#defaults:
+  #- scope:
+      #path: "/assets"
+
 assets:
   compress:
     css: true
@@ -41,6 +45,7 @@ assets:
     - _assets/images
     - _assets/scripts
     - _assets/sound
+
 # Build settings
 markdown: kramdown
 theme: minima
