@@ -30,7 +30,7 @@ a:hover {
 }
 
 a.pure-menu-link:hover {
-  color: $link-color;
+  color: darken($link-color, 20%);
 }
 
 .centered {
