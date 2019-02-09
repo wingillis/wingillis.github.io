@@ -1,0 +1,27 @@
+.nav-width {
+  max-width: 900px;
+  margin: auto; }
+
+.header {
+  background-color: #dbe3db; }
+
+.adjust-height li {
+  height: auto; }
+
+.pure-menu-link:focus {
+  background-color: transparent; }
+
+a.pure-menu-heading.pure-menu-link {
+  color: #353535; }
+
+a.pure-menu-link {
+  color: #497D67;
+  padding-bottom: 18px;
+  padding-top: 18px;
+  transition: background-color 0.2s; }
+
+a.pure-menu-link:hover {
+  background-color: rgba(255, 255, 255, 0.13); }
+
+.pure-menu-horizontal.pure-menu-scrollable {
+  padding: 0; }
