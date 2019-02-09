@@ -12,7 +12,7 @@ git checkout -b master
 # git pull origin master
 
 # push local changes upstream
-git push origin master
+git push origin master --force
 
 # go back to editing branch
 git checkout drafts
