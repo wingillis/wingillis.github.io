@@ -2,6 +2,8 @@
 
 # I'll need to fix this to handle merging and shit
 
+# THIS DOESN'T WORK EITHER
+
 set -e
 
 git branch -d master
