@@ -62,9 +62,9 @@ Society for Neuroscience. November 2017.
 
 ## Patents
 
-Winthrop Gillis, Timothy Gardner, Charles Lissandrello, Alice White, Jun Shen, Bradley Holinski and Daniel Chew.
-[**Nerve Cuffs.**]()
-Provisional Patent PR66142P US. 28 July 2016. Print.
+HOLINSKI, Bradley J., GARDNER, Timothy, LISSANDRELLO, Charles A., WHITE, Alice E., GILLIS, Winthrop, SHEN, Jun, OTCHY, Timothy, MICHAS, Christos. (2018, Patent No. _PCT/US2017/044096_ Boston, MA) [**NERVE CUFFS, METHODS OF FABRICATING THE SAME AND METHODS OF USE**](https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2018022838)
+
+AUTOMATICALLY CLASSIFYING ANIMAL BEHAVIOR ASSOCIATED WITH NEURAL RECORDINGS (Provisional)
 
 ## Preparation
 
