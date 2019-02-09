@@ -61,7 +61,7 @@ Below are a list of commands that you should know for application control:
 - `$`: go to the end of a line
 
 <figure>
-<img src="http://i.imgur.com/C9Hdhkc.gif">
+<img src="https://i.imgur.com/C9Hdhkc.gif">
 <figcaption>
 Activating vim mode
 </figcaption>
