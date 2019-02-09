@@ -22,31 +22,33 @@ which was just in its baby phase. It only offered a small amount of lessons in p
   (bluetooth device tracker and power-pad manager) to allow for semi-complex stimulation
   patterns.
 <figure>
-  <img src="{% asset 'stim.png' %}"/>
+  {% asset stim.png %}
   <figcaption>A glimpse of the stimulator interface.</figcaption>
 </figure>
-- My favorite software usage is for data analysis. I use python and MATLAB
-  daily to process data and compute charts for visualization
+
+- I love to use software to perform data analysis. I use python on a daily basis to process data, build predictive models, and to visualize relationships in the data
+
 <figure>
-<div class="pure-u-1 pure-u-md-1-2">
-  <img class="pure-img" src="{% asset 'lw10rhp_currents.png' %}"/>
-</div>
-<div class="pure-u-1 pure-u-md-1-2">
-  <img class="pure-img" src="{% asset 'current_voltage.png' %}"/>
-</div>
+  <div class="pure-u-1 pure-u-md-1-2">
+    {% asset lw10rhp_currents.png class='pure-img' %}
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2">
+    {% asset current_voltage.png class='pure-img' %}
+  </div>
 </figure>
+
 - I built an automatic system to parse sound files for birdsong, based on [Jeff Markowitz's scripts](https://github.com/jmarkow/zftftb)
 - [This website](https://github.com/wingillis/wingillis.github.io)
 - A [genetic algorithm](https://github.com/wingillis/geneticSounds) that tries to copy a sound (**spoiler alert:** it doesn't work)
 - A web-based timer utilizing [Trello](https://trello.com) for task management [source](https://github.com/wingillis/trelloAlarm)
 <figure>
-  <img src="{% asset 'trello.png' %}"/>
+  {% asset trello.png %}
   <figcaption>How the timer looks when inactive</figcaption>
 </figure>
 - A [fun little art project](/software/fireworks/) for visualization
 <figure>
   <a href="/software/fireworks">
-    <img src="{% asset 'fireworks.png' %}"/>
+    {% asset fireworks.png %}
     <figcaption>Screenshot of the fireworks</figcaption>
   </a>
 </figure>

@@ -17,11 +17,11 @@ description: Entries in this system are disorienting and disorganized
         <h3>
           {{ post.title }}
         </h3>
-        <p>
+        <div class="indent">
+        <p style="padding: 0px;">
           {{ post.description }}
         </p>
-        <div>
-          <p class="article-footer">
+        <div class="article-footer">
             Posted:
             {{ post.date | date: "%B %-d, %Y" }}
             Length:
@@ -31,8 +31,8 @@ description: Entries in this system are disorienting and disorganized
             {% unless words contains "-" %}
               {{ words | plus: 250 | divided_by: 250 | append: " minute read" }}
             {% endunless %}
-          </p>
         </div>
+      </div>
       </a>
     </div>
   {% endfor %}

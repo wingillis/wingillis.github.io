@@ -3,6 +3,7 @@ layout: post
 title: Optimizing PDF organization and annotation
 description: My workflow I developed for stress-free note taking.
 ---
+
 # Optimizing PDF organization and annotation
 
 I am a graduate student and I often have to read many PDFs. This post is about a few small programs I wrote to both get around bottlenecks using Mendeley to manage my pdfs, and keep track of annotations I make within those PDFs.
