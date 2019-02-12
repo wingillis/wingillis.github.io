@@ -1,7 +1,7 @@
 <html>
   <head>
     
-<title>Winthrop Gillis | Why?</title>
+<title>Winthrop Gillis | Tic-Toc</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -96,12 +96,12 @@
   <div>
     <h4>Share:</h4>
   </div>
-  <a href="https://getpocket.com/save?url=https://wingillis.github.io//blog/" target="_blank">
+  <a href="https://getpocket.com/save?url=https://wingillis.github.io//blog/tic-toc/" target="_blank">
     <div class="icon" id="pocket-icon">
 			<img class="inject" src="/assets/pocket-bf6dd18e9776128a80740ec6615853b5e9b1b3284049d51bbcebdda7c7c3ac06.svg">
     </div>
   </a>
-  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://wingillis.github.io//blog/">
+  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://wingillis.github.io//blog/tic-toc/">
     <div class="icon" id="facebook-icon">
 			<img class="inject" src="/assets/facebook-ec76c1636db2ecd45bc5504a6a8c8bf8024b21aaaf96f8682a7eec1b40f2105f.svg">
     </div>
@@ -111,127 +111,100 @@
     <div class="extra-padding">
       <div class="content pure-g text-content">
         <div class="pure-u-1">
-          <div class="centered">
-  <h1>Posts</h1>
-</div>
-<!-- <div style="height: 10px">
+          <h1 id="tic-toc">Tic-Toc</h1>
 
-</div> -->
-<div class="article-list">
-  
-    <a href="/blog/highlighting-pdfs/" title="Optimizing PDF organization and annotation">
-      <div class="article-item">
-        <h3>
-          Optimizing PDF organization and annotation
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          My workflow I developed for stress-free note taking.
-        </p>
-        <div class="article-footer">
-            Posted:
-            December 5, 2017
-            Length:
-            
-            
-              7 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-    <a href="/blog/conflicts-of-interest/" title="The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest.">
-      <div class="article-item">
-        <h3>
-          The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest.
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          Examples of scientific conflicts of interest and a proposal to improve the situation.
-        </p>
-        <div class="article-footer">
-            Posted:
-            December 4, 2017
-            Length:
-            
-            
-              4 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-    <a href="/blog/hammerspoon-vim-bindings/" title="Hammerspoon Vim Bindings">
-      <div class="article-item">
-        <h3>
-          Hammerspoon Vim Bindings
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          Tutorial on how to give all applications vim-like capabilities
-        </p>
-        <div class="article-footer">
-            Posted:
-            August 8, 2017
-            Length:
-            
-            
-              4 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-    <a href="/blog/tic-toc/" title="Tic-Toc">
-      <div class="article-item">
-        <h3>
-          Tic-Toc
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          A user guide for a serial timer web application.
-        </p>
-        <div class="article-footer">
-            Posted:
-            November 29, 2016
-            Length:
-            
-            
-              3 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-    <a href="/blog/finger-possible/" title="Finger Possible">
-      <div class="article-item">
-        <h3>
-          Finger Possible
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          A portable, customizable, extremely efficient design proposition for a keyboard-like human-computer interface.
-        </p>
-        <div class="article-footer">
-            Posted:
-            November 11, 2016
-            Length:
-            
-            
-              9 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-  
-</div>
+<ul id="markdown-toc">
+  <li><a href="#tic-toc" id="markdown-toc-tic-toc">Tic-Toc</a>    <ul>
+      <li><a href="#user-guide" id="markdown-toc-user-guide">User Guide</a></li>
+      <li><a href="#development-notes" id="markdown-toc-development-notes">Development Notes</a></li>
+    </ul>
+  </li>
+</ul>
 
+<p>Over the summer I wanted to do three things as a hobby:</p>
+<ul>
+  <li>learn Google’s material design for web apps</li>
+  <li>build a productive tool to manage timing at a superficial level</li>
+  <li>become more proficient with <a href="http://vuejs.org/v2/guide/">Vue.js</a>, a JavaScript web application framework (I used Vue.js 1.0.x, but I recommend learning v2 instead)</li>
+</ul>
+
+<p>These three things developed into <a href="https://wingillis.github.io/tic-toc/">Tic-Toc</a>, a simple web application to manage timers in a serial fashion.</p>
+
+<h2 id="user-guide">User Guide</h2>
+
+<figure>
+<img src="https://imgur.com/J6dsGKc.png" />
+<figcaption>
+Main screen of the app. The card seen is the input card.
+</figcaption>
+</figure>
+
+<p>It’s very easy to add new timers. In the title portion, and a descriptive name for your timer. In the time portion, you can type what time you need in <code class="highlighter-rouge">h m s</code> format.
+Here are some examples:</p>
+<ul>
+  <li>3h for 3 hours</li>
+  <li>45s for 45 seconds</li>
+  <li>2m 30s for 2 minutes and 30 seconds</li>
+</ul>
+
+<figure>
+<img src="https://imgur.com/KOKmqDu.png" />
+<figcaption>
+Text added into the input card.
+</figcaption>
+</figure>
+
+<p>This saves time from typing so many zeros. Once you type a title and a time, hitting enter or clicking <code class="highlighter-rouge">add</code> will add a new timer card to the bottom of the timer list.</p>
+
+<figure>
+<img src="https://imgur.com/5iXSi5Q.png" />
+<figcaption>
+Two cards added. You can start any timer you want, at any time. Only one timer will run at any given point.
+</figcaption>
+</figure>
+
+<p>In the upper right corner of every timer there is a trash can icon you can click to delete the timer. The <code class="highlighter-rouge">clear all</code> button at the top of the page removes all timers. Clicking <code class="highlighter-rouge">start</code> on any timer will start it counting down from that position in the list downwards. You can pause the timer and move to another one by clicking <code class="highlighter-rouge">start</code> on any other timer, or by clicking <code class="highlighter-rouge">pause</code> on the current active timer, and <code class="highlighter-rouge">start</code> on another. Hitting <code class="highlighter-rouge">resume</code> will continue that timer from where it previously stopped. Hitting <code class="highlighter-rouge">cancel</code> will reset the timer, and if it is running, will stop the timer.</p>
+
+<figure>
+<img src="https://imgur.com/5or2qpO.png" />
+<figcaption>
+A stopped timer on top and a running timer on bottom. You can reset the time by clicking the spinny arrows.
+</figcaption>
+</figure>
+
+<p>When a timer finishes, a chime will sound, letting you know the timer has finished. If you’re using chrome, it will also speak to you, letting you know what your next task is and how much time you’ve allotted to complete the task. A notification will also pop up with the next task, in case chrome is not in the foreground.</p>
+
+<h2 id="development-notes">Development Notes</h2>
+
+<p>As mentioned previously, I developed this using Vue.js. I am partial towards Google’s material design, so I merged a Vue app with <a href="https://getmdl.io/">a material design library</a> for the web.</p>
+
+<p>This app also gave me the opportunity to play with some of the text-to-speech api in chrome - this works on chrome on the phone (if the device is unlocked) and on the computer. This is a cool way to interact with the computer because it does not require you to shift your attention away from whatever you are doing to look at the next task.</p>
+
+<p>This project is open source. You can find it in my <a href="https://github.com/wingillis/tic-toc">GitHub repository</a>.</p>
+
+        </div>
+        
+        <div class="pure-u-1">
+
+          <div id="disqus_thread"></div>
+          <script>
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+          /*
+          var disqus_config = function () {
+          this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = '//wingillis.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
         
       </div>
