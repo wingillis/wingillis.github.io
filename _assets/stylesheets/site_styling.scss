@@ -1,4 +1,42 @@
 @import "base";
+@import "switch";
+
+body.dark {
+  background-color: $dark-background;
+  background-image: $dark-skull;
+  a:link {
+    color: lighten($link-color, 20%);
+  }
+  a:visited {
+    color: lighten($link-color, 20%);
+    text-decoration: none;
+  }
+  nav {
+    background-color: darken($dark-background, 12%);
+    a.pure-menu-heading.pure-menu-link {
+      color: $dark-text-color;
+    }
+    ul {
+
+      background-color: darken($dark-background, 12%);
+    }
+    // a.pure-menu-link {
+    //   color: darken($link-color, 20%);
+    // }
+  }
+}
+.dark {
+  color: $dark-text-color;
+  h1, h2, h3, h4, h5, h6, p, li {
+    color: $dark-text-color;
+  }
+  figcaption {
+    color: lighten($caption-color, 50%);
+  }
+  figure {
+    background-color: rgba(lighten($dark-background, 20%), 0.4);
+  }
+}
 
 strong {
   font-family: 'Roboto', sans-serif;
@@ -65,6 +103,7 @@ div.text-content {
 
 blockquote {
   border-left: 5px solid #A668A6;
+  overflow-x: scroll;
 }
 
 .image-padding {
@@ -193,9 +232,7 @@ figure {
   margin: 10px auto 0px auto;
   border-radius: 3px;
   background-color: rgba(darken($background-color, 15%), 0.4);
-}
 
-figure {
   img {
     width: 100%;
   }
