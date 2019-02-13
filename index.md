@@ -4,9 +4,7 @@ title: Winthrop Gillis
 permalink: /
 ---
 
-I am a second year PhD candidate in neuroscience at Harvard Medical School in [Professor Bob Datta's](http://datta.hms.harvard.edu/research_new2.html) lab.
-Previously, I was a research technician in [Dr. Timothy Gardner's](http://people.bu.edu/timothyg/) laboratory in Boston University.
-I got my B.A. in Behavioral Biology at BU, too.
+I am a PhD candidate in the [Program in Neuroscience](http://www.hms.harvard.edu/dms/neuroscience/) at Harvard Medical School. I study how the brain orchestrates animal behavior in [Bob Datta's](http://datta.hms.harvard.edu/research_new2.html) lab. Prior to September 2016, I was a research technician in [Timothy Gardner's](http://people.bu.edu/timothyg/) laboratory in Boston University, where I developed peripheral nerve recording methods with cuff electrode arrays and flexible carbon nanotube threads. I got my degree at Boston University in Behavioral Biology.
 
 I am interested in many things. These include:
 
@@ -18,7 +16,7 @@ I am interested in many things. These include:
   - [julia](http://julialang.org/) - it has a lot of promise in technical computing and ML
   - javascript/web applications - [vue.js](http://vuejs.org/v2/guide/) is my favorite framework
   - [MATLAB](https://www.mathworks.com/products/matlab.html) - because I have to
-  - C to program [arduinos](https://www.arduino.cc/en/Main/arduinoBoardUno) and other microcontrollers, [like the teensy](https://www.pjrc.com/teensy/teensy31.html)
+  - C to program [arduinos](https://www.arduino.cc/en/Main/arduinoBoardUno) and other microcontrollers, [like the teensy](https://www.pjrc.com/teensy/index.html)
   - clojure/clojurescript - to change the way I think about data transformations
   - java for android applications
 
