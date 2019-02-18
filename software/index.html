@@ -1,7 +1,7 @@
 <html>
   <head>
     
-<title>Winthrop Gillis | Gallery</title>
+<title>Winthrop Gillis | Software</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -17,7 +17,7 @@
 <link type="application/atom+xml" rel="alternate" href="https://wingillis.github.io/feed.xml" title="Winthrop Gillis" />
 
   </head>
-  <body id="app">
+  <body>
     <nav id="navbar" class="header">
   <div class="nav-width">
   <div class="pure-menu pure-menu-horizontal">
@@ -99,34 +99,82 @@
   <div>
     <h4>Share:</h4>
   </div>
-  <a href="https://getpocket.com/save?url=https://wingillis.github.io//gallery/" target="_blank">
+  <a href="https://getpocket.com/save?url=https://wingillis.github.io//software/" target="_blank">
     <div class="icon" id="pocket-icon">
 			<img class="inject" src="/assets/pocket-bf6dd18e9776128a80740ec6615853b5e9b1b3284049d51bbcebdda7c7c3ac06.svg">
     </div>
   </a>
-  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://wingillis.github.io//gallery/">
+  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://wingillis.github.io//software/">
     <div class="icon" id="facebook-icon">
 			<img class="inject" src="/assets/facebook-ec76c1636db2ecd45bc5504a6a8c8bf8024b21aaaf96f8682a7eec1b40f2105f.svg">
     </div>
   </a>
 </div>
 
-    <div class="content text-content pure-g">
-      <div class="pure-u-1">
-  <h1>Gallery</h1>
-  <p>
-		Below are a selection of my renders. I used <a href="https://www.blender.org/">blender</a> to make these.
-  	Click on each image for a higher resolution version.
-  </p>
-</div>
+    <div class="extra-padding">
+      <div class="content pure-g text-content">
+        <div class="pure-u-1">
+          <h1 id="software">Software</h1>
 
-<moving-img v-for="s in sources" :url="s"></moving-img>
+<p>I first learned to program in 2012 when I found <a href="https://www.codecademy.com/">Codecademy</a>, a new website designed to teach self-learners the fundamentals of programming. It offered very few lessons built around javascript, but they were enough to get me excited and were fundamental to my education in software development and engineering. I’ve practiced nearly every day, and while I was learning, I made each of the projects described below.</p>
 
-<script src="/assets/gallery-app-2002461b8b6acd0f79115ef58a634aa4d536ed0eb223b637559f8a3a41d7f6e5.js" type="text/javascript"></script>
+<ul>
+  <li><a href="/tic-toc/">Tic-Toc</a>, a web app for making serial timers (user guide <a href="https://wingillis.github.io/blog/tic-toc/">here</a>)</li>
+  <li>As a consultant, I co-engineered a system to monitor and control wireless <strong>peripheral nerve stimulators</strong>. I built the front-end user interface to select various stimulation patterns, and the back-end which tracks and manages the stimulator devices.</li>
+</ul>
 
+<figure>
+  <img src="/assets/stim-eac1b17f4a17db577bfabf8cf7e9373d3fee102fb1952af4a1aa308cc3bd671f.png" />
+  <figcaption>An example of the stimulator interface for an early version of the software.</figcaption>
+</figure>
+
+<ul>
+  <li>I enjoy performing data analysis, and use python in lab to make figures from datasets I explore for my project</li>
+</ul>
+
+<figure>
+  <div class="pure-u-1 pure-u-md-1-2">
+    <img class="pure-img" src="/assets/lw10rhp_currents-630052ca3fc20df6ebe4417a2dc3778195bdca6f70bd415299b132b233df8673.png" />
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2">
+    <img class="pure-img" src="/assets/current_voltage-3341f45a95aa9286c6f50f5f652c1712ead6e95a55ae9cfb9efc09285d5a05ce.png" />
+  </div>
+  <figcaption>Examples of some plots I make describing experiments I've run</figcaption>
+</figure>
+
+<ul>
+  <li>I built an automatic system to parse sound files for birdsong – it heavily relies on <a href="https://github.com/jmarkow/zftftb">Jeff Markowitz’s scripts</a></li>
+  <li>I built <a href="https://github.com/wingillis/wingillis.github.io">this website</a> using jekyll and github pages.</li>
+  <li>A web-based timer utilizing <a href="https://trello.com">Trello</a> for task management <a href="https://github.com/wingillis/trelloAlarm">source</a></li>
+</ul>
+<figure>
+  <img src="/assets/trello-55bd659a4408f691632e231e63ff4869f87b161722c69b065966c58ca471776c.png" />
+  <figcaption>How the timer looks when inactive</figcaption>
+</figure>
+<ul>
+  <li>A <a href="/software/fireworks/">fun little art project</a> that shoots small circles around the webpage</li>
+</ul>
+<figure>
+  <a href="/software/fireworks">
+    <img src="/assets/fireworks-56e778943d0998e973384cbe4c8aa176f1972fbfdc847c32e83063df842c2a81.png" />
+    <figcaption>Screenshot of the art project</figcaption>
+  </a>
+</figure>
+
+<ul>
+  <li>A free Android app called <a href="https://play.google.com/store/apps/details?id=com.wgillis.maybelater&amp;hl=en">Maybe Later</a>
+    <ul>
+      <li>If you ever find yourself wanting to remember small things here-and-there, but you don’t want to schedule a time to remember it, this app is for you! It will randomly remind you what you want in around a day, week, or month.</li>
+      <li><strong>NOTE</strong>: My app was removed from the store because I haven’t updated Maybe Later to conform with the new Android APIs</li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        
+      </div>
     </div>
-  </body>
-  
+    
 <!-- google analytics -->
 
 <script>
@@ -148,4 +196,15 @@
   SVGInjector(svgs);
 </script>
 
+    
+<footer>
+  <div class="centered">
+    <p style="opacity: 0.58; font-size: 0.78em;">
+    	The entire website was homegrown:  
+      <a href="https://github.com/wingillis/wingillis.github.io">source code.</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
 </html>

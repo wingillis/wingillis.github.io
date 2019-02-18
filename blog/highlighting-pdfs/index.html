@@ -1,0 +1,279 @@
+<html>
+  <head>
+    
+<title>Winthrop Gillis | Optimizing PDF organization and annotation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<link rel="stylesheet" type="text/css" href="/assets/grid-sys-29158cf7bbbe30058626abffc6ab6aac150cae83124742b95f2a63ad44cc55f5.css">
+<link rel="stylesheet" type="text/css" href="/assets/navbar-7c0e14fa9cdc74c42753e2f0eaba329742e7d9057841f3ac5bc94866fa7ab725.css">
+<link rel="stylesheet" type="text/css" href="/assets/site_styling-64d5322c96c6be834049b8298fb87bb3964f703426899c5ca4dc36f6c7045e59.css">
+<script src="/assets/darkmode-8c343ddc4ab44de041ed5da0e2ebd7c7676dcde03eeea262f69b4c819b6b1fa9.js" type="text/javascript"></script>
+
+<link type="application/atom+xml" rel="alternate" href="https://wingillis.github.io/feed.xml" title="Winthrop Gillis" />
+
+  </head>
+  <body>
+    <nav id="navbar" class="header">
+  <div class="nav-width">
+  <div class="pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading pure-menu-link" href="/">
+          Winthrop Gillis
+        </a>
+    <ul id="mobile-menu" class="pure-menu-list">
+      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <a href="#" id="menuLink1" class="pure-menu-link">Pages</a>
+        <ul class="pure-menu-children">
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/projects/">Science</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/gallery/">Art</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/software/">&lt;/&gt; Software</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/blog/">Writing</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="desktop-menu" class="pure-menu-list">
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/projects/">Science</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/gallery/">Art</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/software/">&lt;/&gt; Software</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/blog/">Writing</a>
+      </li>
+    </ul>
+		<div class="pure-menu-item">
+			<span style="font-weight: 100; font-size: 10pt; padding-right: 3px;">Dark mode:</span>
+		</div>
+    <div class="pure-menu-item">
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="darkmode" onclick="updateDark()">
+        <label class="onoffswitch-label" for="darkmode"></label>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+
+    <div id="svg-social-icons">
+  <a href="https://www.linkedin.com/in/wingillis">
+    <div class="icon" id="linkedin-icon">
+			<img class="inject" src="/assets/linkedin-2f7a8a77c5d2a973df11e4fa6904834c0bd2e3d70ea3a72dd297ff8e6865be4d.svg">
+    </div>
+  </a>
+  <a href="mailto:win.gillis@gmail.com">
+    <div class="icon" id="email-icon">
+			<img class="inject" src="/assets/email-127e0be5231cb657ea277bf3eff3e90cf70f0077d3499a4e38ac77bacc12e87a.svg">
+    </div>
+  </a>
+  <a href="https://github.com/wingillis" target="_blank">
+    <div class="icon" id="github-icon">
+			<img class="inject" src="/assets/github-7880f5b318127fca5a44066145c709e56a3be81b28e3b6fb3bdf1a574bbfa097.svg">
+    </div>
+  </a>
+  <a href="https://play.google.com/store/apps/developer?id=Winthrop%20Gillis&hl=en">
+    <div class="icon" id="google-play-icon">
+			<img class="inject" src="/assets/googleplay-71774ad38fbc00305a9a61efd2f19de54e95454145183485b92ad6a502e7ba76.svg">
+    </div>
+  </a>
+  <a href="/feed.xml">
+    <div class="icon" id="rss-icon">
+			<img class="inject" src="/assets/rss-eb2159c4bc9a3f31924c53d758abc1275e5a06ca5b647cc5b490d90f8ce44252.svg">
+    </div>
+  </a>
+  <div>
+    <h4>Share:</h4>
+  </div>
+  <a href="https://getpocket.com/save?url=https://wingillis.github.io//blog/highlighting-pdfs/" target="_blank">
+    <div class="icon" id="pocket-icon">
+			<img class="inject" src="/assets/pocket-bf6dd18e9776128a80740ec6615853b5e9b1b3284049d51bbcebdda7c7c3ac06.svg">
+    </div>
+  </a>
+  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://wingillis.github.io//blog/highlighting-pdfs/">
+    <div class="icon" id="facebook-icon">
+			<img class="inject" src="/assets/facebook-ec76c1636db2ecd45bc5504a6a8c8bf8024b21aaaf96f8682a7eec1b40f2105f.svg">
+    </div>
+  </a>
+</div>
+
+    <div class="extra-padding">
+      <div class="content pure-g text-content">
+        <div class="pure-u-1">
+          <h1 id="optimizing-pdf-organization-and-annotation">Optimizing PDF organization and annotation</h1>
+
+<p>I am a graduate student and I often have to read many PDFs. This post is about a few small programs I wrote to both get around bottlenecks using Mendeley to manage my pdfs, and keep track of annotations I make within those PDFs.</p>
+
+<h2 id="pdf-naming-scheme">PDF naming scheme</h2>
+
+<p>One aspect of downloaded scientific articles that gets on my nerves is the fact that they usually have very obscure names, such as <code class="highlighter-rouge">mmc5.pdf</code>, which makes it difficult to browse for specific PDFs based on file name. <a href="https://www.mendeley.com">Mendeley</a>, a program that can organize the articles you collect throughout your research, can help with this problem. When a pdf is imported into mendeley, it parses the article’s metadata if available, and updates a local database containing your imported articles with the information. Mendeley has an option to watch folders on your computer for newly added PDFs/files, allowing you to automatically import PDFs when you save them to a specific folder (i.e. your downloads folder). It also comes with a useful feature (called <code class="highlighter-rouge">file organizer</code>) to back up imported PDFs to a folder of your choice with a naming scheme based on the article’s metadata. For instance, you can ask Mendeley to rename the PDF with the paper’s title, the author’s names, the journal the paper was published in, or the year the article was published, making it easier to find PDFs just based on their name. For instance, <code class="highlighter-rouge">mmc5.pdf</code> could be renamed to: <code class="highlighter-rouge">A motor cortex circuit for motor planning and movement - Li et al. - Nature - 2015.pdf</code>. Why do I think these features are important?</p>
+
+<ul>
+  <li>I read a lot on mobile devices, and would prefer to use other apps than Mendeley to read with. Therefore, a reasonable file naming scheme is desired.</li>
+  <li>Combining the right tools with Mendeley can make PDF importing and annotation very powerful, as described below.</li>
+</ul>
+
+<h2 id="dropbox-integration">Dropbox integration</h2>
+
+<p>Mendeley has a business model where they offer 2GB free storage space on their servers for the PDFs linked to the articles you accumulate, and then paid tiers where they offer more storage space. It can sync the articles between devices. Pretty quickly you will probably hit the upload limit with the free tier. I did not want to pay for a version of Mendeley where the only difference was more storage space online. As a solution, I use Dropbox to sync my PDFs between devices. I can tell Mendeley’s file organizer to save the processed PDFs in a Dropbox folder (you can also use google drive, or any other cloud storage service). This allows me to sync well-named PDFs between all devices, allowing them to be easily searchable. Dropbox’s searching capabilities are very strong - they even search within the PDFs for search terms you provide.</p>
+
+<p>Sometimes I find an article on my mobile device that I would like to save to read, but I also want the article to be processed by Mendeley. To do this, I can have Mendeley watch a folder within Dropbox on my desktop computer, and send the processed PDF to another folder within Dropbox. So when I find an article on my mobile device, I can upload the PDF directly to the folder that Mendeley watches, and wait for Mendeley on my desktop computer to process the file. The processed file will show up in the processed folder momentarily.
+My PDF importing pipeline looks like this:</p>
+
+<ul>
+  <li><strong>Import folder (to watch by Mendeley)</strong>: <code class="highlighter-rouge">/Users/wgillis/Dropbox/papers to read/</code></li>
+  <li><strong>Export folder (where Mendeley exports processed PDFs):</strong> <code class="highlighter-rouge">/Users/wgillis/Dropbox/mendeley/</code></li>
+</ul>
+
+<h3 id="managing-dropbox-space">Managing Dropbox space</h3>
+
+<p>This type of PDF management uses up twice the amount of space than normal, because you have two folders, each containing the same PDFs. One folder has the PDFs you imported, while the other contains the PDFs that Mendeley has renamed and exported. I didn’t like the increase in storage space, so I used this as an opportunity to do two things:</p>
+
+<ol>
+  <li>make a program that watched new files within the Mendeley export folder</li>
+  <li>learn a new programming language for fun (golang)</li>
+</ol>
+
+<p>The program (<a href="https://github.com/wingillis/mendeley-watcher">found here</a>) detects when new PDFs are added to a user-supplied folder path, and deletes a copy of the same file from another user-supplied folder path. I set it to watch the folder Mendeley exports its files to, and to delete files from the folder I put new PDFs into. This poses an interesting problem: how do I know which two files are the same? I can’t use their file names, because they have changed. One option is to compare two files byte-by-byte. If I have to go through every file, I start using a large amount of disk resources. Another option is to compare a small chunk of each file. This reduces the amount of disk usage the program uses, and still provides a reasonably accurate comparison of similarity.</p>
+
+<h2 id="highlighting-and-annotations">Highlighting and annotations</h2>
+
+<p>Another part of the PDF workflow I wanted to automate/optimize is the note-taking and annotations in the PDF. I like to read and highlight PDFs on my iPad, using the app Notability. I also wanted to figure out a way I could keep track of all the highlights that I make in an article. One requirement was to be able to parse different highlight colors, because I use different color highlight to mean different things (i.e. yellow means ‘remember this’ and blue means ‘read this reference later’). To do this, I used a combination of 4 different tools to decrease the amount of time I have to spend bookkeeping and decrease the amount of effort I need to spend finding a piece of information. The 4 tools are:</p>
+
+<ul>
+  <li>Notability (its auto-backup features)</li>
+  <li>Evernote (its API)</li>
+  <li><a href="https://www.imagemagick.org/script/index.php">imagemagick</a></li>
+  <li>python (its <a href="http://scikit-image.org/docs/dev/api/skimage.html">image processing libraries</a>, among other libraries)</li>
+</ul>
+
+<p>I set up the tools so that I can create highlighted text in Notability, and I sync the highlighted text, along with the corresponding PDF into a dedicated Evernote notebook. Setting it up looks something like this:</p>
+
+<ul>
+  <li>Use Notability’s auto-backup feature to sync PDFs that you’ve modified in the app (by note-taking or highlights) into a folder in any of the online storage services the app supports.</li>
+  <li>Create an Evernote notebook where you’d like to upload the PDFs and highlighted regions (i.e. called Notability PDFs).</li>
+  <li>Acquire a developer token from Evernote for your account (by going to <a href="https://www.evernote.com/api/DeveloperToken.action">this link</a>)</li>
+  <li>Install imagemagick onto your desktop (if on mac, <code class="highlighter-rouge">brew install imagemagick</code>)</li>
+  <li>Install python (via <a href="https://www.anaconda.com/download">Anaconda</a>, preferrably) and install the following libraries:
+    <ul>
+      <li><code class="highlighter-rouge">pip install skimage</code></li>
+      <li><code class="highlighter-rouge">pip install evernote</code> (if using python3, the installation process is slightly more involved. Instead of <code class="highlighter-rouge">pip install evernote</code>, download/clone <a href="https://github.com/evernote/evernote-sdk-python3">this repo</a>, navigate to the directory, and run <code class="highlighter-rouge">pip install -e .</code>)</li>
+      <li><code class="highlighter-rouge">pip install numpy</code></li>
+      <li><code class="highlighter-rouge">pip install scipy</code></li>
+    </ul>
+  </li>
+  <li>Download this repository: notability-uploader - its job is to watch the Notability backup folder for newly modified PDFs, find the regions of the PDF that you highlighted, organize the highlights, and send the highlights, along with the PDF, to your Evernote notebook.</li>
+  <li>Set up some type of daemon to run the notability-uploader. Options include using <code class="highlighter-rouge">launchd</code>, <code class="highlighter-rouge">cron</code> jobs, manually running the script from time to time, or something else.</li>
+</ul>
+
+<h3 id="highlight-detection">Highlight detection</h3>
+
+<p>Originally, I wanted to detect highlighted annotations directly in the PDF file, by parsing the data’s tree structure.
+However, Notability’s output file structure is a little more complicated than that. As a workaround, I look for the specific color of the highlighter I used within the document. To do this, I convert the PDF into one <code class="highlighter-rouge">png</code> image per page, then find pixels within the image that are closest to the highlighter color in colorspace, and extract that region of the image.</p>
+
+<figure>
+<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_C1CBA85C0F3ADE8D7493EBAFD81890EA7E72F14A432FAD5DD63CA577BB5C63F7_1512538979310_test0-1.png" />
+<figcaption>
+Fig 1: Example highlighted page
+</figcaption>
+</figure>
+
+<p>For example, above is a highlighted page from an article (Fig 1). The yellow highlight is to remember for later, while the blue is to read/research later. The <code class="highlighter-rouge">notability-upload</code> program will detect the regions these highlights exist and crop them into a new Evernote note (Fig 2), with the included PDF for reference. One nice thing about Evernote is that it will perform optical character recognition (OCR) on any images in your notes (if you have Premium). This allows you to search for a word specifically in the highlighted regions. An additional use case for highlighting is to quickly save snippets of a paper. For instance, if there is a chart you’d like to keep in easy access, you could highlight a box around the chart, and it will automatically be grabbed (Fig 3).</p>
+
+<figure>
+<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_C1CBA85C0F3ADE8D7493EBAFD81890EA7E72F14A432FAD5DD63CA577BB5C63F7_1512539215856_Screen+Shot+2017-12-06+at+12.46.26+AM.png" />
+<figcaption>
+Fig 2: Structure of the Evernote note
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_C1CBA85C0F3ADE8D7493EBAFD81890EA7E72F14A432FAD5DD63CA577BB5C63F7_1512539524748_file.png" />
+<figcaption>
+Fig 3: A chart grabbed by the highlighter
+</figcaption>
+</figure>
+
+<h3 id="references">References</h3>
+
+<p>The paper used as the example highlighted document is found here:</p>
+
+<blockquote>
+  <p>Brown AEX, de Bivort B. The study of animal behaviour as a physical science. bioRxiv [Internet]. 2017; Available from: http://biorxiv.org/content/early/2017/11/17/220855.abstract</p>
+</blockquote>
+
+        </div>
+        
+        <div class="pure-u-1">
+
+          <div id="disqus_thread"></div>
+          <script>
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+          /*
+          var disqus_config = function () {
+          this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = '//wingillis.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+        
+      </div>
+    </div>
+    
+<!-- google analytics -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74958647-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script src="/assets/svg-injector.min-7b672b9565fcf97d22609102197536194e167d360003d25a6a3e9147b192af96.js" type="text/javascript"></script>
+
+<script>
+  var svgs = document.querySelectorAll('img.inject');
+  SVGInjector(svgs);
+</script>
+
+    
+<footer>
+  <div class="centered">
+    <p style="opacity: 0.58; font-size: 0.78em;">
+    	The entire website was homegrown:  
+      <a href="https://github.com/wingillis/wingillis.github.io">source code.</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
