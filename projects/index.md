@@ -41,9 +41,7 @@ Journal of Neural Engineering. September 2017.
 
 ## Posters
 
-J. E. MARKOWITZ, W. F. GILLIS, C. C. BERON, S. Q. NEUFELD, K. ROBERTSON, N. D. BHAGAT, R. E. PETERSON, E. PETERSON, M. HYUN, S. W. LINDERMAN, B. L. SABATINI, S. R. DATTA. [**The striatum organizes 3D behavior via moment-to-moment action selection.**]() [Society for Neuroscience 2018](https://abstractsonline.com/pp8/#!/4649/presentation/29823)
-
-NIH Brain Initiative 2018.
+J.E. Markowitz, W.F. Gillis, C.C. Beron, S.Q. Neufeld, K. Robertson, N.D. Bhagat, R.E. Peterson, E. Peterson, M. Hyun, S.W. Linderman, B.L. Sabatini, S.R. Datta. [**The striatum organizes 3D behavior via moment-to-moment action selection.**]() [Society for Neuroscience 2018](https://abstractsonline.com/pp8/#!/4649/presentation/29823)
 
 Jeffrey Markowitz, Winthrop Gillis, Celia Beron, Shay Neufeld, Keira Robertson, Minsuk Hyun, Emalee Peterson, Neha Bhagat, Scott Linderman, Bernardo Sabatini, Sandeep Datta. [**Complementary direct and indirect pathway activity encodes sub-second 3D pose dynamics in striatum**.]() Cosyne 2018.
 
@@ -59,13 +57,13 @@ T. Tan, K. Drummey, N. Bhagat, W. Gillis, J. Katon, K. Messemer, C. Dixon, J. Ng
 [**Unique connectivity within the necklace subsystem suggests a novel function in olfactory processing.**]()
 Society for Neuroscience. November 2017.
 
-
 ## Patents
 
-HOLINSKI, Bradley J., GARDNER, Timothy, LISSANDRELLO, Charles A., WHITE, Alice E., GILLIS, Winthrop, SHEN, Jun, OTCHY, Timothy, MICHAS, Christos. (2018, Patent No. _PCT/US2017/044096_ Boston, MA) [**NERVE CUFFS, METHODS OF FABRICATING THE SAME AND METHODS OF USE**](https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2018022838)
+Holinski, Bradley J., Gardner, Timothy, Lissandrello, Charles A., White, Alice E., Gillis, Winthrop, Shen, Jun, Otchy, Timothy, Michas, Christos. (2018, Patent No. _PCT/US2017/044096_ Boston, MA) [**NERVE CUFFS, METHODS OF FABRICATING THE SAME AND METHODS OF USE**](https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2018022838)
 
 AUTOMATICALLY CLASSIFYING ANIMAL BEHAVIOR ASSOCIATED WITH NEURAL RECORDINGS (Provisional)
 
 ## Preparation
 
 **Acute and Chronic Recording in Small Diameter Peripheral Nerves.**
+
