@@ -48,13 +48,13 @@ a.pure-menu-link:hover {
 }
 
 #mobile-menu {
-  @media screen and (min-width: 38em) {
+  @media screen and (min-width: 40em) {
     display: none;
   }
 }
 
 #desktop-menu {
-  @media screen and (max-width: 38em) {
+  @media screen and (max-width: 39.95em) {
     display: none;
   }
 }
