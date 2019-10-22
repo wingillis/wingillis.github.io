@@ -41,19 +41,25 @@ Journal of Neural Engineering. September 2017.
 
 ## Posters
 
-J.E. Markowitz, W.F. Gillis, C.C. Beron, S.Q. Neufeld, K. Robertson, N.D. Bhagat, R.E. Peterson, E. Peterson, M. Hyun, S.W. Linderman, B.L. Sabatini, S.R. Datta. [**The striatum organizes 3D behavior via moment-to-moment action selection.**]() [Society for Neuroscience 2018](https://abstractsonline.com/pp8/#!/4649/presentation/29823)
+**W. Gillis**, J. Markowitz, M. Jay, R. Cieszkowski, J. Murmann, E. Peterson, D. Aldarondo, D. Brann, S. Linderman, B. Sabatini, S.R. Datta. [**Revealing elements of naturalistic reinforcement learning through closed-loop action identification**](https://www.abstractsonline.com/pp8/#!/7883/presentation/66900). Society for Neuroscience 2019.
 
-Jeffrey Markowitz, Winthrop Gillis, Celia Beron, Shay Neufeld, Keira Robertson, Minsuk Hyun, Emalee Peterson, Neha Bhagat, Scott Linderman, Bernardo Sabatini, Sandeep Datta. [**Complementary direct and indirect pathway activity encodes sub-second 3D pose dynamics in striatum**.]() Cosyne 2018.
+E. Batty, M.R. Whiteway, S. Saxena, D. Biderman, T. Abe, S. Musall, **W. Gillis**, J.E. Markowitz, A.K. Churchland, S.R. Datta, S. Linderman, L. Paninski. [**BehaveNet: Behavioral video embedding and neural analysis toolbox**](https://www.abstractsonline.com/pp8/#!/7883/presentation/70973). Society for Neuroscience 2019.
 
-Ben Pearre, Winthrop Gillis, Felix Deku, Alket Mertiri, Jun Shen, Sanne Moorman, Atefeh Ghazavi, Stuart Cogan, Timothy J. Gardner.
+Jeffrey Markowitz, **Winthrop Gillis**, Julie Murmann, Scott Linderman, Bernardo Sabatini, Sandeep Datta. [**Resolving the neural mechanisms of reinforcement learning through new behavioral technologies**](http://cosyne.org/cosyne19/Cosyne2019_program_book.pdf). Cosyne 2019.
+
+J.E. Markowitz, **W.F. Gillis**, C.C. Beron, S.Q. Neufeld, K. Robertson, N.D. Bhagat, R.E. Peterson, E. Peterson, M. Hyun, S.W. Linderman, B.L. Sabatini, S.R. Datta. [**The striatum organizes 3D behavior via moment-to-moment action selection.**](https://abstractsonline.com/pp8/#!/4649/presentation/29823) Society for Neuroscience 2018.
+
+Jeffrey Markowitz, **Winthrop Gillis**, Celia Beron, Shay Neufeld, Keira Robertson, Minsuk Hyun, Emalee Peterson, Neha Bhagat, Scott Linderman, Bernardo Sabatini, Sandeep Datta. [**Complementary direct and indirect pathway activity encodes sub-second 3D pose dynamics in striatum**.]() Cosyne 2018.
+
+Ben Pearre, **Winthrop Gillis**, Felix Deku, Alket Mertiri, Jun Shen, Sanne Moorman, Atefeh Ghazavi, Stuart Cogan, Timothy J. Gardner.
 [**High-Density Recording and Stimulation in Behaving Animals.**]()
 NIH Brain Initiative. 2015.
 
-Felix Deku, Yarden Cohen, Ben Pearre, Alexandra Joshi-Imre, Atefeh Ghazavi, Winthrop Gillis, Timothy Gardner, Stuart Cogan.
+Felix Deku, Yarden Cohen, Ben Pearre, Alexandra Joshi-Imre, Atefeh Ghazavi, **Winthrop Gillis**, Timothy Gardner, Stuart Cogan.
 [**Evaluation of Novel Amorphous Silicon Carbide Ultramicroelectrodes for Neural Interfacing.**]()
 BMES 2016 Annual Meeting. October 2016.
 
-T. Tan, K. Drummey, N. Bhagat, W. Gillis, J. Katon, K. Messemer, C. Dixon, J. Nguyen, S. R. Datta.
+T. Tan, K. Drummey, N. Bhagat, **W. Gillis**, J. Katon, K. Messemer, C. Dixon, J. Nguyen, S. R. Datta.
 [**Unique connectivity within the necklace subsystem suggests a novel function in olfactory processing.**]()
 Society for Neuroscience. November 2017.
 
