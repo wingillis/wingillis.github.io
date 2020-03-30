@@ -17,6 +17,14 @@ layout: post
 
 ## Papers
 
+Eleanor Batty, Matthew R Whiteway, Shreya Saxena, Dan Biderman, Taiga Abe, Simon Musall, Winthrop Gillis, Jeffrey E Markowitz, Anne Churchland, John Cunningham, Sandeep Robert Datta, Scott W Linerman, Liam Paninski.
+[**BehaveNet: nonlinear embedding and Bayesian neural decoding of behavioral videos**](http://papers.nips.cc/paper/9701-behavenet-nonlinear-embedding-and-bayesian-neural-decoding-of-behavioral-videos.pdf)
+NeurIPS. 2019.
+
+Stephanie Rudolph, Chong Guo, Stan Pashkovski, Tomas Osorno, Winthrop Gillis, Jeremy Krauss, Hajnalka Nyitrai, Isabella Flaquer, Mahmoud El-Rifai, Sandeep Robert Datta, Wade Regehr.
+[**Cerebellum-specific deletion of the GABAA receptor δ subunit alters anxiety-like, social and maternal behaviors without affecting motor performance.**](https://www.biorxiv.org/content/10.1101/2019.12.27.889014v1)
+bioRxiv. 27 December 2019. 
+
 Jeffrey E Markowitz, Winthrop F Gillis, Celia C Beron, Shay Q Neufeld, Keiramarie Robertson, Neha D Bhagat, Ralph E Peterson, Emalee Peterson, Minsuk Hyun, Scott W Linderman, Bernardo L Sabatini, Sandeep Robert Datta.
 [**The Striatum Organizes 3D Behavior via Moment-to-Moment Action Selection.**](https://www.cell.com/cell/fulltext/S0092-8674(18)30512-9)
 Cell. _In Press._ 17 May 2018.
@@ -49,27 +57,28 @@ Jeffrey Markowitz, **Winthrop Gillis**, Julie Murmann, Scott Linderman, Bernardo
 
 J.E. Markowitz, **W.F. Gillis**, C.C. Beron, S.Q. Neufeld, K. Robertson, N.D. Bhagat, R.E. Peterson, E. Peterson, M. Hyun, S.W. Linderman, B.L. Sabatini, S.R. Datta. [**The striatum organizes 3D behavior via moment-to-moment action selection.**](https://abstractsonline.com/pp8/#!/4649/presentation/29823) Society for Neuroscience 2018.
 
-Jeffrey Markowitz, **Winthrop Gillis**, Celia Beron, Shay Neufeld, Keira Robertson, Minsuk Hyun, Emalee Peterson, Neha Bhagat, Scott Linderman, Bernardo Sabatini, Sandeep Datta. [**Complementary direct and indirect pathway activity encodes sub-second 3D pose dynamics in striatum**.]() Cosyne 2018.
+Jeffrey Markowitz, **Winthrop Gillis**, Celia Beron, Shay Neufeld, Keira Robertson, Minsuk Hyun, Emalee Peterson, Neha Bhagat, Scott Linderman, Bernardo Sabatini, Sandeep Datta.
+[**Complementary direct and indirect pathway activity encodes sub-second 3D pose dynamics in striatum**.](http://cosyne.org/cosyne18/Cosyne2018_program_book.pdf) Cosyne 2018.
 
-Ben Pearre, **Winthrop Gillis**, Felix Deku, Alket Mertiri, Jun Shen, Sanne Moorman, Atefeh Ghazavi, Stuart Cogan, Timothy J. Gardner.
-[**High-Density Recording and Stimulation in Behaving Animals.**]()
-NIH Brain Initiative. 2015.
+T. Tan, K. Drummey, N. Bhagat, **W. Gillis**, J. Katon, K. Messemer, C. Dixon, J. Nguyen, S. R. Datta.
+[**Unique connectivity within the necklace subsystem suggests a novel function in olfactory processing.**]()
+Society for Neuroscience. November 2017.
 
 Felix Deku, Yarden Cohen, Ben Pearre, Alexandra Joshi-Imre, Atefeh Ghazavi, **Winthrop Gillis**, Timothy Gardner, Stuart Cogan.
 [**Evaluation of Novel Amorphous Silicon Carbide Ultramicroelectrodes for Neural Interfacing.**]()
 BMES 2016 Annual Meeting. October 2016.
 
-T. Tan, K. Drummey, N. Bhagat, **W. Gillis**, J. Katon, K. Messemer, C. Dixon, J. Nguyen, S. R. Datta.
-[**Unique connectivity within the necklace subsystem suggests a novel function in olfactory processing.**]()
-Society for Neuroscience. November 2017.
+Ben Pearre, **Winthrop Gillis**, Felix Deku, Alket Mertiri, Jun Shen, Sanne Moorman, Atefeh Ghazavi, Stuart Cogan, Timothy J. Gardner.
+[**High-Density Recording and Stimulation in Behaving Animals.**]()
+NIH Brain Initiative. 2015.
 
 ## Patents
 
 Holinski, Bradley J., Gardner, Timothy, Lissandrello, Charles A., White, Alice E., Gillis, Winthrop, Shen, Jun, Otchy, Timothy, Michas, Christos. (2018, Patent No. _PCT/US2017/044096_ Boston, MA) [**NERVE CUFFS, METHODS OF FABRICATING THE SAME AND METHODS OF USE**](https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2018022838)
 
 AUTOMATICALLY CLASSIFYING ANIMAL BEHAVIOR ASSOCIATED WITH NEURAL RECORDINGS (Provisional)
-
+<!-- 
 ## Preparation
 
-**Acute and Chronic Recording in Small Diameter Peripheral Nerves.**
+**Acute and Chronic Recording in Small Diameter Peripheral Nerves.** -->
 
