@@ -7,3 +7,4 @@ node_modules/
 .asset-cache/
 .vscode
 .jekyll-cache
+.bundle
