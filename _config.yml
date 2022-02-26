@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Winthrop Gillis
 email: win.gillis@gmail.com
-description: Winthrop Gillis - travelling through space for the right ideas
+description: Winthrop Gillis - traveling through space and time to find the right ideas
 # baseurl: / # the subpath of your site, e.g. /blog
 url: https://wingillis.github.io # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -26,7 +26,7 @@ permalink: blog/:title/
 author:
   github: wingillis
 
-twitter_username: DubGill
+twitter_username: GillisDub
 github_username:  wingillis
 rss_enabled: true
 ga_analytics: UA-74958647-1 # Add your GA Tracking Id
@@ -37,9 +37,6 @@ discus_identifier: wingillis # Add your Disqus identifier
       #path: "/assets"
 
 assets:
-  compress:
-    css: true
-    js: true
   sources:
     - _assets/stylesheets
     - _assets/images
@@ -51,8 +48,8 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-assets
   - jekyll-paginate
+  - jekyll-assets
 exclude:
   - Gemfile
   - Gemfile.lock
