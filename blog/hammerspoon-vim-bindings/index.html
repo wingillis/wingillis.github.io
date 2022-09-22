@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<title>Winthrop Gillis | Hammerspoon Vim Bindings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<link rel="stylesheet" type="text/css" href="/assets/grid-sys-28b585190a970b3f7e43e297f528e0c5a863d3b504feedff79b025def4f15e31275d614a36a80f6847afb403003a0572e727d8ed48fd4bf2b65dcdef835b278e.css">
+<link rel="stylesheet" type="text/css" href="/assets/navbar-7cd459deaeff48aa633c98a2e4c2abe359b822490330e08e1d47a1509ac57acacdb759488749f752eca1f87736af7aa720de12938b9495903a82092d7997349f.css">
+<link rel="stylesheet" type="text/css" href="/assets/site_styling-83b923e771b6504a2e1ed20630b701e34695219a4fa6e5da8c9fefd3ba965b5f38f60e8cbe04f2f12db112fb6495f82a0a749982c341d1b7611a044306293773.css">
+<script type="text/javascript" src="/assets/darkmode-af5c18478c6bbde496823f4e18615a4aaaee4f73606b7aea2d0f04cfa827a1c1fd9ff294ebf5966c1dd07ce666caf22072b89c5375069e2fba15929ba6f4164e.js"></script>
+
+<link type="application/atom+xml" rel="alternate" href="https://wingillis.github.io/feed.xml" title="Winthrop Gillis" />
+
+  </head>
+  <body>
+    <nav id="navbar" class="header">
+  <div class="nav-width">
+  <div class="pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading pure-menu-link" href="/">
+          Winthrop Gillis
+        </a>
+    <ul id="mobile-menu" class="pure-menu-list">
+      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <a href="#" id="menuLink1" class="pure-menu-link">Pages</a>
+        <ul class="pure-menu-children">
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/projects/">Science</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/gallery/">Art</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/software/">&lt;/&gt; Software</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/blog/">Writing</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="desktop-menu" class="pure-menu-list">
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/projects/">Science</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/gallery/">Art</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/software/">&lt;/&gt; Software</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/blog/">Writing</a>
+      </li>
+    </ul>
+		<div class="pure-menu-item">
+			<span style="font-weight: 100; font-size: 10pt; padding-right: 3px;">Dark mode:</span>
+		</div>
+    <div class="pure-menu-item">
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="darkmode" onclick="updateDark()">
+        <label class="onoffswitch-label" for="darkmode"></label>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+
+    <div id="svg-social-icons">
+  <a href="https://www.linkedin.com/in/wingillis">
+    <div class="icon" id="linkedin-icon">
+			<img class="inject" src="/assets/linkedin-1a00a49857cefa326f6f85e2fd312957144b0c6bc12c00cbe766bab06efb20e9e4d49738e56f672af7a2b4f5305c9ca37b9e8db0d9eff5a24adbe289afe7904c.svg">
+    </div>
+  </a>
+  <a href="mailto:win.gillis@gmail.com">
+    <div class="icon" id="email-icon">
+			<img class="inject" src="/assets/email-102dde0872a390dbbd57ac02acde0a0b37d14c1feab89dd3b9269d1497d605976b47df4cc8c3f0c4cdb9d4c2c839f98e644982132aa4b221e3562aad3852c4a2.svg">
+    </div>
+  </a>
+  <a href="https://github.com/wingillis" target="_blank">
+    <div class="icon" id="github-icon">
+			<img class="inject" src="/assets/github-9894146c21627216a68fd9324e74b12b26980a37941838c0326b9241eb485657345c67e8fc0c7e6c921a4d14522bfbec517ba858caaae0f31b4fb447bf39d0a8.svg">
+    </div>
+  </a>
+  <a href="/feed.xml">
+    <div class="icon" id="rss-icon">
+			<img class="inject" src="/assets/rss-3f064e357907827201787517c4464e24de0f935031d1dcfbdb3c19a87a76a7ad9d929b931f9254d127493e2da628df6d7376671bd302d9677d06c75ba75eb283.svg">
+    </div>
+  </a>
+  <div>
+    Share:
+  </div>
+  <a href="https://getpocket.com/save?url=https://wingillis.github.io//blog/hammerspoon-vim-bindings/" target="_blank">
+    <div class="icon" id="pocket-icon">
+			<img class="inject" src="/assets/pocket-d7c17c3b98f742741cc2929e4276ad704682952e5649ae3fe3a6e0b6ddc72be1ec8b19bd71a701822113cd6df914ecb603628ce7b02e8c9a2ae90b1698232620.svg">
+    </div>
+  </a>
+  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://wingillis.github.io//blog/hammerspoon-vim-bindings/">
+    <div class="icon" id="facebook-icon">
+			<img class="inject" src="/assets/facebook-93f1d9d7e5036d2a881eb6358ccd40109b4ba7173f42f02234079a5fea8dd4fa5f3461b0cee3bf84c973f403fb3a5d7e3a1c40c5b8d98aba9c50114ee4c2d80a.svg">
+    </div>
+  </a>
+</div>
+
+    <div class="extra-padding">
+      <div class="content pure-g text-content">
+        <div class="pure-u-1">
+          <h1 id="hammerspoon-vim-bindings">Hammerspoon Vim Bindings</h1>
+
+<p>If you’re like me, you program a lot. And if you’re like me, you program with
+vim a lot. I’ve grown so accustomed to the vim commands for navigating and
+saving files that I’m frequently hitting these keys while using, Microsoft Word,
+Evernote, or other text-based apps. <a href="http://www.hammerspoon.org/">Hammerspoon</a> provides the framework to
+implement a vim-like keymapping for other applications.</p>
+
+<p><strong>Note:</strong> this software only works for macOS.</p>
+
+<h3 id="how-about-a-brief-overview">How about a brief overview</h3>
+
+<p>Hammerspoon is an application that combines the lua language with
+the macOS operating system so that you can interact with the GUI in
+powerful programmatic ways. One of these ways is by added hotkeys to start
+user-defined events, like detecting keystrokes. I used this to implement
+vim bindings activated by the activating a shortcut.</p>
+
+<p>These vim-like key bindings allow the user to use the same keys they would
+use in normal mode to navigate in other mac applications, like Word, Evernote,
+Google Docs, like I described above. You can also delete text in vim style
+as well! If you need to select text, a terse visual-mode has been
+implemented to support this. Much has been implemented, but it is still
+lacking, which is discussed briefly below.</p>
+
+<h2 id="how-to-install">How to install</h2>
+
+<ol>
+  <li>Install <a href="http://www.hammerspoon.org/">hammerspoon</a>.</li>
+  <li>Download my <a href="https://github.com/wingillis/hammerspoon-vim-bindings">vim-bindings repository</a>.</li>
+  <li>Follow the brief installation instructions in the repository’s README.</li>
+  <li>Test it out.</li>
+</ol>
+
+<h2 id="how-to-use">How to use</h2>
+
+<p>The most important command to know is <code class="language-plaintext highlighter-rouge">option + escape</code> which is the entry into
+vim mode from any application. Once in vim mode, a notification will display
+in the center of the screen. Basic navigation commands work, like: <code class="language-plaintext highlighter-rouge">j</code>, <code class="language-plaintext highlighter-rouge">k</code>,
+<code class="language-plaintext highlighter-rouge">l</code>, and <code class="language-plaintext highlighter-rouge">h</code> which code for: :arrow_down:, :arrow_up:, :arrow_right:, :arrow_left:, respectively.
+Below are a list of commands that you should know for application control:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">i</code>: exit ‘normal’ mode into regular computer mode</li>
+  <li><code class="language-plaintext highlighter-rouge">a</code>: exit ‘normal’ mode into regular computer mode, and move cursor to right</li>
+  <li><code class="language-plaintext highlighter-rouge">o</code>: exit ‘normal’ mode into regular computer mode, and press enter</li>
+  <li><code class="language-plaintext highlighter-rouge">O</code>: exit ‘normal’ mode into regular computer mode, move up, and press enter</li>
+  <li><code class="language-plaintext highlighter-rouge">I</code>: exit ‘normal’ mode into regular computer mode, and go to line beginning</li>
+  <li><code class="language-plaintext highlighter-rouge">A</code>: exit ‘normal’ mode into regular computer mode, and go to line end</li>
+  <li><code class="language-plaintext highlighter-rouge">w</code>: go to beginning of word</li>
+  <li><code class="language-plaintext highlighter-rouge">e</code>: go to end of word</li>
+  <li><code class="language-plaintext highlighter-rouge">y</code>: copy text</li>
+  <li><code class="language-plaintext highlighter-rouge">r</code>: replace letter in normal mode</li>
+  <li><code class="language-plaintext highlighter-rouge">p</code>: paste text</li>
+  <li><code class="language-plaintext highlighter-rouge">v</code>: to go into pseudo-visual mode</li>
+  <li><code class="language-plaintext highlighter-rouge">x</code>: delete a character and copy it</li>
+  <li><code class="language-plaintext highlighter-rouge">d</code>: delete line, character, word, etc…</li>
+  <li><code class="language-plaintext highlighter-rouge">c</code>: delete whatever, copy it, and go into insert mode</li>
+  <li><code class="language-plaintext highlighter-rouge">0</code>: go to the beginning of a line</li>
+  <li><code class="language-plaintext highlighter-rouge">$</code>: go to the end of a line</li>
+</ul>
+
+<figure>
+<img src="https://i.imgur.com/C9Hdhkc.gif" />
+<figcaption>
+Activating vim mode
+</figcaption>
+</figure>
+
+<p>Other things that work are basic navigation in visual mode, with copying,
+pasting, and deleting. If you want to get out of visual mode, you just have
+to hit escape, and you’re back into normal mode. In the spirit of vim, the
+only ways to get out of normal mode are to use keys that put you into ‘insert’
+mode, like <code class="language-plaintext highlighter-rouge">a</code>, <code class="language-plaintext highlighter-rouge">i</code>, <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">I</code>, <code class="language-plaintext highlighter-rouge">o</code>, <code class="language-plaintext highlighter-rouge">O</code>.</p>
+
+<p>If something goes horribly wrong, and your system becomes royally messed up,
+you can always reload your hammerspoon configuration to reset the state of
+the program.</p>
+
+<h2 id="how-to-configure">How to configure</h2>
+
+<p>You can edit different aspects of the framework to customize your
+needs more effectively. For instance, you could change the keymap that triggers
+the transition into vim-mode to whatever bindings you wanted, or change which
+keys had what effect in normal or visual mode. This is as simple as changing
+which keys to refer to in the table lookup within the key event handler.</p>
+
+<p>Generally, the system watches out for keypress events, and depending on the
+state of the system, translates them from one set of keypress events to another,
+corresponding to their actions in vim.</p>
+
+<h2 id="future-improvements">Future improvements</h2>
+
+<ul>
+  <li>repeatable actions via numbers</li>
+  <li>recording macros</li>
+  <li>ex mode</li>
+  <li>adding a status bar in the menu to let the user know current vim state</li>
+</ul>
+
+<h3 id="ex-mode">ex mode</h3>
+
+<p>Because this is a semi-vim port layered on top of the OS, I can do some
+fancy things with our implementation of ex mode. Not only can I add
+application-specific commands like saving or quitting documents, but also
+I can add commands to switch between workspaces or to open specific sets
+of applications. I will try to build the ex-mode interface so that it can
+easily be customized by end users to do anything they want.</p>
+
+<h2 id="you-can-contribute-too">You can contribute too!</h2>
+
+<p>I am more than happy to accept help improving this package to be more comprehensive
+and feature-rich! Please fork this <a href="https://github.com/wingillis/hammerspoon-vim-bindings">repo</a> and do whatever you please to
+improve it. Send a pull request if you feel your work should be included in the main
+branch.</p>
+
+<h2 id="caveats">Caveats</h2>
+
+<p>I could not implement all the greatest features of vim. There are things I may
+have forgotten, or found too difficult for me to program. If you have a good
+solution, please, contribute! Some examples: searching for text, marks.</p>
+
+
+        </div>
+        
+        <div class="pure-u-1">
+
+          <div id="disqus_thread"></div>
+          <script>
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+          /*
+          var disqus_config = function () {
+          this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = '//wingillis.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+        
+      </div>
+    </div>
+    
+<!-- google analytics -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74958647-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="/assets/svg-injector.min-5d5b1e24ab9a2b30c41beb12670836497b36e8485b960813abd243201ebd305c79d6f18ded2e68c5d20ad1c2cfa07a977b4d408322784879d595c23754f277a7.js"></script>
+
+<script>
+  var svgs = document.querySelectorAll('img.inject');
+  SVGInjector(svgs);
+</script>
+
+    
+<footer>
+  <div class="centered">
+    <p style="opacity: 0.58; font-size: 0.78em;">
+    	The entire website was homegrown:  
+      <a href="https://github.com/wingillis/wingillis.github.io">source code.</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
