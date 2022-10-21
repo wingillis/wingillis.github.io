@@ -76,14 +76,14 @@ AUTOMATICALLY CLASSIFYING ANIMAL BEHAVIOR ASSOCIATED WITH NEURAL RECORDINGS (Pro
 
 ## Press
 
-[**Decoding Body Language Reveals How the Brain Organizes Behavior**](https://www.simonsfoundation.org/2018/07/11/decoding-body-language-reveals-how-the-brain-organizes-behavior/)
+[**Decoding Body Language Reveals How the Brain Organizes Behavior**](https://web.archive.org/web/20190928120118/https://www.simonsfoundation.org/2018/07/11/decoding-body-language-reveals-how-the-brain-organizes-behavior/)
 
 [**Scientists Unraveling How Movement is Translated Into Desired Action**](https://parkinsonsnewstoday.com/2018/05/24/scientists-unraveling-how-movement-translated-into-desired-action/)
 
 [**How the Brain Orchestrates Movement**](https://neurosciencenews.com/movement-orchestration-9073/)
 
-[**Printable nanoclip stimulates tiny nerves**](http://medicalphysicsweb.org/cws/article/research/68264)
+[**Printable nanoclip stimulates tiny nerves**](https://web.archive.org/web/20171003234802/http://medicalphysicsweb.org/cws/article/research/68264)
 
-[**Flash Nano: Electrical "nerve cuff" could help treat chronic disease**](http://nanotechweb.org/cws/article/tech/68261)
+[**Flash Nano: Electrical "nerve cuff" could help treat chronic disease**](https://web.archive.org/web/20171129094145/http://nanotechweb.org/cws/article/tech/68261)
 
-Note: some links don't work any more.
+Note: some links may not work.
