@@ -20,15 +20,15 @@ Back in 2012, I followed the newly constructed and free [Codecademy](https://www
 The lessons were sparse and short, but enough to fuel my excitement to explore the new world of possibilities software development provided.
 
 <!-- Describe general experience with different programming languages, paradigms, and platforms -->
-Over the years, I've developed experience programming with the following languages, listed in order of comfort level:
-1) **python**, 2) **javascript**, 3) **julia**, 4) **c**, 5) **matlab**, and have dabbled in other languages such as lua, clojure, groovy, c# and go.
+Over the years, I've developed expertise programming with the following languages, listed in order of comfort level:
+1) **python**, 2) **javascript**, 3) **julia**, 4) **c**, 5) **matlab**, and gathered experience in other languages such as lua, clojure, groovy, c# and go.
 There are similarities many languages share making it easier to take up a new language, but also differences that make some
 languages a better choice to solve certain problems. I've had fun thinking about how languages and their accompanying frameworks
 are best suited to solve different problems.
 
 I've continued to practice software engineering and other programming-adjacent skills in college and graduate school.
 
-<!-- ## Graduate school projects
+## Graduate school projects
 
 The projects I've worked on in graduate school are usually built to conduct customized experiments.
 
@@ -38,11 +38,11 @@ The projects I've worked on in graduate school are usually built to conduct cust
 
 ## Pre-graduate school projects
 
-### Consulting: wireless control of peripheral nerve stimulation -->
+### Consulting: wireless control of peripheral nerve stimulation
 
 ## Hobby projects
 
-- [Tic-Toc](/tic-toc/), a web app for making serial timers (user guide [here](https://wingillis.github.io/blog/tic-toc/)).
+- [Tic-Toc](/tic-toc/) (made **BEFORE** TikTok was big), a web app for making serial timers (user guide [here](https://wingillis.github.io/blog/tic-toc/)).
 - As a consultant, I co-engineered a system to monitor and control wireless **peripheral nerve stimulators**. I built the front-end user interface to select various stimulation patterns, and the back-end which tracks and manages the stimulator devices.
 
 <figure>

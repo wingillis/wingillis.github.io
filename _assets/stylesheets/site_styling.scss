@@ -266,3 +266,11 @@ figcaption {
   color: lighten($text-color, 30%);
   padding-bottom: 25px;
 }
+
+h3#titlebar {
+  color: #497d67;
+}
+
+h3#titlebar:hover {
+  color: #3e6957;
+}
