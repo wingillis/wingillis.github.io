@@ -5,11 +5,15 @@ layout: post
 ---
 ## Papers
 
+Sherry Lin, **Winthrop F Gillis**, Caleb Weinreb, Ayman Zeine, Samuel C Jones, Emma M Robinson, Jeffrey Markowitz, Sandeep Robert Datta. [**Characterizing the structure of mouse behavior using Motion Sequencing.**](https://arxiv.org/abs/2211.08497) arxiv. 15 November 2022.
+
+Julia C Costacurta, Lea Duncker, Blue Sheffer, **Winthrop Gillis**, Caleb Weinreb, Jeffrey E Markowitz, Sandeep Robert Datta, Alex H Williams, Scott W Linderman. [**Distinguishing discrete and continuous behavioral variability using warped autoregressive HMMs.**](https://openreview.net/forum?id=6Kj1wCgiUp_) NeurIPS. 31 October 2022.
+
 Julia C Costacurta, Lea Duncker, Blue Sheffer, Alex H Williams, **Winthrop Gillis**, Caleb Weinreb, Jeffrey E Markowitz, Sandeep Robert Datta, Scott W Linderman. [**Distinguishing discrete and continuous behavioral variability using warped autoregressive HMMs.**](https://www.biorxiv.org/content/10.1101/2022.06.10.495690.abstract) bioRxiv. 28 June 2022.
 
-Rudolph, S., Guo, C., Pashkovski, S. L., Osorno, T., **Gillis, W. F.**, Krauss, J. M., Nyitrai, H., Flaquer, I., El-Rifai, M., Datta, S. R., & Regehr, W. G. [**Cerebellum-Specific Deletion of the GABA<sub>A</sub> Receptor δ Subunit Leads to Sex-Specific Disruption of Behavior.**](https://www.sciencedirect.com/science/article/pii/S2211124720313279) Cell Reports. 3 November 2020.
+Stephanie Rudolph, Chong Guo, Stan L. Pashkovski, Tomas Osorno, **Winthrop F Gillis**, Jeremy M Krauss, Hajnalka Nyitrai, Isabella Flaquer, Mahmoud El-Rifai, Sandeep Robert Datta, Wade G Regehr. [**Cerebellum-Specific Deletion of the GABA<sub>A</sub> Receptor δ Subunit Leads to Sex-Specific Disruption of Behavior.**](https://www.sciencedirect.com/science/article/pii/S2211124720313279) Cell Reports. 3 November 2020.
 
-Wiltschko, A. B., Tsukahara, T., Zeine, A., Anyoha, R., **Gillis, W. F.**, Markowitz, J. E., Peterson, R. E., Katon, J., Johnson, M. J., & Datta, S. R. [**Revealing the structure of pharmacobehavioral space through motion sequencing.**](https://www.nature.com/articles/s41593-020-00706-3) Nature neuroscience. 21 September 2020.
+Alexander B Wiltschko, Tatsuya Tsukahara, Ayman Zeine, Rockwell Anyoha, **Winthrop F Gillis**, Jeffrey E Markowitz, Ralph E. Peterson, Jesse Katon, Matthew J Johnson, Sandeep Robert Datta. [**Revealing the structure of pharmacobehavioral space through motion sequencing.**](https://www.nature.com/articles/s41593-020-00706-3) Nature neuroscience. 21 September 2020.
 
 Eleanor Batty, Matthew R Whiteway, Shreya Saxena, Dan Biderman, Taiga Abe, Simon Musall, **Winthrop Gillis**, Jeffrey E Markowitz, Anne Churchland, John Cunningham, Sandeep Robert Datta, Scott W Linderman, Liam Paninski.
 [**BehaveNet: nonlinear embedding and Bayesian neural decoding of behavioral videos**](http://papers.nips.cc/paper/9701-behavenet-nonlinear-embedding-and-bayesian-neural-decoding-of-behavioral-videos.pdf)
