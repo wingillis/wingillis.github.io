@@ -9,8 +9,6 @@ Sherry Lin, **Winthrop F Gillis**, Caleb Weinreb, Ayman Zeine, Samuel C Jones, E
 
 Julia C Costacurta, Lea Duncker, Blue Sheffer, **Winthrop Gillis**, Caleb Weinreb, Jeffrey E Markowitz, Sandeep Robert Datta, Alex H Williams, Scott W Linderman. [**Distinguishing discrete and continuous behavioral variability using warped autoregressive HMMs.**](https://openreview.net/forum?id=6Kj1wCgiUp_) NeurIPS. 31 October 2022.
 
-Julia C Costacurta, Lea Duncker, Blue Sheffer, Alex H Williams, **Winthrop Gillis**, Caleb Weinreb, Jeffrey E Markowitz, Sandeep Robert Datta, Scott W Linderman. [**Distinguishing discrete and continuous behavioral variability using warped autoregressive HMMs.**](https://www.biorxiv.org/content/10.1101/2022.06.10.495690.abstract) bioRxiv. 28 June 2022.
-
 Stephanie Rudolph, Chong Guo, Stan L. Pashkovski, Tomas Osorno, **Winthrop F Gillis**, Jeremy M Krauss, Hajnalka Nyitrai, Isabella Flaquer, Mahmoud El-Rifai, Sandeep Robert Datta, Wade G Regehr. [**Cerebellum-Specific Deletion of the GABA<sub>A</sub> Receptor δ Subunit Leads to Sex-Specific Disruption of Behavior.**](https://www.sciencedirect.com/science/article/pii/S2211124720313279) Cell Reports. 3 November 2020.
 
 Alexander B Wiltschko, Tatsuya Tsukahara, Ayman Zeine, Rockwell Anyoha, **Winthrop F Gillis**, Jeffrey E Markowitz, Ralph E. Peterson, Jesse Katon, Matthew J Johnson, Sandeep Robert Datta. [**Revealing the structure of pharmacobehavioral space through motion sequencing.**](https://www.nature.com/articles/s41593-020-00706-3) Nature neuroscience. 21 September 2020.
@@ -41,30 +39,53 @@ Journal of Neural Engineering. June 2017.
 [**Knowing where the nose is.**](https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-017-0382-6)
 BMC Biology. 15 May 2017.
 
-## Posters
+## Posters and presentations
 
-<!-- add ViDA poster -->
+**Winthrop Gillis**.
+[**Real-time MoSeq: revealing elements of naturalistic reinforcement learning through closed-loop action identification**](https://www.abstractsonline.com/pp8/#!/10619/presentation/1151).
+Presentation. Society for Neuroscience 2022.
 
-**W. Gillis**, J. Markowitz, M. Jay, R. Cieszkowski, J. Murmann, E. Peterson, D. Aldarondo, D. Brann, S. Linderman, B. Sabatini, S.R. Datta. [**Revealing elements of naturalistic reinforcement learning through closed-loop action identification**](https://www.abstractsonline.com/pp8/#!/7883/presentation/66900). Society for Neuroscience 2019.
+Maya Jay, Jeffrey E Markowitz, **Winthrop F Gillis**, Jeffrey Wood, Timothy Sainburg, Riley W Harris, Rebecca Scott, David H Brann, Caleb Weinreb, Mohammed Osman, Sandra A Romero Pinto, Naoshige Uchida, Scott Linderman, Bernardo L Sabatini, Sandeep Robert Datta.
+[**Striatal dopamine structures the spontaneous behavior of mice across multiple timescales**](https://www.abstractsonline.com/pp8/#!/10619/presentation/82111).
+Poster. Society for Neuroscience 2022.
 
-E. Batty, M.R. Whiteway, S. Saxena, D. Biderman, T. Abe, S. Musall, **W. Gillis**, J.E. Markowitz, A.K. Churchland, S.R. Datta, S. Linderman, L. Paninski. [**BehaveNet: Behavioral video embedding and neural analysis toolbox**](https://www.abstractsonline.com/pp8/#!/7883/presentation/70973). Society for Neuroscience 2019.
+<!-- add Jax MoSeq workshop -->
 
-Jeffrey Markowitz, **Winthrop Gillis**, Julie Murmann, Scott Linderman, Bernardo Sabatini, Sandeep Datta. [**Resolving the neural mechanisms of reinforcement learning through new behavioral technologies**](http://cosyne.org/cosyne19/Cosyne2019_program_book.pdf). Cosyne 2019.
+<!-- add first MoSeq workshop -->
 
-J.E. Markowitz, **W.F. Gillis**, C.C. Beron, S.Q. Neufeld, K. Robertson, N.D. Bhagat, R.E. Peterson, E. Peterson, M. Hyun, S.W. Linderman, B.L. Sabatini, S.R. Datta. [**The striatum organizes 3D behavior via moment-to-moment action selection.**](https://abstractsonline.com/pp8/#!/4649/presentation/29823) Society for Neuroscience 2018.
+**Winthrop Gillis**, Jeffrey Markowitz, Maya Jay, Jeffrey Wood, Ryley Harris, Robert Cieszkowski, Julia Murmann, David Brann, Scott Linderman, Bernardo Sabatini, Sandeep Robert Datta.
+[**Revealing elements of naturalistic reinforcement learning through closed-loop action identification**]().
+Poster. Virtual Dopamine Conference 2021.
+
+**Winthrop Gillis**, Jeffrey Markowitz, Maya Jay, Robert Cieszkowski, Julia Murmann, Emily Peterson, Diego Aldarondo, David Brann, Scott Linderman, Bernardo Sabatini, Sandeep Robert Datta.
+[**Revealing elements of naturalistic reinforcement learning through closed-loop action identification**](https://www.abstractsonline.com/pp8/#!/7883/presentation/66900).
+Poster. Society for Neuroscience 2019.
+
+Ella Batty, Matthew R Whiteway, S. Saxena, D. Biderman, T. Abe, Simon Musall, **Winthrop Gillis**, Jeffrey E Markowitz, Anne K Churchland, Sandeep Robert Datta, Scott Linderman, Liam Paninski.
+[**BehaveNet: Behavioral video embedding and neural analysis toolbox**](https://www.abstractsonline.com/pp8/#!/7883/presentation/70973).
+Poster. Society for Neuroscience 2019.
+
+Jeffrey Markowitz, **Winthrop Gillis**, Julie Murmann, Scott Linderman, Bernardo Sabatini, Sandeep Datta.
+[**Resolving the neural mechanisms of reinforcement learning through new behavioral technologies**](http://cosyne.org/cosyne19/Cosyne2019_program_book.pdf).
+Poster. Cosyne 2019.
+
+Jeffrey E Markowitz, **Winthrop F Gillis**, Celia C Beron, Shay Q Neufeld, Kiera Robertson, Neha D Bhagat, Ralph E Peterson, Emily Peterson, Minsuk Hyun, Scott W Linderman, Bernardo L Sabatini, Sandeep Robert Datta.
+[**The striatum organizes 3D behavior via moment-to-moment action selection**](https://abstractsonline.com/pp8/#!/4649/presentation/29823).
+Poster. Society for Neuroscience 2018.
 
 Jeffrey Markowitz, **Winthrop Gillis**, Celia Beron, Shay Neufeld, Keira Robertson, Minsuk Hyun, Emalee Peterson, Neha Bhagat, Scott Linderman, Bernardo Sabatini, Sandeep Datta.
-[**Complementary direct and indirect pathway activity encodes sub-second 3D pose dynamics in striatum**.](http://cosyne.org/cosyne18/Cosyne2018_program_book.pdf) Cosyne 2018.
+[**Complementary direct and indirect pathway activity encodes sub-second 3D pose dynamics in striatum**](http://cosyne.org/cosyne18/Cosyne2018_program_book.pdf).
+Poster. Cosyne 2018.
 
 T. Tan, K. Drummey, N. Bhagat, **W. Gillis**, J. Katon, K. Messemer, C. Dixon, J. Nguyen, S. R. Datta.
-[**Unique connectivity within the necklace subsystem suggests a novel function in olfactory processing.**]()
-Society for Neuroscience. November 2017.
+[**Unique connectivity within the necklace subsystem suggests a novel function in olfactory processing**]().
+Poster. Society for Neuroscience. November 2017.
 
 Felix Deku, Yarden Cohen, Ben Pearre, Alexandra Joshi-Imre, Atefeh Ghazavi, **Winthrop Gillis**, Timothy Gardner, Stuart Cogan.
-[**Evaluation of Novel Amorphous Silicon Carbide Ultramicroelectrodes for Neural Interfacing.**]()
-BMES 2016 Annual Meeting. October 2016.
+[**Evaluation of Novel Amorphous Silicon Carbide Ultramicroelectrodes for Neural Interfacing**]().
+Poster. BMES 2016 Annual Meeting. October 2016.
 
-Ben Pearre, **Winthrop Gillis**, Felix Deku, Alket Mertiri, Jun Shen, Sanne Moorman, Atefeh Ghazavi, Stuart Cogan, Timothy J. Gardner.
+Ben Pearre, **Winthrop Gillis**, Felix Deku, Alket Mertiri, Jun Shen, Sanne Moorman, Atefeh Ghazavi, Stuart Cogan, Timothy J Gardner.
 [**High-Density Recording and Stimulation in Behaving Animals.**]()
 NIH Brain Initiative. 2015.
 
@@ -73,10 +94,6 @@ NIH Brain Initiative. 2015.
 Holinski, Bradley J., Gardner, Timothy, Lissandrello, Charles A., White, Alice E., Gillis, Winthrop, Shen, Jun, Otchy, Timothy, Michas, Christos. (2018, Patent No. _PCT/US2017/044096_ Boston, MA) [**NERVE CUFFS, METHODS OF FABRICATING THE SAME AND METHODS OF USE**](https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2018022838)
 
 AUTOMATICALLY CLASSIFYING ANIMAL BEHAVIOR ASSOCIATED WITH NEURAL RECORDINGS (Provisional)
-
-<!--- ## Preparation
-
-**Acute and Chronic Recording in Small Diameter Peripheral Nerves.** --->
 
 ## Press
 
