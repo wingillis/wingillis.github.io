@@ -30,11 +30,28 @@ I've continued to practice software engineering and other programming-adjacent s
 
 ## Graduate school projects
 
-The projects I've worked on in graduate school are usually built to conduct customized experiments.
+The projects I've worked on in graduate school are usually built to conduct customized experiments,
+always with the goal of making it easier to answer questions about biology.
 
 ### Real-time MoSeq
 
+I developed a 1) graphical user interface (GUI) and a 2) framework to define `Pipelines` that act on image data in real-time
+as it's acquired from a camera.
+
 ### MoSeq v2
+
+In 2015 the Datta lab [published a paper](https://www.cell.com/neuron/fulltext/S0896-6273(15)01037-5) describing a probabilistic model
+that decomposes mouse behavior into stereotyped motifs of action, which the lab calls MoSeq (short for Motion Sequencing). We wanted to 
+share our model along with the pipeline used to acquire, pre-process, and model the data. However, as with all research code written
+to publish a paper, the first version was quite difficult for other labs to use and install.
+
+Building off of [Jeff Markowitz's](https://bme.gatech.edu/bme/faculty/Jeffrey-Markowitz) work laying out the scaffolding for an easy-to-use
+version of the MoSeq pipeline, I lead a team of software engineers to turn the MoSeq pipeline into a user-friendly ecosystem that includes:
+- a suite of python packages to go from video recordings all the way to labeled actions
+- expansive documentation (in the form of a wiki) that describes each step of the pipeline, along with formal documentation for each
+  function defined in the package suite
+- example Jupyter notebooks that show how to use the MoSeq pipeline, along with visualizations that show the consequences of changing parameters
+- a [protocol paper](https://arxiv.org/abs/2211.08497) explicitly outlining the steps to run the pipeline
 
 ## Pre-graduate school projects
 
