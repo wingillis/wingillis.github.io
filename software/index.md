@@ -52,6 +52,7 @@ version of the MoSeq pipeline, I lead a team of software engineers to turn the M
   function defined in the package suite
 - example Jupyter notebooks that show how to use the MoSeq pipeline, along with visualizations that show the consequences of changing parameters
 - a [protocol paper](https://arxiv.org/abs/2211.08497) explicitly outlining the steps to run the pipeline
+- a [website](https://moseq4all.org) detailing how to get access to the private GitHub repositories that house the MoSeq codebase and documentation 
 
 ## Pre-graduate school projects
 
