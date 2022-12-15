@@ -35,8 +35,12 @@ always with the goal of making it easier to answer questions about biology.
 
 ### Real-time MoSeq
 
-I developed a 1) graphical user interface (GUI) and a 2) framework to define `Pipelines` that act on image data in real-time
-as it's acquired from a camera.
+<!-- I think I want to talk about the first version I built with Jeff first, and maybe later include the new version -->
+
+I built the first version (v1) with [Jeff Markowitz](https://bme.gatech.edu/bme/faculty/Jeffrey-Markowitz) in 2018-2019
+so that we could classify stereotyped modules of mouse behavior (our lab calls them "syllables") in real-time and
+reinforce their expression by optogenetically evoking dopamine release into the dorsolateral striatum (a sub-cortical
+brain structure involved in action selection).
 
 ### MoSeq v2
 
@@ -58,19 +62,20 @@ version of the MoSeq pipeline, I lead a team of software engineers to turn the M
 
 ### Consulting: wireless control of peripheral nerve stimulation
 
-## Hobby projects and other
-
-- I created [this website](https://github.com/wingillis/wingillis.github.io) using jekyll and github pages. I also designed the theming (check out the cool skulls in the background)!
-- [Tic-Toc](/tic-toc/) (made **BEFORE** TikTok was big) is a web app for making serial timers (user guide [here](https://wingillis.github.io/blog/tic-toc/)).
-- As a consultant, I co-engineered a system to monitor and control wireless **peripheral nerve stimulators** via bluetooth.
-I built the front-end user interface to select various stimulation patterns, and the back-end which tracks and manages the stimulator devices.
+As a consultant, I co-engineered a front-end user interface to monitor and control wireless peripheral nerve stimulators via bluetooth.
+The interface allows a user to select various stimulation patterns and tracks and manages the various stimulator devices connected
+to the app.
 
 <figure>
   {% asset stim.png %}
   <figcaption>An example of the stimulator interface for an early version of the software.</figcaption>
 </figure>
 
-- I created a system to automatically parse sound files for birdsong as they were generated – it heavily relies on [Jeff Markowitz's scripts](https://github.com/jmarkow/zftftb) which does the actual sound processing
+## Hobby projects and other
+
+- I created [this website](https://github.com/wingillis/wingillis.github.io) using jekyll and github pages. I also designed the theming (check out the cool skulls in the background)!
+- [Tic-Toc](/tic-toc/) (made **BEFORE** TikTok was big) is a web app for making serial timers (user guide [here](https://wingillis.github.io/blog/tic-toc/)).
+- I created a system to automatically parse sound files for birdsong as they were generated – it heavily relies on [Jeff Markowitz's scripts](https://github.com/jmarkow/zftftb) which does the sound processing heavy-lifting
 - A web-based timer utilizing [Trello](https://trello.com) for task management [source](https://github.com/wingillis/trelloAlarm)
 
 <figure>
