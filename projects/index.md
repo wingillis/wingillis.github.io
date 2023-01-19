@@ -5,9 +5,13 @@ layout: post
 ---
 ## Papers
 
-Jeffrey E Markowitz<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Maya Jay<sup>1</sup>, Jeffrey Wood, Ryley W Harris, Robert Cieszkowski, Rebecca Scott, David Brann, Dorothy Koveal, Tomasz Kula, Caleb Weinreb, Mohammed Abdal Monium Osman, Sandra Romero Pinto, Naoshige Uchida, Scott W. Linderman, Bernardo L. Sabatini, Sandeep Robert Datta. [**Spontaneous behaviour is structured by reinforcement without explicit reward.**](https://www.nature.com/articles/s41586-022-05611-2) Nature. 18 January 2023. <sup>1</sup>These authors contributed equally.
+Jeffrey E Markowitz<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Maya Jay<sup>1</sup>, Jeffrey Wood, Ryley W Harris, Robert Cieszkowski, Rebecca Scott, David Brann, Dorothy Koveal, Tomasz Kula, Caleb Weinreb, Mohammed Abdal Monium Osman, Sandra Romero Pinto, Naoshige Uchida, Scott W. Linderman, Bernardo L. Sabatini, Sandeep Robert Datta.
+[**Spontaneous behaviour is structured by reinforcement without explicit reward.**](https://www.nature.com/articles/s41586-022-05611-2)
+Nature. 18 January 2023. <sup>1</sup>These authors contributed equally.
 
-Sherry Lin<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Caleb Weinreb, Ayman Zeine, Samuel C Jones, Emma M Robinson, Jeffrey Markowitz, Sandeep Robert Datta. [**Characterizing the structure of mouse behavior using Motion Sequencing.**](https://arxiv.org/abs/2211.08497) arxiv. 15 November 2022. <sup>1</sup>These authors contributed equally.
+Sherry Lin<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Caleb Weinreb, Ayman Zeine, Samuel C Jones, Emma M Robinson, Jeffrey Markowitz, Sandeep Robert Datta.
+[**Characterizing the structure of mouse behavior using Motion Sequencing.**](https://arxiv.org/abs/2211.08497)
+arXiv. 15 November 2022. <sup>1</sup>These authors contributed equally.
 
 Julia C Costacurta, Lea Duncker, Blue Sheffer, **Winthrop Gillis**, Caleb Weinreb, Jeffrey E Markowitz, Sandeep Robert Datta, Alex H Williams, Scott W Linderman. [**Distinguishing discrete and continuous behavioral variability using warped autoregressive HMMs.**](https://openreview.net/forum?id=6Kj1wCgiUp_) NeurIPS. 31 October 2022.
 
@@ -25,15 +29,15 @@ Cell. _In Press._ 17 May 2018.
 
 <span class="__dimensions_badge_embed__" data-id="pub.1104039317" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
-**Winthrop F Gillis**, Charles A Lissandrello, Jun Shen, Ben W Pearre, Alket Mertiri, Felix Deku, Stuart Cogan, Bradley J Holinski, Daniel J Chew, Alice E White, Timothy J Gardner and Timothy M Otchy.
+**Winthrop F Gillis**<sup>1</sup>, Charles A Lissandrello<sup>1</sup>, Jun Shen, Ben W Pearre, Alket Mertiri, Felix Deku, Stuart Cogan, Bradley J Holinski, Daniel J Chew, Alice E White, Timothy J Gardner and Timothy M Otchy.
 [**Carbon Fiber On Polyimide Ultra-Microelectrodes.**](http://iopscience.iop.org/article/10.1088/1741-2552/aa8c88)
-Journal of Neural Engineering. September 2017.
+Journal of Neural Engineering. September 2017. <sup>1</sup>These authors contributed equally.
 
 <span class="__dimensions_badge_embed__" data-id="pub.1091757262" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
-Charles A Lissandrello, **Winthrop F Gillis**, Jun Shen, Ben W Pearre, Flavia Vitale, Matteo Pasquali, Bradley J Holinski, Daniel J Chew, Alice E White and Timothy J Gardner.
+Charles A Lissandrello<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Jun Shen, Ben W Pearre, Flavia Vitale, Matteo Pasquali, Bradley J Holinski, Daniel J Chew, Alice E White and Timothy J Gardner.
 [**A micro-scale printable nanoclip for electrical stimulation and recording in small nerves.**](http://iopscience.iop.org/article/10.1088/1741-2552/aa5a5b)
-Journal of Neural Engineering. June 2017.
+Journal of Neural Engineering. June 2017. <sup>1</sup>These authors contributed equally.
 
 <span class="__dimensions_badge_embed__" data-id="pub.1084173495" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
