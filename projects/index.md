@@ -5,7 +5,9 @@ layout: post
 ---
 ## Papers
 
-Sherry Lin, **Winthrop F Gillis**, Caleb Weinreb, Ayman Zeine, Samuel C Jones, Emma M Robinson, Jeffrey Markowitz, Sandeep Robert Datta. [**Characterizing the structure of mouse behavior using Motion Sequencing.**](https://arxiv.org/abs/2211.08497) arxiv. 15 November 2022.
+Jeffrey E Markowitz<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Maya Jay<sup>1</sup>, Jeffrey Wood, Ryley W Harris, Robert Cieszkowski, Rebecca Scott, David Brann, Dorothy Koveal, Tomasz Kula, Caleb Weinreb, Mohammed Abdal Monium Osman, Sandra Romero Pinto, Naoshige Uchida, Scott W. Linderman, Bernardo L. Sabatini, Sandeep Robert Datta. [**Spontaneous behaviour is structured by reinforcement without explicit reward.**](https://www.nature.com/articles/s41586-022-05611-2) Nature. 18 January 2023. <sup>1</sup>These authors contributed equally.
+
+Sherry Lin<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Caleb Weinreb, Ayman Zeine, Samuel C Jones, Emma M Robinson, Jeffrey Markowitz, Sandeep Robert Datta. [**Characterizing the structure of mouse behavior using Motion Sequencing.**](https://arxiv.org/abs/2211.08497) arxiv. 15 November 2022. <sup>1</sup>These authors contributed equally.
 
 Julia C Costacurta, Lea Duncker, Blue Sheffer, **Winthrop Gillis**, Caleb Weinreb, Jeffrey E Markowitz, Sandeep Robert Datta, Alex H Williams, Scott W Linderman. [**Distinguishing discrete and continuous behavioral variability using warped autoregressive HMMs.**](https://openreview.net/forum?id=6Kj1wCgiUp_) NeurIPS. 31 October 2022.
 
