@@ -5,11 +5,14 @@ body.dark {
   background-color: $dark-background;
   background-image: $dark-skull;
   a:link {
-    color: lighten($link-color, 20%);
+    color: lighten($link-color, 30%);
   }
   a:visited {
-    color: lighten($link-color, 20%);
+    color: lighten($link-color, 30%);
     text-decoration: none;
+  }
+  a:hover {
+    color: lighten($link-color, 50%);
   }
   nav {
     background-color: darken($dark-background, 12%);
@@ -65,7 +68,7 @@ a:visited {
 }
 
 a:hover {
-  color: lighten($link-color, 30%);
+  color: lighten($link-color, 20%);
   text-decoration: none;
 }
 
