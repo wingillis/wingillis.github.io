@@ -55,9 +55,8 @@ Maya Jay, Jeffrey E Markowitz, **Winthrop F Gillis**, Jeffrey Wood, Timothy Sain
 [**Striatal dopamine structures the spontaneous behavior of mice across multiple timescales**](https://www.abstractsonline.com/pp8/#!/10619/presentation/82111).
 Poster. Society for Neuroscience 2022.
 
-<!-- add Jax MoSeq workshop -->
-
-<!-- add first MoSeq workshop -->
+Winthrop Gillis, Sherry Lin. [**Workshop – Characterizing the structure of mouse behavior using Motion Sequencing (MoSeq)**]().
+The Short Course on the Application of Machine Learning for Automated Quantification of Behavior. Jackson Labs. October 2022.
 
 **Winthrop Gillis**, Jeffrey Markowitz, Maya Jay, Jeffrey Wood, Ryley Harris, Robert Cieszkowski, Julia Murmann, David Brann, Scott Linderman, Bernardo Sabatini, Sandeep Robert Datta.
 [**Revealing elements of naturalistic reinforcement learning through closed-loop action identification**]().
