@@ -2,7 +2,7 @@
 <html>
   <head>
     
-<title>Winthrop Gillis | Why?</title>
+<title>Winthrop Gillis | Fireworks</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,7 +18,7 @@
 <link type="application/atom+xml" rel="alternate" href="https://wingillis.github.io/feed.xml" title="Winthrop Gillis" />
 
   </head>
-  <body>
+  <body id="app">
     <nav id="navbar" class="header">
   <div class="nav-width">
   <div class="pure-menu pure-menu-horizontal">
@@ -95,147 +95,31 @@
   <div>
     Share:
   </div>
-  <a href="https://getpocket.com/save?url=https://wingillis.github.io//blog/" target="_blank">
+  <a href="https://getpocket.com/save?url=https://wingillis.github.io//software/fireworks/" target="_blank">
     <div class="icon" id="pocket-icon">
 			<img class="inject" src="/assets/pocket-d7c17c3b98f742741cc2929e4276ad704682952e5649ae3fe3a6e0b6ddc72be1ec8b19bd71a701822113cd6df914ecb603628ce7b02e8c9a2ae90b1698232620.svg">
     </div>
   </a>
-  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://wingillis.github.io//blog/">
+  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://wingillis.github.io//software/fireworks/">
     <div class="icon" id="facebook-icon">
 			<img class="inject" src="/assets/facebook-93f1d9d7e5036d2a881eb6358ccd40109b4ba7173f42f02234079a5fea8dd4fa5f3461b0cee3bf84c973f403fb3a5d7e3a1c40c5b8d98aba9c50114ee4c2d80a.svg">
     </div>
   </a>
 </div>
 
-    <div class="extra-padding">
-      <div class="content pure-g text-content">
-        <div class="pure-u-1">
-          <div class="centered">
-  <h1>Posts</h1>
-</div>
-<!-- <div style="height: 10px">
+    <div class="content text-content pure-g">
+      <div id="fireworks" class="pure-u-1">
 
-</div> -->
-<div class="article-list">
-  
-    <a href="/blog/highlighting-pdfs/" title="Optimizing PDF organization and annotation">
-      <div class="article-item">
-        <h3>
-          Optimizing PDF organization and annotation
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          My workflow I developed for stress-free note taking.
-        </p>
-        <div class="article-footer">
-            Posted:
-            December 5, 2017
-            Length:
-            
-            
-              7 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-    <a href="/blog/conflicts-of-interest/" title="The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest.">
-      <div class="article-item">
-        <h3>
-          The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest.
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          Examples of scientific conflicts of interest and a proposal to improve the situation.
-        </p>
-        <div class="article-footer">
-            Posted:
-            December 4, 2017
-            Length:
-            
-            
-              4 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-    <a href="/blog/hammerspoon-vim-bindings/" title="Hammerspoon Vim Bindings">
-      <div class="article-item">
-        <h3>
-          Hammerspoon Vim Bindings
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          Tutorial on how to give all applications vim-like capabilities
-        </p>
-        <div class="article-footer">
-            Posted:
-            August 8, 2017
-            Length:
-            
-            
-              4 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-    <a href="/blog/tic-toc/" title="Tic-Toc">
-      <div class="article-item">
-        <h3>
-          Tic-Toc
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          A user guide for a serial timer web application.
-        </p>
-        <div class="article-footer">
-            Posted:
-            November 29, 2016
-            Length:
-            
-            
-              3 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-    <a href="/blog/finger-possible/" title="Finger Possible">
-      <div class="article-item">
-        <h3>
-          Finger Possible
-        </h3>
-        <div class="indent">
-        <p style="padding: 0px;">
-          A portable, customizable, extremely efficient design proposition for a keyboard-like human-computer interface.
-        </p>
-        <div class="article-footer">
-            Posted:
-            November 11, 2016
-            Length:
-            
-            
-              9 minute read
-            
-        </div>
-      </div>
-      </a>
-    </div>
-  
-  
 </div>
 
-        </div>
-        
-      </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.3.1/pixi.min.js"></script>
+<script type="text/javascript" src="/assets/f1-53fbc3245d1c0beb6987a4e49b481d2b74ae9a7b8f7eeef9e5e5e831a0601e0318f120a5d8541cd8ae85a5c512f7db7ae443cd72798b3947953f3db3d3418062.js"></script>
+<script type="text/javascript" src="/assets/f2-b4e0d4b600f08948cfce92be526e15389474079da30e01f3f7202e35c2da99c5fbe5837378e07da66919582c30f1705b26b0dca453b3ed63cb4d255672c06fde.js"></script>
+<script type="text/javascript" src="/assets/fireworks-fd93749acc981b7a5630d4a4b43289c92ae6da06eac85cce6e2a3b302668e92a3a76457503ab44259ef4e41c4202a1071ec18bbced6397e6d89df439f4c85d4f.js"></script>
+
     </div>
-    
+  </body>
+  
 <!-- google analytics -->
 
 <script>
@@ -257,15 +141,4 @@
   SVGInjector(svgs);
 </script>
 
-    
-<footer>
-  <div class="centered">
-    <p style="opacity: 0.58; font-size: 0.78em;">
-    	The entire website was homegrown:  
-      <a href="https://github.com/wingillis/wingillis.github.io">source code.</a>
-    </p>
-  </div>
-</footer>
-
-  </body>
 </html>
