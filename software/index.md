@@ -4,14 +4,6 @@ title: Software
 permalink: /software/
 ---
 
-<!-- REWRITE!!! make a bit more professional -->
-<!-- # Outline
-- [x] background about my programming abilities
-- Describe the main highlights I've used my programming for
-  1. Building and managing MoSeq, building real-time MoSeq
-  2. Data analysis, pipelining, and figure generation
-  3. Building hardware and experiments -->
-
 # Software, firmware, hardware
 
 ## Background
@@ -19,7 +11,6 @@ permalink: /software/
 Back in 2012, I followed the newly constructed and free [Codecademy](https://www.codecademy.com/) course that taught the fundamentals of programming through javascript.
 The lessons were sparse and short, but enough to fuel my excitement to explore the new world of possibilities software development provided.
 
-<!-- Describe general experience with different programming languages, paradigms, and platforms -->
 Over the years, I've developed expertise programming with the following languages, ordered by comfort level:
 1) **python**, 2) **javascript**, 3) **julia**, 4) **c**, 5) **matlab**, and gathered experience in other languages such as lua, clojure, groovy, c# and go.
 There are similarities many languages share making it easier to take up a new language, but also differences that make some
@@ -71,7 +62,6 @@ the MoSeq codebase and documentation
 
 ### Real-time MoSeq
 
-<!-- I think I want to talk about the first version I built with Jeff first, and maybe later include the new version -->
 In 2018-2019, [Jeff Markowitz](https://bme.gatech.edu/bme/faculty/Jeffrey-Markowitz) and I developed a version of
 MoSeq that can identify the motifs of action mice produce (the Datta lab calls them "syllables") in near real-time
 (within 50ms). We developed this technology in order better understand if the mouse brain contains information about
