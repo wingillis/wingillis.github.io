@@ -5,6 +5,10 @@ layout: post
 ---
 ## Papers
 
+Dana Rubi Levy, Nigel Hunter, Sherry Lin, Emma Marie Robinson, **Winthrop Gillis**, Eli Benjamin Conlin, Rockwell Anyoha, Rebecca M Shansky, Sandeep Robert Datta.
+[**Mouse spontaneous behavior reflects individual variation rather than estrous state.**](https://www.cell.com/current-biology/fulltext/S0960-9822(23)00175-6)
+Current Biology. 07 March 2023.
+
 Jeffrey E Markowitz<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Maya Jay<sup>1</sup>, Jeffrey Wood, Ryley W Harris, Robert Cieszkowski, Rebecca Scott, David Brann, Dorothy Koveal, Tomasz Kula, Caleb Weinreb, Mohammed Abdal Monium Osman, Sandra Romero Pinto, Naoshige Uchida, Scott W. Linderman, Bernardo L. Sabatini, Sandeep Robert Datta.
 [**Spontaneous behaviour is structured by reinforcement without explicit reward.**](https://www.nature.com/articles/s41586-022-05611-2)
 Nature. 18 January 2023. <sup>1</sup>These authors contributed equally.
@@ -96,9 +100,11 @@ NIH Brain Initiative. 2015.
 
 ## Patents
 
-Holinski, Bradley J., Gardner, Timothy, Lissandrello, Charles A., White, Alice E., Gillis, Winthrop, Shen, Jun, Otchy, Timothy, Michas, Christos. (2018, Patent No. _PCT/US2017/044096_ Boston, MA) [**NERVE CUFFS, METHODS OF FABRICATING THE SAME AND METHODS OF USE**](https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2018022838)
+Bradley J. Holinski, Timothy Gardner, Charles A. Lissandrello, Alice E. White, **Winthrop Gillis**, Jun Shen, Timothy Otchy, Christos Michas. (2018, Patent No. _PCT/US2017/044096_ Boston, MA) [**NERVE CUFFS, METHODS OF FABRICATING THE SAME AND METHODS OF USE**.](https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2018022838)
 
 AUTOMATICALLY CLASSIFYING ANIMAL BEHAVIOR ASSOCIATED WITH NEURAL RECORDINGS (Provisional)
+
+Sandeep Robert Datta, **Winthrop Gillis**, Jeffrey Evan. [**IMAGE PROCESSING FOR STANDARDIZING SIZE AND SHAPE OF ORGANISMS**.](https://patents.justia.com/patent/20220392017)
 
 ## Press
 
