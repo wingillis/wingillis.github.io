@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wingillis.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wingillis.github.io/" rel="alternate" type="text/html" /><updated>2023-03-07T21:31:31-05:00</updated><id>https://wingillis.github.io/feed.xml</id><title type="html">Winthrop Gillis</title><subtitle>Winthrop Gillis - traveling through space and time to find the right ideas</subtitle><author><name>{&quot;github&quot;=&gt;&quot;wingillis&quot;}</name></author><entry><title type="html">Optimizing PDF organization and annotation</title><link href="https://wingillis.github.io/blog/highlighting-pdfs/" rel="alternate" type="text/html" title="Optimizing PDF organization and annotation" /><published>2017-12-05T00:00:00-05:00</published><updated>2017-12-05T00:00:00-05:00</updated><id>https://wingillis.github.io/blog/highlighting-pdfs</id><content type="html" xml:base="https://wingillis.github.io/blog/highlighting-pdfs/"><![CDATA[<h1 id="optimizing-pdf-organization-and-annotation">Optimizing PDF organization and annotation</h1>
+
+<p>I am a graduate student and I often have to read many PDFs. This post is about a few small programs I wrote to both get around bottlenecks using Mendeley to manage my pdfs, and keep track of annotations I make within those PDFs.</p>
+
+<h2 id="pdf-naming-scheme">PDF naming scheme</h2>
+
+<p>One aspect of downloaded scientific articles that gets on my nerves is the fact that they usually have very obscure names, such as <code class="language-plaintext highlighter-rouge">mmc5.pdf</code>, which makes it difficult to browse for specific PDFs based on file name. <a href="https://www.mendeley.com">Mendeley</a>, a program that can organize the articles you collect throughout your research, can help with this problem. When a pdf is imported into mendeley, it parses the article’s metadata if available, and updates a local database containing your imported articles with the information. Mendeley has an option to watch folders on your computer for newly added PDFs/files, allowing you to automatically import PDFs when you save them to a specific folder (i.e. your downloads folder). It also comes with a useful feature (called <code class="language-plaintext highlighter-rouge">file organizer</code>) to back up imported PDFs to a folder of your choice with a naming scheme based on the article’s metadata. For instance, you can ask Mendeley to rename the PDF with the paper’s title, the author’s names, the journal the paper was published in, or the year the article was published, making it easier to find PDFs just based on their name. For instance, <code class="language-plaintext highlighter-rouge">mmc5.pdf</code> could be renamed to: <code class="language-plaintext highlighter-rouge">A motor cortex circuit for motor planning and movement - Li et al. - Nature - 2015.pdf</code>. Why do I think these features are important?</p>
+
+<ul>
+  <li>I read a lot on mobile devices, and would prefer to use other apps than Mendeley to read with. Therefore, a reasonable file naming scheme is desired.</li>
+  <li>Combining the right tools with Mendeley can make PDF importing and annotation very powerful, as described below.</li>
+</ul>
+
+<h2 id="dropbox-integration">Dropbox integration</h2>
+
+<p>Mendeley has a business model where they offer 2GB free storage space on their servers for the PDFs linked to the articles you accumulate, and then paid tiers where they offer more storage space. It can sync the articles between devices. Pretty quickly you will probably hit the upload limit with the free tier. I did not want to pay for a version of Mendeley where the only difference was more storage space online. As a solution, I use Dropbox to sync my PDFs between devices. I can tell Mendeley’s file organizer to save the processed PDFs in a Dropbox folder (you can also use google drive, or any other cloud storage service). This allows me to sync well-named PDFs between all devices, allowing them to be easily searchable. Dropbox’s searching capabilities are very strong - they even search within the PDFs for search terms you provide.</p>
+
+<p>Sometimes I find an article on my mobile device that I would like to save to read, but I also want the article to be processed by Mendeley. To do this, I can have Mendeley watch a folder within Dropbox on my desktop computer, and send the processed PDF to another folder within Dropbox. So when I find an article on my mobile device, I can upload the PDF directly to the folder that Mendeley watches, and wait for Mendeley on my desktop computer to process the file. The processed file will show up in the processed folder momentarily.
+My PDF importing pipeline looks like this:</p>
+
+<ul>
+  <li><strong>Import folder (to watch by Mendeley)</strong>: <code class="language-plaintext highlighter-rouge">/Users/wgillis/Dropbox/papers to read/</code></li>
+  <li><strong>Export folder (where Mendeley exports processed PDFs):</strong> <code class="language-plaintext highlighter-rouge">/Users/wgillis/Dropbox/mendeley/</code></li>
+</ul>
+
+<h3 id="managing-dropbox-space">Managing Dropbox space</h3>
+
+<p>This type of PDF management uses up twice the amount of space than normal, because you have two folders, each containing the same PDFs. One folder has the PDFs you imported, while the other contains the PDFs that Mendeley has renamed and exported. I didn’t like the increase in storage space, so I used this as an opportunity to do two things:</p>
+
+<ol>
+  <li>make a program that watched new files within the Mendeley export folder</li>
+  <li>learn a new programming language for fun (golang)</li>
+</ol>
+
+<p>The program (<a href="https://github.com/wingillis/mendeley-watcher">found here</a>) detects when new PDFs are added to a user-supplied folder path, and deletes a copy of the same file from another user-supplied folder path. I set it to watch the folder Mendeley exports its files to, and to delete files from the folder I put new PDFs into. This poses an interesting problem: how do I know which two files are the same? I can’t use their file names, because they have changed. One option is to compare two files byte-by-byte. If I have to go through every file, I start using a large amount of disk resources. Another option is to compare a small chunk of each file. This reduces the amount of disk usage the program uses, and still provides a reasonably accurate comparison of similarity.</p>
+
+<h2 id="highlighting-and-annotations">Highlighting and annotations</h2>
+
+<p>Another part of the PDF workflow I wanted to automate/optimize is the note-taking and annotations in the PDF. I like to read and highlight PDFs on my iPad, using the app Notability. I also wanted to figure out a way I could keep track of all the highlights that I make in an article. One requirement was to be able to parse different highlight colors, because I use different color highlight to mean different things (i.e. yellow means ‘remember this’ and blue means ‘read this reference later’). To do this, I used a combination of 4 different tools to decrease the amount of time I have to spend bookkeeping and decrease the amount of effort I need to spend finding a piece of information. The 4 tools are:</p>
+
+<ul>
+  <li>Notability (its auto-backup features)</li>
+  <li>Evernote (its API)</li>
+  <li><a href="https://www.imagemagick.org/script/index.php">imagemagick</a></li>
+  <li>python (its <a href="http://scikit-image.org/docs/dev/api/skimage.html">image processing libraries</a>, among other libraries)</li>
+</ul>
+
+<p>I set up the tools so that I can create highlighted text in Notability, and I sync the highlighted text, along with the corresponding PDF into a dedicated Evernote notebook. Setting it up looks something like this:</p>
+
+<ul>
+  <li>Use Notability’s auto-backup feature to sync PDFs that you’ve modified in the app (by note-taking or highlights) into a folder in any of the online storage services the app supports.</li>
+  <li>Create an Evernote notebook where you’d like to upload the PDFs and highlighted regions (i.e. called Notability PDFs).</li>
+  <li>Acquire a developer token from Evernote for your account (by going to <a href="https://www.evernote.com/api/DeveloperToken.action">this link</a>)</li>
+  <li>Install imagemagick onto your desktop (if on mac, <code class="language-plaintext highlighter-rouge">brew install imagemagick</code>)</li>
+  <li>Install python (via <a href="https://www.anaconda.com/download">Anaconda</a>, preferrably) and install the following libraries:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">pip install skimage</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pip install evernote</code> (if using python3, the installation process is slightly more involved. Instead of <code class="language-plaintext highlighter-rouge">pip install evernote</code>, download/clone <a href="https://github.com/evernote/evernote-sdk-python3">this repo</a>, navigate to the directory, and run <code class="language-plaintext highlighter-rouge">pip install -e .</code>)</li>
+      <li><code class="language-plaintext highlighter-rouge">pip install numpy</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pip install scipy</code></li>
+    </ul>
+  </li>
+  <li>Download this repository: notability-uploader - its job is to watch the Notability backup folder for newly modified PDFs, find the regions of the PDF that you highlighted, organize the highlights, and send the highlights, along with the PDF, to your Evernote notebook.</li>
+  <li>Set up some type of daemon to run the notability-uploader. Options include using <code class="language-plaintext highlighter-rouge">launchd</code>, <code class="language-plaintext highlighter-rouge">cron</code> jobs, manually running the script from time to time, or something else.</li>
+</ul>
+
+<h3 id="highlight-detection">Highlight detection</h3>
+
+<p>Originally, I wanted to detect highlighted annotations directly in the PDF file, by parsing the data’s tree structure.
+However, Notability’s output file structure is a little more complicated than that. As a workaround, I look for the specific color of the highlighter I used within the document. To do this, I convert the PDF into one <code class="language-plaintext highlighter-rouge">png</code> image per page, then find pixels within the image that are closest to the highlighter color in colorspace, and extract that region of the image.</p>
+
+<figure>
+<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_C1CBA85C0F3ADE8D7493EBAFD81890EA7E72F14A432FAD5DD63CA577BB5C63F7_1512538979310_test0-1.png" />
+<figcaption>
+Fig 1: Example highlighted page
+</figcaption>
+</figure>
+
+<p>For example, above is a highlighted page from an article (Fig 1). The yellow highlight is to remember for later, while the blue is to read/research later. The <code class="language-plaintext highlighter-rouge">notability-upload</code> program will detect the regions these highlights exist and crop them into a new Evernote note (Fig 2), with the included PDF for reference. One nice thing about Evernote is that it will perform optical character recognition (OCR) on any images in your notes (if you have Premium). This allows you to search for a word specifically in the highlighted regions. An additional use case for highlighting is to quickly save snippets of a paper. For instance, if there is a chart you’d like to keep in easy access, you could highlight a box around the chart, and it will automatically be grabbed (Fig 3).</p>
+
+<figure>
+<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_C1CBA85C0F3ADE8D7493EBAFD81890EA7E72F14A432FAD5DD63CA577BB5C63F7_1512539215856_Screen+Shot+2017-12-06+at+12.46.26+AM.png" />
+<figcaption>
+Fig 2: Structure of the Evernote note
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_C1CBA85C0F3ADE8D7493EBAFD81890EA7E72F14A432FAD5DD63CA577BB5C63F7_1512539524748_file.png" />
+<figcaption>
+Fig 3: A chart grabbed by the highlighter
+</figcaption>
+</figure>
+
+<h3 id="references">References</h3>
+
+<p>The paper used as the example highlighted document is found here:</p>
+
+<blockquote>
+  <p>Brown AEX, de Bivort B. The study of animal behaviour as a physical science. bioRxiv [Internet]. 2017; Available from: http://biorxiv.org/content/early/2017/11/17/220855.abstract</p>
+</blockquote>]]></content><author><name>{&quot;github&quot;=&gt;&quot;wingillis&quot;}</name></author><summary type="html"><![CDATA[My workflow I developed for stress-free note taking.]]></summary></entry><entry><title type="html">The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest.</title><link href="https://wingillis.github.io/blog/conflicts-of-interest/" rel="alternate" type="text/html" title="The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest." /><published>2017-12-04T00:00:00-05:00</published><updated>2017-12-04T00:00:00-05:00</updated><id>https://wingillis.github.io/blog/conflicts-of-interest</id><content type="html" xml:base="https://wingillis.github.io/blog/conflicts-of-interest/"><![CDATA[<h1 id="the-growing-influence-of-large-companies-on-the-science-conducted-in-an-academic-setting-and-its-impacts-on-conflicts-of-interest">The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest</h1>
+
+<p>Quite a few trends are currently occurring in the academic world that are having a strong impact on the prevalence of conflicts of interest.
+These include: a higher number of professors founding startups, a larger portion of research funds coming from private sector sources, and a decreasing pool of funding from government sources.However, the rules governing the regulation of money and the current philosophy of valuable research have not evolved as rapidly. A growing concern within the scientific community is the increasing pressure these money sources create on the professors when they are faced with difficult and large decisions.</p>
+
+<figure>
+<img src="https://i.imgur.com/fxGw87Q.jpg" />
+<figcaption>
+Fig 1: Federal funding has stagnated while corporate funding is increasing at a supralinear rate
+</figcaption>
+</figure>
+
+<p>Over the past decade, the amount of <a href="http://www.sciencemag.org/news/2017/03/data-check-us-government-share-basic-research-funding-falls-below-50">government-issued funding has more or less stagnated</a> while the <a href="https://www.nature.com/news/the-future-of-the-postdoc-1.17253">number of scientists working in labs has continued to climb</a>. This has created a pressure for lab leaders to look for funding to support the increasing number of employed scientists in their labs. Many leaders have temporarily and incompletely solved this problem by accepting funding from industrial sources. Even as the amount of money issued by the government stagnates, the amount of money that companies are providing to labs steadily increases (Fig 1). However, the terms of funding that companies issue are very different than the terms of funding for government funded grants. In fact, there is little, if any, regulatory control over the contracts that companies ask researchers to agree to.</p>
+
+<p>The researcher-company relationship can create constraints on the research, as well as influence/bias the decisions the researcher makes about their lab. These conflicts of interest can also strongly and negatively influence the types of scientific questions a lab leader may want to ask. The research directions a lab pursues may be highly dependent on the business interests of funding companies. In addition, because the economic model of a vast majority of companies is to fund projects that have a high probability of success, the types of experiments a researcher may propose to work on under company funding may be biased to a stronger chance for a positive outcome, and thus are less likely to comprise of risky, bold scientific pursuits. In other words, a researcher may find themselves in a situation where they have to balance the need to keep research funding flowing and running a lab that conducts fundamental basic research that may not always yield positive, marketable results, but still valuable results that will advance the researcher’s respective field of expertise.</p>
+
+<figure>
+<img src="https://i.imgur.com/KbSSQ5x.png" />
+<figcaption>
+Fig 2: The amount of people choosing science as a career is also increasing
+</figcaption>
+</figure>
+
+<p>These points highlight the concern that is growing around the pressures these external funding sources may create for a lab leader. If current trends persist, and industrial influence continues to dominate the funding landscape, then these points should also be addressed in future scientific funding policies that arise in response to the changing times. Here, I will propose a list of steps that are intended to aid in addressing concerns of conflicts of interest arising from collaborations between companies and academic researchers.</p>
+
+<p>First, administrative authorities should recognize the increase in influence private companies are having within academia. With this increase of awareness should also be an increase in standardization for the process of being funded by a company. Some restrictions should exist regarding the types of contracts that companies can make with researchers - for instance, knowledge gained by a company funded project could be required to be released publicly, but could somehow be commercially protected by patents to allow the funding company to maintain some competitive edge, while minimizing cost to the company. Another potential requirement could be to create a funding application schema similar to how the NIH reviews grant applications. An applicant can send a well-planned research proposal to a set of qualified reviewers to assess the scientific strength of the proposal and decide to pass it along to the company for review. This may help eliminate potential biases for choosing easy experiments that may have a higher chance of yielding positive results.</p>
+
+<p>Second, any restriction or requirement mentioned in the first item should not be overly strict or difficult to achieve, as this could create too much friction for companies to decide to offer academic funding. The most important thing to keep in mind is that, given the current economic climate, the trend for company-based funding is continuing to rise. Any decisions that will decrease the number of funding sources for research have to be very well thought out. The last a lab wants to worry about is acquiring additional funding because a sponsor backed out due to strict regulations.</p>
+
+<p>Third, a push towards respecting scientifically strong conclusions regardless of the outcome’s valence is necessary for good science to succeed. For a scientist to progress successfully in their career, a large amount of weight is placed on their published positive findings. This culture perseverates by the industrial push for positive and competitive findings from the labs they fund. If less weight were placed on positive findings, and negative findings were seen as less bad by objectively evaluating the scientific rigor the scientist employs, there would be less of a concern that industrial funding sources and startup stakes will affect decisions the scientist would make.
+In conclusion, conflict of interests are becoming more prevalent with increasing industrial sources of funding. While funding sources are changing quickly, rules and regulations for funding are not. Here I suggest points of discussion for changing how money is transferred from companies to research labs, so that conflicts of interest are less of an issue within labs.</p>]]></content><author><name>{&quot;github&quot;=&gt;&quot;wingillis&quot;}</name></author><summary type="html"><![CDATA[Examples of scientific conflicts of interest and a proposal to improve the situation.]]></summary></entry><entry><title type="html">Hammerspoon Vim Bindings</title><link href="https://wingillis.github.io/blog/hammerspoon-vim-bindings/" rel="alternate" type="text/html" title="Hammerspoon Vim Bindings" /><published>2017-08-08T00:00:00-04:00</published><updated>2017-08-08T00:00:00-04:00</updated><id>https://wingillis.github.io/blog/hammerspoon-vim-bindings</id><content type="html" xml:base="https://wingillis.github.io/blog/hammerspoon-vim-bindings/"><![CDATA[<h1 id="hammerspoon-vim-bindings">Hammerspoon Vim Bindings</h1>
+
+<p>If you’re like me, you program a lot. And if you’re like me, you program with
+vim a lot. I’ve grown so accustomed to the vim commands for navigating and
+saving files that I’m frequently hitting these keys while using, Microsoft Word,
+Evernote, or other text-based apps. <a href="http://www.hammerspoon.org/">Hammerspoon</a> provides the framework to
+implement a vim-like keymapping for other applications.</p>
+
+<p><strong>Note:</strong> this software only works for macOS.</p>
+
+<h3 id="how-about-a-brief-overview">How about a brief overview</h3>
+
+<p>Hammerspoon is an application that combines the lua language with
+the macOS operating system so that you can interact with the GUI in
+powerful programmatic ways. One of these ways is by added hotkeys to start
+user-defined events, like detecting keystrokes. I used this to implement
+vim bindings activated by the activating a shortcut.</p>
+
+<p>These vim-like key bindings allow the user to use the same keys they would
+use in normal mode to navigate in other mac applications, like Word, Evernote,
+Google Docs, like I described above. You can also delete text in vim style
+as well! If you need to select text, a terse visual-mode has been
+implemented to support this. Much has been implemented, but it is still
+lacking, which is discussed briefly below.</p>
+
+<h2 id="how-to-install">How to install</h2>
+
+<ol>
+  <li>Install <a href="http://www.hammerspoon.org/">hammerspoon</a>.</li>
+  <li>Download my <a href="https://github.com/wingillis/hammerspoon-vim-bindings">vim-bindings repository</a>.</li>
+  <li>Follow the brief installation instructions in the repository’s README.</li>
+  <li>Test it out.</li>
+</ol>
+
+<h2 id="how-to-use">How to use</h2>
+
+<p>The most important command to know is <code class="language-plaintext highlighter-rouge">option + escape</code> which is the entry into
+vim mode from any application. Once in vim mode, a notification will display
+in the center of the screen. Basic navigation commands work, like: <code class="language-plaintext highlighter-rouge">j</code>, <code class="language-plaintext highlighter-rouge">k</code>,
+<code class="language-plaintext highlighter-rouge">l</code>, and <code class="language-plaintext highlighter-rouge">h</code> which code for: :arrow_down:, :arrow_up:, :arrow_right:, :arrow_left:, respectively.
+Below are a list of commands that you should know for application control:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">i</code>: exit ‘normal’ mode into regular computer mode</li>
+  <li><code class="language-plaintext highlighter-rouge">a</code>: exit ‘normal’ mode into regular computer mode, and move cursor to right</li>
+  <li><code class="language-plaintext highlighter-rouge">o</code>: exit ‘normal’ mode into regular computer mode, and press enter</li>
+  <li><code class="language-plaintext highlighter-rouge">O</code>: exit ‘normal’ mode into regular computer mode, move up, and press enter</li>
+  <li><code class="language-plaintext highlighter-rouge">I</code>: exit ‘normal’ mode into regular computer mode, and go to line beginning</li>
+  <li><code class="language-plaintext highlighter-rouge">A</code>: exit ‘normal’ mode into regular computer mode, and go to line end</li>
+  <li><code class="language-plaintext highlighter-rouge">w</code>: go to beginning of word</li>
+  <li><code class="language-plaintext highlighter-rouge">e</code>: go to end of word</li>
+  <li><code class="language-plaintext highlighter-rouge">y</code>: copy text</li>
+  <li><code class="language-plaintext highlighter-rouge">r</code>: replace letter in normal mode</li>
+  <li><code class="language-plaintext highlighter-rouge">p</code>: paste text</li>
+  <li><code class="language-plaintext highlighter-rouge">v</code>: to go into pseudo-visual mode</li>
+  <li><code class="language-plaintext highlighter-rouge">x</code>: delete a character and copy it</li>
+  <li><code class="language-plaintext highlighter-rouge">d</code>: delete line, character, word, etc…</li>
+  <li><code class="language-plaintext highlighter-rouge">c</code>: delete whatever, copy it, and go into insert mode</li>
+  <li><code class="language-plaintext highlighter-rouge">0</code>: go to the beginning of a line</li>
+  <li><code class="language-plaintext highlighter-rouge">$</code>: go to the end of a line</li>
+</ul>
+
+<figure>
+<img src="https://i.imgur.com/C9Hdhkc.gif" />
+<figcaption>
+Activating vim mode
+</figcaption>
+</figure>
+
+<p>Other things that work are basic navigation in visual mode, with copying,
+pasting, and deleting. If you want to get out of visual mode, you just have
+to hit escape, and you’re back into normal mode. In the spirit of vim, the
+only ways to get out of normal mode are to use keys that put you into ‘insert’
+mode, like <code class="language-plaintext highlighter-rouge">a</code>, <code class="language-plaintext highlighter-rouge">i</code>, <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">I</code>, <code class="language-plaintext highlighter-rouge">o</code>, <code class="language-plaintext highlighter-rouge">O</code>.</p>
+
+<p>If something goes horribly wrong, and your system becomes royally messed up,
+you can always reload your hammerspoon configuration to reset the state of
+the program.</p>
+
+<h2 id="how-to-configure">How to configure</h2>
+
+<p>You can edit different aspects of the framework to customize your
+needs more effectively. For instance, you could change the keymap that triggers
+the transition into vim-mode to whatever bindings you wanted, or change which
+keys had what effect in normal or visual mode. This is as simple as changing
+which keys to refer to in the table lookup within the key event handler.</p>
+
+<p>Generally, the system watches out for keypress events, and depending on the
+state of the system, translates them from one set of keypress events to another,
+corresponding to their actions in vim.</p>
+
+<h2 id="future-improvements">Future improvements</h2>
+
+<ul>
+  <li>repeatable actions via numbers</li>
+  <li>recording macros</li>
+  <li>ex mode</li>
+  <li>adding a status bar in the menu to let the user know current vim state</li>
+</ul>
+
+<h3 id="ex-mode">ex mode</h3>
+
+<p>Because this is a semi-vim port layered on top of the OS, I can do some
+fancy things with our implementation of ex mode. Not only can I add
+application-specific commands like saving or quitting documents, but also
+I can add commands to switch between workspaces or to open specific sets
+of applications. I will try to build the ex-mode interface so that it can
+easily be customized by end users to do anything they want.</p>
+
+<h2 id="you-can-contribute-too">You can contribute too!</h2>
+
+<p>I am more than happy to accept help improving this package to be more comprehensive
+and feature-rich! Please fork this <a href="https://github.com/wingillis/hammerspoon-vim-bindings">repo</a> and do whatever you please to
+improve it. Send a pull request if you feel your work should be included in the main
+branch.</p>
+
+<h2 id="caveats">Caveats</h2>
+
+<p>I could not implement all the greatest features of vim. There are things I may
+have forgotten, or found too difficult for me to program. If you have a good
+solution, please, contribute! Some examples: searching for text, marks.</p>]]></content><author><name>{&quot;github&quot;=&gt;&quot;wingillis&quot;}</name></author><summary type="html"><![CDATA[Tutorial on how to give all applications vim-like capabilities]]></summary></entry><entry><title type="html">Tic-Toc</title><link href="https://wingillis.github.io/blog/tic-toc/" rel="alternate" type="text/html" title="Tic-Toc" /><published>2016-11-29T00:00:00-05:00</published><updated>2016-11-29T00:00:00-05:00</updated><id>https://wingillis.github.io/blog/tic-toc</id><content type="html" xml:base="https://wingillis.github.io/blog/tic-toc/"><![CDATA[<h1 id="tic-toc">Tic-Toc</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#tic-toc" id="markdown-toc-tic-toc">Tic-Toc</a>    <ul>
+      <li><a href="#user-guide" id="markdown-toc-user-guide">User Guide</a></li>
+      <li><a href="#development-notes" id="markdown-toc-development-notes">Development Notes</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Over the summer I wanted to do three things as a hobby:</p>
+<ul>
+  <li>learn Google’s material design for web apps</li>
+  <li>build a productive tool to manage timing at a superficial level</li>
+  <li>become more proficient with <a href="http://vuejs.org/v2/guide/">Vue.js</a>, a JavaScript web application framework (I used Vue.js 1.0.x, but I recommend learning v2 instead)</li>
+</ul>
+
+<p>These three things developed into <a href="https://wingillis.github.io/tic-toc/">Tic-Toc</a>, a simple web application to manage timers in a serial fashion.</p>
+
+<h2 id="user-guide">User Guide</h2>
+
+<figure>
+<img src="https://imgur.com/J6dsGKc.png" />
+<figcaption>
+Main screen of the app. The card seen is the input card.
+</figcaption>
+</figure>
+
+<p>It’s very easy to add new timers. In the title portion, and a descriptive name for your timer. In the time portion, you can type what time you need in <code class="language-plaintext highlighter-rouge">h m s</code> format.
+Here are some examples:</p>
+<ul>
+  <li>3h for 3 hours</li>
+  <li>45s for 45 seconds</li>
+  <li>2m 30s for 2 minutes and 30 seconds</li>
+</ul>
+
+<figure>
+<img src="https://imgur.com/KOKmqDu.png" />
+<figcaption>
+Text added into the input card.
+</figcaption>
+</figure>
+
+<p>This saves time from typing so many zeros. Once you type a title and a time, hitting enter or clicking <code class="language-plaintext highlighter-rouge">add</code> will add a new timer card to the bottom of the timer list.</p>
+
+<figure>
+<img src="https://imgur.com/5iXSi5Q.png" />
+<figcaption>
+Two cards added. You can start any timer you want, at any time. Only one timer will run at any given point.
+</figcaption>
+</figure>
+
+<p>In the upper right corner of every timer there is a trash can icon you can click to delete the timer. The <code class="language-plaintext highlighter-rouge">clear all</code> button at the top of the page removes all timers. Clicking <code class="language-plaintext highlighter-rouge">start</code> on any timer will start it counting down from that position in the list downwards. You can pause the timer and move to another one by clicking <code class="language-plaintext highlighter-rouge">start</code> on any other timer, or by clicking <code class="language-plaintext highlighter-rouge">pause</code> on the current active timer, and <code class="language-plaintext highlighter-rouge">start</code> on another. Hitting <code class="language-plaintext highlighter-rouge">resume</code> will continue that timer from where it previously stopped. Hitting <code class="language-plaintext highlighter-rouge">cancel</code> will reset the timer, and if it is running, will stop the timer.</p>
+
+<figure>
+<img src="https://imgur.com/5or2qpO.png" />
+<figcaption>
+A stopped timer on top and a running timer on bottom. You can reset the time by clicking the spinny arrows.
+</figcaption>
+</figure>
+
+<p>When a timer finishes, a chime will sound, letting you know the timer has finished. If you’re using chrome, it will also speak to you, letting you know what your next task is and how much time you’ve allotted to complete the task. A notification will also pop up with the next task, in case chrome is not in the foreground.</p>
+
+<h2 id="development-notes">Development Notes</h2>
+
+<p>As mentioned previously, I developed this using Vue.js. I am partial towards Google’s material design, so I merged a Vue app with <a href="https://getmdl.io/">a material design library</a> for the web.</p>
+
+<p>This app also gave me the opportunity to play with some of the text-to-speech api in chrome - this works on chrome on the phone (if the device is unlocked) and on the computer. This is a cool way to interact with the computer because it does not require you to shift your attention away from whatever you are doing to look at the next task.</p>
+
+<p>This project is open source. You can find it in my <a href="https://github.com/wingillis/tic-toc">GitHub repository</a>.</p>]]></content><author><name>{&quot;github&quot;=&gt;&quot;wingillis&quot;}</name></author><summary type="html"><![CDATA[A user guide for a serial timer web application.]]></summary></entry><entry><title type="html">Finger Possible</title><link href="https://wingillis.github.io/blog/finger-possible/" rel="alternate" type="text/html" title="Finger Possible" /><published>2016-11-11T00:00:00-05:00</published><updated>2016-11-11T00:00:00-05:00</updated><id>https://wingillis.github.io/blog/finger-possible</id><content type="html" xml:base="https://wingillis.github.io/blog/finger-possible/"><![CDATA[<h1 id="finger-possible">Finger Possible</h1>
+
+<p>This post is on a project that I worked on in 2015-2016.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#finger-possible" id="markdown-toc-finger-possible">Finger Possible</a>    <ul>
+      <li><a href="#problem" id="markdown-toc-problem">Problem</a></li>
+      <li><a href="#idea" id="markdown-toc-idea">Idea</a>        <ul>
+          <li><a href="#button-input" id="markdown-toc-button-input">Button input</a></li>
+          <li><a href="#capacitive-input" id="markdown-toc-capacitive-input">Capacitive input</a></li>
+          <li><a href="#piezo-input" id="markdown-toc-piezo-input">Piezo input</a></li>
+          <li><a href="#leap-motion-input" id="markdown-toc-leap-motion-input">Leap Motion input</a></li>
+          <li><a href="#typing-mechanics" id="markdown-toc-typing-mechanics">Typing mechanics</a></li>
+          <li><a href="#implementation" id="markdown-toc-implementation">Implementation</a></li>
+          <li><a href="#mouse-input" id="markdown-toc-mouse-input">Mouse input</a></li>
+        </ul>
+      </li>
+      <li><a href="#future-directions" id="markdown-toc-future-directions">Future directions</a>        <ul>
+          <li><a href="#typing-predictions" id="markdown-toc-typing-predictions">Typing predictions</a></li>
+          <li><a href="#brainmuscle-computer-interface" id="markdown-toc-brainmuscle-computer-interface">Brain/muscle computer interface</a></li>
+          <li><a href="#more-sophisticated-typing-interfaces" id="markdown-toc-more-sophisticated-typing-interfaces">More sophisticated typing interfaces</a></li>
+          <li><a href="#integration-with-magic-leap" id="markdown-toc-integration-with-magic-leap">Integration with Magic Leap</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="problem">Problem</h2>
+
+<p>Throughout the day I have ideas or to-dos I want to remember. However, I usually only carry my phone around with me. If I’m on the move, it’s very difficult to write down my ideas on my phone and watch what’s in front of me. This (and the desire to program while biking) has inspired me to think about different ways humans can interact with computers. One such interaction that could use updating is the keyboard. The keyboard is a slow, limiting device. One has to sit in front of it and place their fingers on precise points (the keys) to produce coherent output. In my experience, this is especially inefficient with touch screen keyboards. There is no tactile feedback - only visual feedback, meaning you have to look down while writing.</p>
+
+<h2 id="idea">Idea</h2>
+
+<p>Many frustrations, including typing with a touch screen keyboard, led me to think of alternative input methods. One approach I thought of was to put the ‘keyboard’ onto the fingers. Combinations of tapped fingers would produce coherent output. This immediately removes the spatial limitations of a keyboard. Instead of hitting a key in a specific location of the keyboard to generate a character, that same character can be mapped to a combination of finger presses (which can tap anywhere, even on someone’s body). For example, the letter ‘a’ can be mapped from its spatial location on the keyboard to a combination of finger presses (press your left middle finger).
+Here are some pros:</p>
+<ul>
+  <li>with two 10-finger hands, there are 1023 finger combinations</li>
+  <li>with just one hand there are 31 combinations, enough to type all the letters, plus some</li>
+  <li>there are no spatial limitations</li>
+  <li>phone typing can potentially be a lot less distracting</li>
+  <li>there are more opportunities to interact with a computer without spatial limitations</li>
+</ul>
+
+<p>Can an actual device like this be built? Is this device practical or feasible? I have some thoughts and prototypes, but I don’t necessarily know the best type of input (mechanism) to use. On that note, I’ll enumerate my designs, and please write any comments/criticisms for improvements or different designs. I will present four designs, each fairly similar, and there could be better solutions than the ones I came up with.</p>
+
+<h3 id="button-input">Button input</h3>
+
+<p>Most of my designs involve a gloved keyboard, where the inputs points are on the tips of the fingers. On each finger, there was a single button which was to be pressed during different finger combinations, and each combination makes to a different character (as stated before).</p>
+
+<figure>
+<img src="https://i.imgur.com/8IMTo1q.png" />
+<figcaption>
+The button 'keyboard'. The black loops slip onto the tip of each finger. there are buttons on one side of the black loops, located on the finger tips.
+</figcaption>
+</figure>
+
+<h3 id="capacitive-input">Capacitive input</h3>
+
+<p>This design uses metal strips on the gloved fingertips to detect touch. The metal senses a characteristic change in capacitance when it touches a hand or other similar object. The metal strips on each finger are isolated from the finger itself so it doesn’t detect touch inputs all the time. To get around this problem, a conductive material that touches the palm and extends to the fingers can be tapped to register touches.</p>
+
+<figure>
+<img src="https://i.imgur.com/2OzYh0F.png" />
+<figcaption>
+The capacitive touch keyboard. Metal strips are located on the fingertips for detecting touches to skin or metal.
+</figcaption>
+</figure>
+
+<h3 id="piezo-input">Piezo input</h3>
+
+<p>This design takes advantage of the mechanical properties of piezoelectric devices; they generate electricity when they vibrate. Tapping fingers induces a detectable current for measuring a response.</p>
+
+<figure>
+<img src="https://i.imgur.com/vT41I0x.png" />
+<figcaption>
+Example of what the piezo keyboard prototype looks like on my hand.
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://i.imgur.com/p2ctbK4.png" />
+<figcaption>
+Circuitry of the keyboard and both gloves. The board is an Arduino Leonardo.
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://i.imgur.com/qQjvg7Z.png" alt="bluetooth keyboard" />
+<figcaption>
+An example of what a fixed piezo keyboard could look like. This was mainly a prototype to see if I could get it working in a more 'portable' form. It's portability comes from the fact that it is powered by a battery and connects to a device as a bluetooth keyboard, sending commands wirelessly. However, it is quite large and is spatially limited which I previously ragged on.
+</figcaption>
+</figure>
+
+<h3 id="leap-motion-input">Leap Motion input</h3>
+
+<p>This system works radically different than the other three. It uses a device called the <a href="https://www.leapmotion.com/">Leap Motion</a>, which tracks finger and hand movements using an infrared (IR) light sensor. So there are no physical objects one would need to wear to use this - just put their hands over the Leap. Or, one could wear the Leap, and type anywhere in front of them. This version has an advantage over other keyboard implementations used in the leap motion software - the other versions use spatial mapping, which can take away from productivity and user experience.</p>
+
+<figure>
+<img src="https://i.imgur.com/pnaYwd7.png" />
+
+<figcaption>
+An example of leap motion keyboard. A hovered hand can press down finger combinations anywhere, and the leap will register a keypress. The purple LEDs in the device are actually the IR sensors.
+</figcaption>
+</figure>
+
+<h3 id="typing-mechanics">Typing mechanics</h3>
+
+<p>To reiterate, with this device, one would type letters by tapping combinations of fingers at the same time. With this approach, there are 1023 theoretical finger input combinations.</p>
+
+<p>Due to the overwhelming amount of key combinations possible, there has to be some sensible way to map keys to finger presses. My first thought was to map the most typed keys to easy-to-remember finger combos. The most typed letters would only require a one finger press, and the next most typed letters would require a symmetric two finger press (i.e. Right and left thumb make the letter ‘d’). The rest of the keys are relatively haphazardly mapped.</p>
+
+<figure>
+<div class="pure-u-1 pure-u-md-1-2">
+<img class="pure-img" src="https://i.imgur.com/4l3EU9H.png" />
+</div>
+<div class="pure-u-1 pure-u-md-1-2">
+<img class="pure-img" src="https://i.imgur.com/xEuLPlE.png" />
+</div>
+<figcaption>
+Example keyboard mappings for the alphabet and important keys. Finger presses are green circles, and order goes from left pinky to thumb, then right thumb to pinky.
+</figcaption>
+</figure>
+
+<p>In addition to just mapping characters to different finger combinations, one can imagine mapping ‘functions’ do different combinations, like ‘quit application’ or ‘focus on chrome window’, commonly written phrases like your email signature or ‘Hello, It’s been awhile, can we schedule a time to catch up’, or even usernames and passwords. These could be implemented in a manner similar to <a href="https://www.boastr.net">Better Touch Tool</a>, or as a programming language like how <a href="http://www.hammerspoon.org">Hammerspoon</a> uses Lua.</p>
+
+<h3 id="implementation">Implementation</h3>
+
+<p>How about the build itself? How can this device be implemented? I’m just a novice when it comes to electronics and systems level programming, so I am sure that someone more experienced than I will have a better implementation strategy and will use the right electronic components.</p>
+
+<p>At any rate, I wanted to see if I could build a prototype myself. For the first iteration, I used an <a href="https://www.arduino.cc/en/Main/ArduinoBoardLeonardo">Arduino Leonardo</a> due to its ability to communicate to the computer as a keyboard peripheral. To implement each key, I connected 10 buttons to 10 of the digital IO ports. Then I collected button press events within a certain time window. This collection window began when the first button press of a combo began.</p>
+
+<p>One aspect I was interested in addressing was the potential to increase typing speed vs a classic keyboard. The average user’s typing speed is 44 wpm. This is slower that the average adult’s reading speed (270 wpm). Considering typing speeds on the high end are 212 wpm, typing can improve. Knowing this, I determined that the key detection window needs to be around 50-75 ms to start with. Another important component is that the collection window has to be sufficiently large enough to be able to register multiple fingers tapping at non-precise moments in time. It is pretty difficult to tap two fingers at exactly the same time so in the software I accumulate taps until the window has been reached. With a window at 65 ms, the new theoretical typing speed is close to the fastest typing limit. With practice this limit can increase and the tap detection window can decrease as well.</p>
+
+<p>Other options exist for microcontrollers to use as the keyboard, like having a program detect inputs and acts like a keyboard, sending keyboard events to the operating system.</p>
+
+<p>I mentioned leap motion previously - this design exists as a computer program that detects the downward motion of fingers. This program works at a slightly slower speed than the hand keyboard due to its finger tracking. It detects the downward change of a fingertip relative to its palm. Once it reaches a certain threshold, it registers as a finger press.</p>
+
+<h3 id="mouse-input">Mouse input</h3>
+
+<p>One might ask, ‘where is the mouse’? This need not be abandoned. It can also undergo some fundamental changes in how it works - instead of moving your hand positionally around a table, you can rotate it. Tapping fingers together can be used to click the mouse. It is entirely possible that a mouse can be more or less neglected. If the interface and navigation are optimized, a mouse would not be needed to move from application to application. If one were thinking about interfacing this device to something like the Magic Leap, a traditional mouse and keyboard would be severely limiting in the ways and richness for interacting with the augmented reality system, where hand gestures and contextual manipulation seem more natural.</p>
+
+<h2 id="future-directions">Future directions</h2>
+
+<h3 id="typing-predictions">Typing predictions</h3>
+
+<p>A unique feature that could be added to this system is something that Android and iOS use as a part of their keyboards - intelligent typing. It could be possible to infer a probability of a certain character based on which characters were already typed and the current typing combination. Then typing error could be automatically corrected.</p>
+
+<h3 id="brainmuscle-computer-interface">Brain/muscle computer interface</h3>
+
+<p>My prototypes for these gloves are pretty invasive to day-to-day activities. One can imagine other prototypes developed utilizing other new technologies. For instance, one company is developing a device that relies on muscular activation to interface with a computer, called <a href="https://www.myo.com">myo</a>. An implementation strategy would be to utilize myo’s abilities to detect EMG (electromyogram) signals for each individual finger to determine finger press combinations. Some complications:</p>
+<ul>
+  <li>For a full two-hand keyboard, there would have to me a myo on each arm, and they would have to be synchronized. One can get around this by building a simple one-handed keyboard. 2^5 (32) finger combos still gives one the full alphabetical range.</li>
+  <li>Myo may require a specific window of time to determine if a muscle is activated, potentially longer that what is needed for a fast keyboard.</li>
+</ul>
+
+<p>My ultimate goal with this project originated from the desire to have a brain machine interface that is able to translate brain activity into legible text. In this spirit, one can imagine that the physical version of this finger keyboard is used to teach the machine the brain’s representations for each finger combination. Then to type, the user would just have to think about moving fingers, sort of how our inner voice speaks when we are reading.</p>
+
+<h3 id="more-sophisticated-typing-interfaces">More sophisticated typing interfaces</h3>
+
+<p>Using this keyboard with existing shortcuts is doable, and shortcut sequences could easily programmed into the interface, but we could be limiting the potential to create a very powerful and productive tool. We could build the interface in a context-aware manner, like how Apple builds it’s user interfaces for iOS, or as a modal interface like vim’s system. One can imagine a finger combination that changes the ‘state’ of the keyboard from typing mode to sharing mode or application command mode (for things like preferences or quit) that are universal between programs. A simple use case would be to turn on and off the type tracking system with a slightly complex gesture, so it would not be pressed accidentally too often.</p>
+
+<h3 id="integration-with-magic-leap">Integration with Magic Leap</h3>
+
+<p>In my opinion, one of the most promising computing paradigms is augmented reailty.
+It will probably revolutionize they way we interact with computers.
+Briefly, it creates an augmented reality experience by superimposing computer-generated images in visual space, without seriously obstructing field of view.
+One very useful application of my hand keyboard would be one mechanism of interfacing with devices built for augmented reality, most importantly for textual or procedural input.</p>]]></content><author><name>{&quot;github&quot;=&gt;&quot;wingillis&quot;}</name></author><summary type="html"><![CDATA[A portable, customizable, extremely efficient design proposition for a keyboard-like human-computer interface.]]></summary></entry></feed>
