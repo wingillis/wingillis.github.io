@@ -24,7 +24,7 @@ Stephanie Rudolph, Chong Guo, Stan L. Pashkovski, Tomas Osorno, **Winthrop F Gil
 Alexander B Wiltschko, Tatsuya Tsukahara, Ayman Zeine, Rockwell Anyoha, **Winthrop F Gillis**, Jeffrey E Markowitz, Ralph E. Peterson, Jesse Katon, Matthew J Johnson, Sandeep Robert Datta. [**Revealing the structure of pharmacobehavioral space through motion sequencing.**](https://www.nature.com/articles/s41593-020-00706-3) Nature neuroscience. 21 September 2020.
 
 Eleanor Batty, Matthew R Whiteway, Shreya Saxena, Dan Biderman, Taiga Abe, Simon Musall, **Winthrop Gillis**, Jeffrey E Markowitz, Anne Churchland, John Cunningham, Sandeep Robert Datta, Scott W Linderman, Liam Paninski.
-[**BehaveNet: nonlinear embedding and Bayesian neural decoding of behavioral videos**](http://papers.nips.cc/paper/9701-behavenet-nonlinear-embedding-and-bayesian-neural-decoding-of-behavioral-videos.pdf)
+[**BehaveNet: nonlinear embedding and Bayesian neural decoding of behavioral videos.**](http://papers.nips.cc/paper/9701-behavenet-nonlinear-embedding-and-bayesian-neural-decoding-of-behavioral-videos.pdf)
 NeurIPS. 2019.
 
 Jeffrey E Markowitz, **Winthrop F Gillis**, Celia C Beron, Shay Q Neufeld, Keiramarie Robertson, Neha D Bhagat, Ralph E Peterson, Emalee Peterson, Minsuk Hyun, Scott W Linderman, Bernardo L Sabatini, Sandeep Robert Datta.
