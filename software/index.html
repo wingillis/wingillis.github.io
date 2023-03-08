@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<title>Winthrop Gillis | Software</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<link rel="stylesheet" type="text/css" href="/assets/grid-sys-28b585190a970b3f7e43e297f528e0c5a863d3b504feedff79b025def4f15e31275d614a36a80f6847afb403003a0572e727d8ed48fd4bf2b65dcdef835b278e.css">
+<link rel="stylesheet" type="text/css" href="/assets/navbar-f4c7d93e83dac5be8cc0b9a41d2b51e1a19031fe200b041bce7dcf7eca067c50ecc8fff76322b6ffa5f4ea7d1af62babfec1133015be947ca26f61eab73c48ad.css">
+<link rel="stylesheet" type="text/css" href="/assets/site_styling-673eaf847724759116a1e7f89448ada286875e66a2788269ebb3582f4e761aa999b3334fec224a747077667dab7ba078a6f0ecdeb2f023579bd1317e54d57969.css">
+<script type="text/javascript" src="/assets/darkmode-af5c18478c6bbde496823f4e18615a4aaaee4f73606b7aea2d0f04cfa827a1c1fd9ff294ebf5966c1dd07ce666caf22072b89c5375069e2fba15929ba6f4164e.js"></script>
+
+<link type="application/atom+xml" rel="alternate" href="https://wingillis.github.io/feed.xml" title="Winthrop Gillis" />
+
+  </head>
+  <body>
+    <nav id="navbar" class="header">
+  <div class="nav-width">
+  <div class="pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading pure-menu-link" href="/">
+          Winthrop Gillis
+        </a>
+    <ul id="mobile-menu" class="pure-menu-list">
+      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <a href="#" id="menuLink1" class="pure-menu-link">Pages</a>
+        <ul class="pure-menu-children">
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/projects/">Science</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/gallery/">Art</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/software/">&lt;/&gt; Software</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/blog/">Writing</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="desktop-menu" class="pure-menu-list">
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/projects/">Science</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/gallery/">Art</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/software/">&lt;/&gt; Software</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/blog/">Writing</a>
+      </li>
+    </ul>
+		<div class="pure-menu-item">
+			<span style="font-weight: 100; font-size: 10pt; padding-right: 3px;">Dark mode:</span>
+		</div>
+    <div class="pure-menu-item">
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="darkmode" onclick="updateDark()">
+        <label class="onoffswitch-label" for="darkmode"></label>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+
+    <div id="svg-social-icons">
+  <a href="https://www.linkedin.com/in/wingillis">
+    <div class="icon" id="linkedin-icon">
+			<img class="inject" src="/assets/linkedin-1a00a49857cefa326f6f85e2fd312957144b0c6bc12c00cbe766bab06efb20e9e4d49738e56f672af7a2b4f5305c9ca37b9e8db0d9eff5a24adbe289afe7904c.svg">
+    </div>
+  </a>
+  <a href="mailto:win.gillis@gmail.com">
+    <div class="icon" id="email-icon">
+			<img class="inject" src="/assets/email-102dde0872a390dbbd57ac02acde0a0b37d14c1feab89dd3b9269d1497d605976b47df4cc8c3f0c4cdb9d4c2c839f98e644982132aa4b221e3562aad3852c4a2.svg">
+    </div>
+  </a>
+  <a href="https://github.com/wingillis" target="_blank">
+    <div class="icon" id="github-icon">
+			<img class="inject" src="/assets/github-9894146c21627216a68fd9324e74b12b26980a37941838c0326b9241eb485657345c67e8fc0c7e6c921a4d14522bfbec517ba858caaae0f31b4fb447bf39d0a8.svg">
+    </div>
+  </a>
+  <a href="/feed.xml">
+    <div class="icon" id="rss-icon">
+			<img class="inject" src="/assets/rss-3f064e357907827201787517c4464e24de0f935031d1dcfbdb3c19a87a76a7ad9d929b931f9254d127493e2da628df6d7376671bd302d9677d06c75ba75eb283.svg">
+    </div>
+  </a>
+  <div>
+    Share:
+  </div>
+  <a href="https://getpocket.com/save?url=https://wingillis.github.io//software/" target="_blank">
+    <div class="icon" id="pocket-icon">
+			<img class="inject" src="/assets/pocket-d7c17c3b98f742741cc2929e4276ad704682952e5649ae3fe3a6e0b6ddc72be1ec8b19bd71a701822113cd6df914ecb603628ce7b02e8c9a2ae90b1698232620.svg">
+    </div>
+  </a>
+  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://wingillis.github.io//software/">
+    <div class="icon" id="facebook-icon">
+			<img class="inject" src="/assets/facebook-93f1d9d7e5036d2a881eb6358ccd40109b4ba7173f42f02234079a5fea8dd4fa5f3461b0cee3bf84c973f403fb3a5d7e3a1c40c5b8d98aba9c50114ee4c2d80a.svg">
+    </div>
+  </a>
+</div>
+
+    <div class="extra-padding">
+      <div class="content pure-g text-content">
+        <div class="pure-u-1">
+          <h1 id="software-firmware-hardware">Software, firmware, hardware</h1>
+
+<h2 id="background">Background</h2>
+
+<p>Back in 2012, I followed the newly constructed and free <a href="https://www.codecademy.com/">Codecademy</a> course that taught the fundamentals of programming through javascript.
+The lessons were sparse and short, but enough to fuel my excitement to explore the new world of possibilities software development provided.</p>
+
+<p>Over the years, I’ve developed expertise programming with the following languages, ordered by comfort level:
+1) <strong>python</strong>, 2) <strong>javascript</strong>, 3) <strong>julia</strong>, 4) <strong>c</strong>, 5) <strong>matlab</strong>, and gathered experience in other languages such as lua, clojure, groovy, c# and go.
+There are similarities many languages share making it easier to take up a new language, but also differences that make some
+languages a better choice to solve certain problems. I’ve had fun thinking about how languages and their accompanying frameworks
+are best suited to solve different problems.</p>
+
+<p>I’ve continued to practice software engineering and other programming-adjacent skills in college and graduate school.</p>
+
+<h2 id="graduate-school-projects">Graduate school projects</h2>
+
+<p>The following software projects showcase some of the software engineering projects I have worked on and managed.
+In addition to writing software packages,</p>
+<ul>
+  <li>I’ve built circuits infused with <a href="https://store.arduino.cc/products/arduino-uno-rev3">Arduino</a> and
+<a href="https://www.pjrc.com/store/teensy40.html">Teensy</a> microcontrollers to talk with experimental equipment
+like lasers or to synchronize independent streams of data like neural recordings and videos of mouse behavior.</li>
+  <li>I’ve developed modeling pipelines to fit deep neural networks from a large pool of training samples.</li>
+  <li>I’ve developed analysis and visualization pipelines to produce the figures in my publications (example
+<a href="https://github.com/dattalab/dopamine-reinforces-spontaneous-behavior">here</a>).</li>
+</ul>
+
+<h3 id="moseq-v2">MoSeq v2</h3>
+
+<p>In 2015 the Datta lab <a href="https://www.cell.com/neuron/fulltext/S0896-6273(15)01037-5">published a paper</a> describing
+a probabilistic model that decomposes mouse behavior into stereotyped motifs of action, which the lab calls MoSeq
+(short for Motion Sequencing). We wanted to share our model along with the pipeline used to acquire, pre-process,
+and model the data. However, as with all research code written to publish a paper, the first version was quite
+difficult for other labs to use and install.</p>
+
+<figure>
+  <img src="https://dattalab.github.io/moseq2-website/images/crowd_movie_example.gif" />
+  <figcaption>Example set of stereotyped motifs of action learned using MoSeq.</figcaption>
+</figure>
+
+<p>Building off of <a href="https://bme.gatech.edu/bme/faculty/Jeffrey-Markowitz">Jeff’s</a> work laying out the scaffolding
+for an easy-to-use version of the MoSeq pipeline, I lead a team of software engineers to turn the MoSeq pipeline
+into a user-friendly ecosystem that includes:</p>
+<ul>
+  <li>a suite of python packages to go from video recordings all the way to labeled actions</li>
+  <li>expansive documentation (in the form of a wiki) that describes each step of the pipeline, along with formal
+documentation for each function defined in the package suite</li>
+  <li>example Jupyter notebooks that show how to use the MoSeq pipeline, along with visualizations that show the
+consequences of changing parameters</li>
+  <li>a <a href="https://arxiv.org/abs/2211.08497">protocol paper</a> explicitly outlining the steps to run the pipeline</li>
+  <li>a <a href="https://moseq4all.org">website</a> detailing how to get access to the private GitHub repositories that house
+the MoSeq codebase and documentation</li>
+</ul>
+
+<figure>
+  <img style="background-color:#6f7073;" src="/assets/syllables_small-4673a3d8e3b9d54445ef3616d60578aac4fae03baf257222839c97a2ca9fd872ef9b7c44dcc79bff094ec413c040deb31c1a8c5f1fa9d2ef18e11a0947025842.png" />
+  <figcaption>Schematic of syllables. Each unique color is a different syllable MoSeq has identified.</figcaption>
+</figure>
+
+<h3 id="real-time-moseq">Real-time MoSeq</h3>
+
+<p>In 2018-2019, <a href="https://bme.gatech.edu/bme/faculty/Jeffrey-Markowitz">Jeff Markowitz</a> and I developed a version of
+MoSeq that can identify the motifs of action mice produce (the Datta lab calls them “syllables”) in near real-time
+(within 50ms). We developed this technology in order better understand if the mouse brain contains information about
+syllables and if syllable expression can be modified, like reinforcing syllable expression by delivering reward.</p>
+
+<p>In the <a href="https://www.nature.com/articles/s41586-022-05611-2">companion paper</a>, we found many interesting relationships
+between spontaneous dopamine (DA) release and behavior, which led us to manipulate DA release in real-time to
+understand if it is driving changes to behavior, or just reflecting those changes.</p>
+
+<figure>
+  <img style="background-color:#ffffff; padding:10px; width:96%;" src="/assets/closed-loop-rl-02d4ec37f6354432b29288e9e7d93a5d6e31f056b5346531988c5291b229ccda139394bc0d0bdd128c8ff0dfbf9a16cf28acff0f4ec41a5d3b883c015c885f52.svg" />
+  <figcaption>Schematic of the real-time syllable detection system. Depth frames of a mouse exploring an arena
+  are captured, and fed through a size-normalizing and denoising convolutional deep neural netork. After,
+  they are sent to a pre-trained MoSeq model to make predictions about behavior. If we detect the mouse is
+  performing a particular syllable, we can communicate with a laser hooked up to the mouse to
+  <a href="https://en.wikipedia.org/wiki/Optogenetics">optogenetically</a>
+  activate dopamine neurons and release dopamine into the brain.</figcaption>
+</figure>
+
+<h2 id="projects-before-graduate-school">Projects before graduate school</h2>
+
+<h3 id="consulting-wireless-control-of-peripheral-nerve-stimulation">Consulting: wireless control of peripheral nerve stimulation</h3>
+
+<p>As a consultant, I co-engineered a front-end user interface to monitor and control wireless peripheral nerve stimulators via bluetooth.
+The interface allows a user to select various stimulation patterns and tracks and manages the various stimulator devices connected
+to the app.</p>
+
+<figure>
+  <img src="/assets/stim-6784af817fdaec922ba32fb67edf277e9d2269d3081d7d2d5a38e516ca38080a4e0fe8945b9a918a874ce7f9cfad0332da295f1cc6e3e870770167a4048144ea.png" />
+  <figcaption>An example of the stimulator interface for an early version of the software.</figcaption>
+</figure>
+
+<h2 id="hobby-projects-and-other">Hobby projects and other</h2>
+
+<ul>
+  <li>I created <a href="https://github.com/wingillis/wingillis.github.io">this website</a> using jekyll and github pages. I also designed the theming (check out the cool skulls in the background)!</li>
+  <li><a href="/tic-toc/">Tic-Toc</a> (made <strong>BEFORE</strong> TikTok was big) is a web app for making serial timers (user guide <a href="https://wingillis.github.io/blog/tic-toc/">here</a>).</li>
+  <li>I created a system to automatically parse sound files for birdsong as they were generated – it heavily relies on <a href="https://github.com/jmarkow/zftftb">Jeff Markowitz’s scripts</a> which does the sound processing heavy-lifting</li>
+  <li>A web-based timer utilizing <a href="https://trello.com">Trello</a> for task management <a href="https://github.com/wingillis/trelloAlarm">source</a></li>
+</ul>
+
+<figure>
+  <img src="/assets/trello-01705f3b6db0565a7c225895437e2c128d48c90af535da3f26af07298ce559c31339dea8a2dbc44a8807c779a04d64c0a5c50acf78c6900506f96c47075be6c1.png" />
+  <figcaption>How the timer looks when inactive</figcaption>
+</figure>
+
+<ul>
+  <li>A <a href="/software/fireworks/">fun little art project</a> that shoots small circles around the webpage</li>
+</ul>
+
+<figure>
+  <a href="/software/fireworks">
+    <img src="/assets/fireworks-193a20047dd47d71fd5c0f284c706b4a89a6bd7ea89b0120cef7e666c981046d9a5d2d65c459906c20016bb2b0dbb8065dfd87f20d9a22cc1bfa3aa5444e553f.png" />
+    <figcaption>Screenshot of the art project</figcaption>
+  </a>
+</figure>
+
+<ul>
+  <li>A free Android app called Maybe Later (<strong>NOTE</strong>: I haven’t updated the app in years - thus, it’s not available on the Android app store any more)
+    <ul>
+      <li>If you ever find yourself wanting to remember small things here-and-there, but you don’t want to schedule a time to remember it, this app is for you! It will randomly remind you what you want in around a day, week, or month.</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- ## Small, fun, and silly projects -->
+
+        </div>
+        
+      </div>
+    </div>
+    
+<!-- google analytics -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74958647-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="/assets/svg-injector.min-5d5b1e24ab9a2b30c41beb12670836497b36e8485b960813abd243201ebd305c79d6f18ded2e68c5d20ad1c2cfa07a977b4d408322784879d595c23754f277a7.js"></script>
+
+<script>
+  var svgs = document.querySelectorAll('img.inject');
+  SVGInjector(svgs);
+</script>
+
+    
+<footer>
+  <div class="centered">
+    <p style="opacity: 0.58; font-size: 0.78em;">
+    	The entire website was homegrown:  
+      <a href="https://github.com/wingillis/wingillis.github.io">source code.</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

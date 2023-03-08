@@ -1,21 +1,84 @@
----
-title: tic-toc
----
 <!DOCTYPE html>
 <html>
   <head>
-    {% include head.html %}
-    {% asset alarm.ico %}
+    
+<title>Winthrop Gillis | tic-toc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<link rel="stylesheet" type="text/css" href="/assets/grid-sys-28b585190a970b3f7e43e297f528e0c5a863d3b504feedff79b025def4f15e31275d614a36a80f6847afb403003a0572e727d8ed48fd4bf2b65dcdef835b278e.css">
+<link rel="stylesheet" type="text/css" href="/assets/navbar-f4c7d93e83dac5be8cc0b9a41d2b51e1a19031fe200b041bce7dcf7eca067c50ecc8fff76322b6ffa5f4ea7d1af62babfec1133015be947ca26f61eab73c48ad.css">
+<link rel="stylesheet" type="text/css" href="/assets/site_styling-673eaf847724759116a1e7f89448ada286875e66a2788269ebb3582f4e761aa999b3334fec224a747077667dab7ba078a6f0ecdeb2f023579bd1317e54d57969.css">
+<script type="text/javascript" src="/assets/darkmode-af5c18478c6bbde496823f4e18615a4aaaee4f73606b7aea2d0f04cfa827a1c1fd9ff294ebf5966c1dd07ce666caf22072b89c5375069e2fba15929ba6f4164e.js"></script>
+
+<link type="application/atom+xml" rel="alternate" href="https://wingillis.github.io/feed.xml" title="Winthrop Gillis" />
+
+    <link rel="shortcut icon" href="/assets/alarm-095c29e3942d6bc2a46ebf49fd075fdf9b8f40621ed0542c5f2fcc3a1685f940e9bc2888b223e05655232836d85d594acfaf296598daa038debf948f211ba334.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.lime-indigo.min.css">
   </head>
   <body>
-    {% include navbar.html %}
-    <audio preload="auto" id="alarmAudio" src="{% asset alarm.opus @path %}" volume="0.7">
+    <nav id="navbar" class="header">
+  <div class="nav-width">
+  <div class="pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading pure-menu-link" href="/">
+          Winthrop Gillis
+        </a>
+    <ul id="mobile-menu" class="pure-menu-list">
+      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <a href="#" id="menuLink1" class="pure-menu-link">Pages</a>
+        <ul class="pure-menu-children">
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/projects/">Science</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/gallery/">Art</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/software/">&lt;/&gt; Software</a>
+          </li>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="/blog/">Writing</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="desktop-menu" class="pure-menu-list">
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/projects/">Science</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/gallery/">Art</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/software/">&lt;/&gt; Software</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/blog/">Writing</a>
+      </li>
+    </ul>
+		<div class="pure-menu-item">
+			<span style="font-weight: 100; font-size: 10pt; padding-right: 3px;">Dark mode:</span>
+		</div>
+    <div class="pure-menu-item">
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="darkmode" onclick="updateDark()">
+        <label class="onoffswitch-label" for="darkmode"></label>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+
+    <audio preload="auto" id="alarmAudio" src="/assets/alarm-ea87ce9d88be25fb0072ca49ac16009ed57e817a49dc06c29e9d8a78f83313abfd11bc92d6f283ba9d9adf31645e860844a009419b59c57008fa30f75fdfd705.opus" volume="0.7">
     </audio>
     <app></app>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    {% asset build.js %}
+    <script type="text/javascript" src="/assets/build-7604e933f37e88813c1e78d0e687a541255484576c4ef14f0bbd1703a8072922c802ecc76f3cf01a09081140eee02f9e1ca9d5ac443a0d93e5b68463f264b692.js"></script>
   </body>
 
 </html>
