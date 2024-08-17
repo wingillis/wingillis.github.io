@@ -1,0 +1,31 @@
+{{ $src := .Get "src" }}
+{{ $image := resources.Get $src }}
+
+{{ $imageURL := "" }}
+{{ if or $image (not (strings.HasPrefix $src "http")) }}
+  {{ if and (ne $image.MediaType.SubType "svg") (ne $image.MediaType.SubType "gif")}}
+    {{ $filter := images.Process "webp" }}
+    {{ $image = $image | images.Filter $filter }}
+  {{ end }}
+  {{ $imageURL = $image.Permalink }}
+{{ else }}
+  {{ $imageURL = $src }}
+{{ end }}
+
+{{ $figureParams := dict 
+  "src" $imageURL
+  "alt" (.Get "alt")
+  "caption" (.Get "caption")
+  "class" (.Get "class")
+  "attr" (.Get "attr")
+  "attrlink" (.Get "attrlink")
+  "title" (.Get "title")
+  "link" (.Get "link")
+  "target" (.Get "target")
+  "rel" (.Get "rel")
+  "width" (.Get "width")
+  "height" (.Get "height")
+  "imgStyle" (.Get "imgStyle")
+}}
+
+{{ partial "figure.html" $figureParams }}

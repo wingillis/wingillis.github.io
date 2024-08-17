@@ -1,0 +1,42 @@
+{{ $linkedin := resources.Get "images/linkedin.svg" }}
+{{ $email := resources.Get "images/email.svg" }}
+{{ $github := resources.Get "images/github.svg" }}
+{{ $rss := resources.Get "images/rss.svg" }}
+{{ $pocket := resources.Get "images/pocket.svg" }}
+{{ $facebook := resources.Get "images/facebook.svg" }}
+
+<div id="svg-social-icons">
+  <a href="https://www.linkedin.com/in/wingillis">
+    <div class="icon" id="linkedin-icon">
+      {{ $linkedin.Content | safeHTML }}
+    </div>
+  </a>
+  <a href="mailto:win.gillis@gmail.com">
+    <div class="icon" id="email-icon">
+      {{ $email.Content | safeHTML }}
+    </div>
+  </a>
+  <a href="https://github.com/wingillis" target="_blank">
+    <div class="icon" id="github-icon">
+      {{ $github.Content | safeHTML }}
+    </div>
+  </a>
+  <a href="/index.xml">
+    <div class="icon" id="rss-icon">
+      {{ $rss.Content | safeHTML }}
+    </div>
+  </a>
+  <div>
+    Share:
+  </div>
+  <a href="https://getpocket.com/save?url={{ .Page.Permalink }}" target="_blank">
+    <div class="icon" id="pocket-icon">
+      {{ $pocket.Content | safeHTML }}
+    </div>
+  </a>
+  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ .Page.Permalink }}">
+    <div class="icon" id="facebook-icon">
+      {{ $facebook.Content | safeHTML }}
+    </div>
+  </a>
+</div>

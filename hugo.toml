@@ -1,0 +1,25 @@
+baseURL = 'https://wingillis.github.io'
+languageCode = 'en-us'
+title = 'Winthrop Gillis'
+
+[markup]
+defaultMarkdownHandler = "goldmark"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[services]
+[services.googleAnalytics]
+ID = 'UA-74958647-1'
+
+[services.rss]
+limit = 42
+
+[outputs]
+home = ["html", "rss"]
+section = ["html", "rss"]
+taxonomy = ["html"]
+term = ["html"]
+
+[pagination]
+pagerSize = 15
