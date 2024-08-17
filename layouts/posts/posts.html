@@ -1,0 +1,37 @@
+{{ define "main"}}
+<div class="centered">
+  <h1>Posts</h1>
+</div>
+
+<div class="article-list content">
+  {{ range .Paginator.Pages }}
+    <a href="{{ .Permalink }}" title="{{ .Title }}">
+      <div class="article-item">
+        <h3>
+          {{ .Title }}
+        </h3>
+        <div class="indent">
+        <p style="padding: 0px;">
+          {{ .Description }}
+        </p>
+        <div class="article-footer">
+            Posted:
+            {{ .Date.Format "Jan 02, 2006"}}
+            {{ printf "Estimated %d minute read" .ReadingTime }}
+        </div>
+      </div>
+      </a>
+    </div>
+  {{ end }}
+  {{ if .Paginator.HasPrev }}
+    <div class="article-pagination">
+        <a href="{{ .Paginator.Prev.URL }}" class="article-pagination-right">Newer posts <span class="icon icon-ios-arrow-thin-right"></span></a>
+    </div>
+  {{ end }}
+  {{ if .Paginator.HasNext }}
+    <div class="article-pagination">
+        <a href="{{ .Paginator.Next.URL }}"><span class="icon icon-ios-arrow-thin-left"></span> Older posts</a>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

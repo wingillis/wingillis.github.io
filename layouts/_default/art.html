@@ -1,0 +1,23 @@
+{{- $gall_app := resources.Get "scripts/gallery-app.js" -}}
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body id="app">
+    {{ partial "navbar.html" }}
+    {{ partial "social_header.html" . }}
+    <div class="content text-content pure-g">
+      <div class="pure-u-1">
+        <h1>Gallery</h1>
+        <p>
+          {{ page.Content }}
+        </p>
+      </div>
+      <moving-img v-for="s in sources" :url="s"></moving-img>
+    </div>
+    <script src="{{ $gall_app.Permalink }}"></script>
+  </body>
+  {{ partial "javascripts.html" . }}
+  {{ partial "footer.html" }}
+</html>

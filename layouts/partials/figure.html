@@ -1,0 +1,21 @@
+<figure{{ with .class }} class="{{ . }}"{{ end }}>
+    {{ if .link }}<a href="{{ .link }}"{{ with .target }} target="{{ . }}"{{ end }}{{ with .rel }} rel="{{ . }}"{{ end }}>{{ end }}
+        <img src="{{ .src }}"
+             {{ if or .alt .caption }}alt="{{ with .alt }}{{ . }}{{ else }}{{ .caption }}{{ end }}"{{ end }}
+             {{ with .width }}width="{{ . }}"{{ end }}
+             {{ with .height }}height="{{ . }}"{{ end }}
+             {{ with .imgStyle }}style="{{ . | safeCSS }}"{{ end }}
+        />
+    {{ if .link }}</a>{{ end }}
+    {{ if or (or .title .caption) .attr }}
+        <figcaption>
+            {{ with .title }}<h4>{{ . }}</h4>{{ end }}
+            {{ if or .caption .attr }}
+                {{ .caption }}
+                {{ with .attrlink }}<a href="{{ . }}">{{ end }}
+                    {{ .attr }}
+                {{ if .attrlink }}</a>{{ end }}
+            {{ end }}
+        </figcaption>
+    {{ end }}
+</figure>
