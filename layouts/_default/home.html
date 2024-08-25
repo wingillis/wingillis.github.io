@@ -5,10 +5,10 @@
   </div>
   <div class="pure-u-md-1-3 pure-u-sm-1-2" style="margin: auto;">
     <div class="min-padding">
-      {{ $filter := images.Process "webp" }}
-      {{ with resources.Get "images/headshot_01.png" | images.Filter $filter }}
+      {{- $filter := images.Process "webp" -}}
+      {{- with resources.Get "images/headshot_01.png" | images.Filter $filter -}}
         <img src="{{ .Permalink }}" class="pure-img">
-      {{ end }}
+      {{- end -}}
     </div>
   </div>
   <br>

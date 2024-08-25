@@ -6,8 +6,8 @@
   <body>
     {{ partial "navbar.html" }}
     {{ partial "social_header.html" . }}
-    {{ block "main" . }}
-    {{ end }}
+    {{- block "main" . -}}
+    {{- end -}}
     {{ partial "javascripts.html" . }}
     {{ partial "footer.html" }}
   </body>
