@@ -1,4 +1,4 @@
-<figure{{ with .class }} class="{{ . }}"{{ end }}>
+<figure class="img-figure{{ with .class }} {{ . }}{{ end }}">
     {{ if .link }}<a href="{{ .link }}"{{ with .target }} target="{{ . }}"{{ end }}{{ with .rel }} rel="{{ . }}"{{ end }}>{{ end }}
         <img src="{{ .src }}"
              {{ if or .alt .caption }}alt="{{ with .alt }}{{ . }}{{ else }}{{ .caption }}{{ end }}"{{ end }}

@@ -3,7 +3,6 @@ title: Finger Possible
 description: A portable, customizable, extremely efficient design proposition for a keyboard-like human-computer interface.
 date: 2016-11-11
 ---
-# Finger Possible
 
 This post is on a project that I worked on in 2015-2016.
 
@@ -15,8 +14,8 @@ Throughout the day I have ideas or to-dos I want to remember. However, I usually
 
 Many frustrations, including typing with a touch screen keyboard, led me to think of alternative input methods. One approach I thought of was to put the 'keyboard' onto the fingers. Combinations of tapped fingers would produce coherent output. This immediately removes the spatial limitations of a keyboard. Instead of hitting a key in a specific location of the keyboard to generate a character, that same character can be mapped to a combination of finger presses (which can tap anywhere, even on someone's body). For example, the letter 'a' can be mapped from its spatial location on the keyboard to a combination of finger presses (press your left middle finger).
 Here are some pros:
-- with two 10-finger hands, there are 1023 finger combinations
-- with just one hand there are 31 combinations, enough to type all the letters, plus some
+- with two 5-finger hands, there are 1023 potential finger combinations
+- with a single hand there are 31 combinations; enough to type the alphabet
 - there are no spatial limitations
 - phone typing can potentially be a lot less distracting
 - there are more opportunities to interact with a computer without spatial limitations
@@ -27,61 +26,48 @@ Can an actual device like this be built? Is this device practical or feasible? I
 
 Most of my designs involve a gloved keyboard, where the inputs points are on the tips of the fingers. On each finger, there was a single button which was to be pressed during different finger combinations, and each combination makes to a different character (as stated before).
 
-<figure>
-<img src="https://i.imgur.com/8IMTo1q.png">
-<figcaption>
-The button 'keyboard'. The black loops slip onto the tip of each finger. there are buttons on one side of the black loops, located on the finger tips.
-</figcaption>
-</figure>
+{{< figure 
+    src="https://i.imgur.com/8IMTo1q.png"
+    caption="The button 'keyboard'. The black loops slip onto the tip of each finger. there are buttons on one side of the black loops, located on the finger tips."
+>}}
 
 
 ### Capacitive input
 
 This design uses metal strips on the gloved fingertips to detect touch. The metal senses a characteristic change in capacitance when it touches a hand or other similar object. The metal strips on each finger are isolated from the finger itself so it doesn't detect touch inputs all the time. To get around this problem, a conductive material that touches the palm and extends to the fingers can be tapped to register touches.
 
-<figure>
-<img src="https://i.imgur.com/2OzYh0F.png">
-<figcaption>
-The capacitive touch keyboard. Metal strips are located on the fingertips for detecting touches to skin or metal.
-</figcaption>
-</figure>
+{{< figure
+    src="https://i.imgur.com/2OzYh0F.png"
+    caption="The capacitive touch keyboard. Metal strips are located on the fingertips for detecting touches to skin or metal."
+>}}
 
 ### Piezo input
 
 This design takes advantage of the mechanical properties of piezoelectric devices; they generate electricity when they vibrate. Tapping fingers induces a detectable current for measuring a response.
 
-<figure>
-<img src="https://i.imgur.com/vT41I0x.png">
-<figcaption>
-Example of what the piezo keyboard prototype looks like on my hand.
-</figcaption>
-</figure>
+{{< figure
+    src="https://i.imgur.com/vT41I0x.png"
+    caption="Example of what the piezo keyboard prototype looks like on my hand."
+>}}
 
-<figure>
-<img src="https://i.imgur.com/p2ctbK4.png">
-<figcaption>
-Circuitry of the keyboard and both gloves. The board is an Arduino Leonardo.
-</figcaption>
-</figure>
+{{< figure
+    src="https://i.imgur.com/p2ctbK4.png"
+    caption="Circuitry of the keyboard and both gloves. The board is an Arduino Leonardo."
+>}}
 
-<figure>
-<img src="https://i.imgur.com/qQjvg7Z.png" alt="bluetooth keyboard">
-<figcaption>
-An example of what a fixed piezo keyboard could look like. This was mainly a prototype to see if I could get it working in a more 'portable' form. It's portability comes from the fact that it is powered by a battery and connects to a device as a bluetooth keyboard, sending commands wirelessly. However, it is quite large and is spatially limited which I previously ragged on.
-</figcaption>
-</figure>
+{{< figure
+    src="https://i.imgur.com/qQjvg7Z.png"
+    caption="An example of what a fixed piezo keyboard could look like. This was mainly a prototype to see if I could get it working in a more 'portable' form. It's portability comes from the fact that it is powered by a battery and connects to a device as a bluetooth keyboard, sending commands wirelessly. However, it is quite large and is spatially limited which I previously ragged on."
+>}}
 
 ### Leap Motion input
 
 This system works radically different than the other three. It uses a device called the [Leap Motion](https://www.leapmotion.com/), which tracks finger and hand movements using an infrared (IR) light sensor. So there are no physical objects one would need to wear to use this - just put their hands over the Leap. Or, one could wear the Leap, and type anywhere in front of them. This version has an advantage over other keyboard implementations used in the leap motion software - the other versions use spatial mapping, which can take away from productivity and user experience.
 
-<figure>
-<img src="https://i.imgur.com/pnaYwd7.png">
-
-<figcaption>
-An example of leap motion keyboard. A hovered hand can press down finger combinations anywhere, and the leap will register a keypress. The purple LEDs in the device are actually the IR sensors.
-</figcaption>
-</figure>
+{{< figure
+    src="https://i.imgur.com/pnaYwd7.png"
+    caption="An example of leap motion keyboard. A hovered hand can press down finger combinations anywhere, and the leap will register a keypress. The purple LEDs in the device are actually the IR sensors."
+>}}
 
 ### Typing mechanics
 
@@ -90,15 +76,15 @@ To reiterate, with this device, one would type letters by tapping combinations o
 Due to the overwhelming amount of key combinations possible, there has to be some sensible way to map keys to finger presses. My first thought was to map the most typed keys to easy-to-remember finger combos. The most typed letters would only require a one finger press, and the next most typed letters would require a symmetric two finger press (i.e. Right and left thumb make the letter 'd'). The rest of the keys are relatively haphazardly mapped.
 
 <figure>
-<div class="pure-u-1 pure-u-md-1-2">
-<img class="pure-img" src="https://i.imgur.com/4l3EU9H.png">
-</div>
-<div class="pure-u-1 pure-u-md-1-2">
-<img class="pure-img" src="https://i.imgur.com/xEuLPlE.png">
-</div>
-<figcaption>
-Example keyboard mappings for the alphabet and important keys. Finger presses are green circles, and order goes from left pinky to thumb, then right thumb to pinky.
-</figcaption>
+    <div class="pure-u-1 pure-u-md-1-2">
+        <img class="pure-img" src="https://i.imgur.com/4l3EU9H.png">
+    </div>
+    <div class="pure-u-1 pure-u-md-1-2">
+        <img class="pure-img" src="https://i.imgur.com/xEuLPlE.png">
+    </div>
+    <figcaption>
+        Example keyboard mappings for the alphabet and important keys. Finger presses are green circles, and order goes from left pinky to thumb, then right thumb to pinky.
+    </figcaption>
 </figure>
 
 In addition to just mapping characters to different finger combinations, one can imagine mapping 'functions' do different combinations, like 'quit application' or 'focus on chrome window', commonly written phrases like your email signature or 'Hello, It's been awhile, can we schedule a time to catch up', or even usernames and passwords. These could be implemented in a manner similar to [Better Touch Tool](https://www.boastr.net), or as a programming language like how [Hammerspoon](http://www.hammerspoon.org) uses Lua.

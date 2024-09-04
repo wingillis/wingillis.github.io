@@ -1,0 +1,52 @@
+{{- $filter := images.Process "webp" -}}
+{{- $img1 := resources.Get (.Get "img1") | images.Filter $filter -}}
+{{- $img2 := resources.Get (.Get "img2") | images.Filter $filter -}}
+{{- $caption1 := (.Get "caption1") | markdownify -}}
+{{- $caption2 := (.Get "caption2") | markdownify -}}
+{{- $switchTxt := (.Get "switchtxt") | default "Switch image" -}}
+
+{{- $id1SHA := printf "img-id-%s" (substr (sha1 $img1.Permalink) 0 20) -}}
+{{- $id2SHA := printf "img-id-%s" (substr (sha1 $img2.Permalink) 0 20) -}}
+
+<figure>
+  <img id="{{ $id1SHA }}" src="{{ $img1.Permalink }}" alt="First image">
+  <img id="{{ $id2SHA }}" src="{{ $img2.Permalink }}" alt="Second image" style="display: none;">
+  <figcaption id="switchable-img-caption">
+    {{ $caption1 }}
+  </figcaption>
+<div style="text-align: center;">
+    <button id="image-switch-btn" onclick="toggleImage()" class="pure-button button-success">{{ $switchTxt }}</button>
+</div>
+</figure>
+
+<style>
+#image-switch-btn {
+    margin-top: 10px;
+}
+</style>
+
+<script>
+let showing = 1;
+
+function toggleImage() {
+  const img1 = document.getElementById('{{ $id1SHA }}');
+  const img2 = document.getElementById('{{ $id2SHA }}');
+  const caption = document.getElementById('switchable-img-caption');
+
+  const caption1 = "{{ $caption1 }}";
+  const caption2 = "{{ $caption2 }}";
+
+  
+  if (showing === 1) {
+    img1.style.display = 'none';
+    img2.style.display = null;
+    caption.innerHTML = caption2;
+    showing = 2;
+  } else {
+    img1.style.display = null;
+    img2.style.display = 'none';
+    caption.innerHTML = caption1;
+    showing = 1;
+  }
+}
+</script>

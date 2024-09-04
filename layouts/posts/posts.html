@@ -5,23 +5,23 @@
 
 <div class="article-list content">
   {{ range .Paginator.Pages }}
-    <a href="{{ .Permalink }}" title="{{ .Title }}">
+    <a href="{{ .Permalink }}" title="{{ .Title }}" class="article-item-link">
       <div class="article-item">
         <h3>
           {{ .Title }}
         </h3>
         <div class="indent">
-        <p style="padding: 0px;">
-          {{ .Description }}
-        </p>
-        <div class="article-footer">
-            Posted:
-            {{ .Date.Format "Jan 02, 2006"}}
-            {{ printf "Estimated %d minute read" .ReadingTime }}
+          <p style="padding: 0px;">
+            {{ .Description }}
+          </p>
+          <div class="article-footer">
+              Posted:
+              {{ .Date.Format "Jan 02, 2006"}}
+              {{ printf "Estimated %d minute read" .ReadingTime }}
+          </div>
         </div>
       </div>
-      </a>
-    </div>
+    </a>
   {{ end }}
   {{ if .Paginator.HasPrev }}
     <div class="article-pagination">

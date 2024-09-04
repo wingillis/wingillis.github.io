@@ -30,14 +30,38 @@ body.dark {
 }
 .dark {
   color: $dark-text-color;
-  h1, h2, h3, h4, h5, h6, p, li {
+  h1, h2, h3, h4, h5, h6, p, li, small {
     color: $dark-text-color;
   }
   figcaption {
     color: lighten($caption-color, 50%);
   }
   figure {
-    background-color: rgba(lighten($dark-background, 20%), 0.4);
+    background-color: rgba(darken($dark-background, 15%), 0.6);
+  }
+  b, strong {
+    color: lighten($dark-text-color, 5%);
+  }
+  .article-item {
+    background-color: rgba(darken($dark-background, 15%), 0.6);
+    border-color: rgba(lighten($dark-background, 12%), 0.6);
+  }
+  .pure-table-striped tr:nth-child(2n-1) td {
+    background-color: rgba(darken($dark-background, 15%), 0.5);
+  }
+  blockquote {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .article-item:hover {
+    background-color: rgba(darken($dark-background, 5%), 0.6);
+  }
+  div.post {
+    h2 {
+      border-bottom: 4px solid rgba($dark-text-color, 1);
+    }
+    h3 {
+      border-bottom: 2px solid rgba($dark-text-color, 0.65);
+    }
   }
 }
 
@@ -51,20 +75,39 @@ h1, h2, h3, h4, h5 {
   text-align: 'left';
 }
 
+div.post {
+  h2 {
+    padding-bottom: 2px;
+    border-bottom: 4px solid rgba($text-color, 1);
+    width: 85%;
+  }
+  h3 {
+    border-bottom: 2px solid rgba($text-color, 0.5);
+    width: 65%;
+    margin-left: 3px;
+  }
+  h4, h5 {
+    margin-left: 6px;
+  }
+  // h4, h5 {
+  //   border-bottom: 2px solid rgba($text-color, 0.15);
+  // }
+}
+
 h1 {
   padding-bottom: 20px;
 }
 
 a:link {
   color: $link-color;
-  text-decoration: none;
+  // text-decoration: none;
   transition: color 0.2s;
   font-weight: 400;
 }
 
 a:visited {
   color: $link-color;
-  text-decoration: none;
+  // text-decoration: none;
 }
 
 a:hover {
@@ -78,6 +121,16 @@ a.pure-menu-link:hover {
 
 .centered {
 	text-align: center;
+}
+
+.button-success {
+  background: $link-color;
+  color: lighten($dark-text-color, 15%);
+  transition: background 0.2s;
+}
+
+.button-success:hover {
+  background: lighten($link-color, 10%);
 }
 
 code {
@@ -105,8 +158,10 @@ div.text-content {
 }
 
 blockquote {
-  border-left: 5px solid #A668A6;
+  border-left: 6px solid $link-color;
   overflow-x: scroll;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding-right: 10px;
 }
 
 .image-padding {
@@ -138,6 +193,10 @@ p, li {
   color: $text-color;
 }
 
+small {
+  line-height: 1;
+}
+
 
 div.pure-g {
   div {
@@ -151,7 +210,7 @@ div.pure-g {
   padding-left: 21px;
 }
 
-.icon {
+div.icon, span.icon {
   width: 30px;
   height: 30px;
   margin-left: 6px;
@@ -227,10 +286,10 @@ p {
 figure {
   padding: 11px;
   @media screen and (min-width: 30em) {
-    width: 85%;
+    width: 90%;
   }
   @media screen and (min-width: 48em) {
-    width: 57%;
+    width: 80%;
   }
   margin: 10px auto 0px auto;
   border-radius: 3px;
@@ -261,7 +320,30 @@ figcaption {
 }
 
 .article-item {
-  border-bottom: 2px dashed darken($background-color, 50%);
+  // border-bottom: 2px dashed darken($background-color, 50%);
+  background-color: rgba(lighten($background-color, 15%), 0.4);
+  padding: 1px 25px 1px 25px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border-color: rgba(darken($background-color, 20%), 0.5);
+  border-width: 2px;
+  border-style: solid;
+  transition: background-color 0.25s;
+}
+
+.article-item:hover {
+  background-color: rgba(darken($background-color, 8%), 0.4);
+}
+
+.article-item-link {
+  text-decoration: none;
+}
+
+
+b, strong {
+  font-weight: bold;
 }
 
 .article-footer {
@@ -276,4 +358,36 @@ h3#titlebar {
 
 h3#titlebar:hover {
   color: #3e6957;
+}
+
+pre {
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+pre {
+  code {
+    background-color: transparent;
+  }
+}
+
+.plotly-fig {
+  padding: 15px;
+  @media screen and (min-width: 30em) {
+    width: 90%;
+    
+  }
+  @media screen and (min-width: 48em) {
+    width: 80%;
+  }
+}
+
+table.pure-table {
+  margin: auto;
+}
+
+.pure-table-striped tr:nth-child(2n-1) td {
+  background-color: rgba(lighten($background-color, 15%), 0.4);
 }

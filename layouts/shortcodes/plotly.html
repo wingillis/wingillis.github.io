@@ -1,0 +1,28 @@
+<!-- This shortcode is a component for delaying the rendering plotly graphs until after the
+document has been loaded, and iterates through each plot instead of trying to simultaneously
+render them -->
+{{- $figpath := resources.Get (printf "plotly/%s.json" (.Get "name")) -}}
+{{- $id := printf "plotly-id-%s" (substr (sha1 $figpath.Permalink) 0 20) -}}
+
+<figure class="plotly-fig">
+    <div id="{{ $id }}" style="width: 100%;"></div>
+{{- if (.Get "caption") -}}
+<figcaption>
+    {{ (.Get "caption") | markdownify }}
+    {{- with (.Get "attrlink") -}}<a href="{{ . }}">{{- end -}}
+    {{- with (.Get "attr") -}}
+        {{ . }}
+    {{- end -}}
+    {{- with (.Get "attrlink") -}}</a>{{- end -}}
+</figcaption>
+{{- end -}}
+</figure>
+
+<script>
+    window.plotlyPlots = window.plotlyPlots || [];
+    window.plotlyPlots.push({
+        id: "{{ $id }}",
+        data: "{{ $figpath.Content | safeJS }}",
+        showlegend: {{ (.Get "showlegend") | default true }},
+    });
+</script>

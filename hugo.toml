@@ -1,6 +1,8 @@
 baseURL = 'https://wingillis.github.io'
 languageCode = 'en-us'
 title = 'Winthrop Gillis'
+buildDrafts = true
+enableEmoji = true
 
 [markup]
 defaultMarkdownHandler = "goldmark"
@@ -8,10 +10,15 @@ defaultMarkdownHandler = "goldmark"
 [markup.goldmark.renderer]
 unsafe = true
 
-[services]
-[services.googleAnalytics]
-ID = 'UA-74958647-1'
+[markup.goldmark.parser.attribute]
+block = true
 
+[markup.highlight]
+# style = "tokyonight-moon"
+style = "nord"
+lineNos = false
+
+[services]
 [services.rss]
 limit = 42
 

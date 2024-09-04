@@ -1,7 +1,19 @@
 ---
 title: CV
 ---
+
+### [Google scholar](https://scholar.google.com/citations?user=hxoCF_cAAAAJ)
+{.centered}
+
 ## Papers
+
+Dana Rubi Levy<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Caleb Weinreb<sup>1</sup>, Minhua Mei, David Brann, Nigel Hunter, J'Kayla Anthis, Rockwell Anyoha, Scott W Linderman, Sandeep Robert Datta.
+[**Natural behavior embodies a continuous aging clock.**]()
+_In review._ September 2024. <sup>1</sup>These authors contributed equally.
+
+Jack Lindsey, Jeffrey E Markowitz, **Winthrop F Gillis**, Sandeep Robert Datta, Ashok Litwin-Kumar.
+[**Dynamics of striatal action selection and reinforcement learning.**](https://www.biorxiv.org/content/10.1101/2024.02.14.580408v2)
+bioRxiv. 25 July 2024.
 
 Dana Rubi Levy, Nigel Hunter, Sherry Lin, Emma Marie Robinson, **Winthrop Gillis**, Eli Benjamin Conlin, Rockwell Anyoha, Rebecca M Shansky, Sandeep Robert Datta.
 [**Mouse spontaneous behavior reflects individual variation rather than estrous state.**](https://www.cell.com/current-biology/fulltext/S0960-9822(23)00175-6)
@@ -15,11 +27,17 @@ Sherry Lin<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Caleb Weinreb, Ayman 
 [**Characterizing the structure of mouse behavior using Motion Sequencing.**](https://arxiv.org/abs/2211.08497)
 arXiv. 15 November 2022. <sup>1</sup>These authors contributed equally.
 
-Julia C Costacurta, Lea Duncker, Blue Sheffer, **Winthrop Gillis**, Caleb Weinreb, Jeffrey E Markowitz, Sandeep Robert Datta, Alex H Williams, Scott W Linderman. [**Distinguishing discrete and continuous behavioral variability using warped autoregressive HMMs.**](https://openreview.net/forum?id=6Kj1wCgiUp_) NeurIPS. 31 October 2022.
+Julia C Costacurta, Lea Duncker, Blue Sheffer, **Winthrop Gillis**, Caleb Weinreb, Jeffrey E Markowitz, Sandeep Robert Datta, Alex H Williams, Scott W Linderman.
+[**Distinguishing discrete and continuous behavioral variability using warped autoregressive HMMs.**](https://openreview.net/forum?id=6Kj1wCgiUp_)
+NeurIPS. 31 October 2022.
 
-Stephanie Rudolph, Chong Guo, Stan L. Pashkovski, Tomas Osorno, **Winthrop F Gillis**, Jeremy M Krauss, Hajnalka Nyitrai, Isabella Flaquer, Mahmoud El-Rifai, Sandeep Robert Datta, Wade G Regehr. [**Cerebellum-Specific Deletion of the GABA<sub>A</sub> Receptor δ Subunit Leads to Sex-Specific Disruption of Behavior.**](https://www.sciencedirect.com/science/article/pii/S2211124720313279) Cell Reports. 3 November 2020.
+Stephanie Rudolph, Chong Guo, Stan L. Pashkovski, Tomas Osorno, **Winthrop F Gillis**, Jeremy M Krauss, Hajnalka Nyitrai, Isabella Flaquer, Mahmoud El-Rifai, Sandeep Robert Datta, Wade G Regehr.
+[**Cerebellum-Specific Deletion of the GABA<sub>A</sub> Receptor δ Subunit Leads to Sex-Specific Disruption of Behavior.**](https://www.sciencedirect.com/science/article/pii/S2211124720313279)
+Cell Reports. 3 November 2020.
 
-Alexander B Wiltschko, Tatsuya Tsukahara, Ayman Zeine, Rockwell Anyoha, **Winthrop F Gillis**, Jeffrey E Markowitz, Ralph E. Peterson, Jesse Katon, Matthew J Johnson, Sandeep Robert Datta. [**Revealing the structure of pharmacobehavioral space through motion sequencing.**](https://www.nature.com/articles/s41593-020-00706-3) Nature neuroscience. 21 September 2020.
+Alexander B Wiltschko, Tatsuya Tsukahara, Ayman Zeine, Rockwell Anyoha, **Winthrop F Gillis**, Jeffrey E Markowitz, Ralph E. Peterson, Jesse Katon, Matthew J Johnson, Sandeep Robert Datta.
+[**Revealing the structure of pharmacobehavioral space through motion sequencing.**](https://www.nature.com/articles/s41593-020-00706-3)
+Nature neuroscience. 21 September 2020.
 
 Eleanor Batty, Matthew R Whiteway, Shreya Saxena, Dan Biderman, Taiga Abe, Simon Musall, **Winthrop Gillis**, Jeffrey E Markowitz, Anne Churchland, John Cunningham, Sandeep Robert Datta, Scott W Linderman, Liam Paninski.
 [**BehaveNet: nonlinear embedding and Bayesian neural decoding of behavioral videos.**](http://papers.nips.cc/paper/9701-behavenet-nonlinear-embedding-and-bayesian-neural-decoding-of-behavioral-videos.pdf)
@@ -43,35 +61,37 @@ BMC Biology. 15 May 2017.
 
 ## Posters and presentations
 
+<!-- Insert Stanford workshop here -->
+
 **Winthrop Gillis**.
-[**Real-time MoSeq: revealing elements of naturalistic reinforcement learning through closed-loop action identification**](https://www.abstractsonline.com/pp8/#!/10619/presentation/1151).
+[**Real-time MoSeq: revealing elements of naturalistic reinforcement learning through closed-loop action identification.**](https://www.abstractsonline.com/pp8/#!/10619/presentation/1151)
 Presentation. Society for Neuroscience 2022.
 
 Maya Jay, Jeffrey E Markowitz, **Winthrop F Gillis**, Jeffrey Wood, Timothy Sainburg, Riley W Harris, Rebecca Scott, David H Brann, Caleb Weinreb, Mohammed Osman, Sandra A Romero Pinto, Naoshige Uchida, Scott Linderman, Bernardo L Sabatini, Sandeep Robert Datta.
-[**Striatal dopamine structures the spontaneous behavior of mice across multiple timescales**](https://www.abstractsonline.com/pp8/#!/10619/presentation/82111).
+[**Striatal dopamine structures the spontaneous behavior of mice across multiple timescales.**](https://www.abstractsonline.com/pp8/#!/10619/presentation/82111)
 Poster. Society for Neuroscience 2022.
 
-Winthrop Gillis, Sherry Lin. [**Workshop – Characterizing the structure of mouse behavior using Motion Sequencing (MoSeq)**]().
+Winthrop Gillis, Sherry Lin. [**Workshop – Characterizing the structure of mouse behavior using Motion Sequencing (MoSeq).**]()
 The Short Course on the Application of Machine Learning for Automated Quantification of Behavior. Jackson Labs. October 2022.
 
 **Winthrop Gillis**, Jeffrey Markowitz, Maya Jay, Jeffrey Wood, Ryley Harris, Robert Cieszkowski, Julia Murmann, David Brann, Scott Linderman, Bernardo Sabatini, Sandeep Robert Datta.
-[**Revealing elements of naturalistic reinforcement learning through closed-loop action identification**]().
+[**Revealing elements of naturalistic reinforcement learning through closed-loop action identification.**]()
 Poster. Virtual Dopamine Conference 2021.
 
 **Winthrop Gillis**, Jeffrey Markowitz, Maya Jay, Robert Cieszkowski, Julia Murmann, Emily Peterson, Diego Aldarondo, David Brann, Scott Linderman, Bernardo Sabatini, Sandeep Robert Datta.
-[**Revealing elements of naturalistic reinforcement learning through closed-loop action identification**](https://www.abstractsonline.com/pp8/#!/7883/presentation/66900).
+[**Revealing elements of naturalistic reinforcement learning through closed-loop action identification.**](https://www.abstractsonline.com/pp8/#!/7883/presentation/66900)
 Poster. Society for Neuroscience 2019.
 
 Ella Batty, Matthew R Whiteway, S. Saxena, D. Biderman, T. Abe, Simon Musall, **Winthrop Gillis**, Jeffrey E Markowitz, Anne K Churchland, Sandeep Robert Datta, Scott Linderman, Liam Paninski.
-[**BehaveNet: Behavioral video embedding and neural analysis toolbox**](https://www.abstractsonline.com/pp8/#!/7883/presentation/70973).
+[**BehaveNet: Behavioral video embedding and neural analysis toolbox.**](https://www.abstractsonline.com/pp8/#!/7883/presentation/70973)
 Poster. Society for Neuroscience 2019.
 
 Jeffrey Markowitz, **Winthrop Gillis**, Julie Murmann, Scott Linderman, Bernardo Sabatini, Sandeep Datta.
-[**Resolving the neural mechanisms of reinforcement learning through new behavioral technologies**](http://cosyne.org/cosyne19/Cosyne2019_program_book.pdf).
+[**Resolving the neural mechanisms of reinforcement learning through new behavioral technologies.**](http://cosyne.org/cosyne19/Cosyne2019_program_book.pdf)
 Poster. Cosyne 2019.
 
 Jeffrey E Markowitz, **Winthrop F Gillis**, Celia C Beron, Shay Q Neufeld, Kiera Robertson, Neha D Bhagat, Ralph E Peterson, Emily Peterson, Minsuk Hyun, Scott W Linderman, Bernardo L Sabatini, Sandeep Robert Datta.
-[**The striatum organizes 3D behavior via moment-to-moment action selection**](https://abstractsonline.com/pp8/#!/4649/presentation/29823).
+[**The striatum organizes 3D behavior via moment-to-moment action selection.**](https://abstractsonline.com/pp8/#!/4649/presentation/29823)
 Poster. Society for Neuroscience 2018.
 
 Jeffrey Markowitz, **Winthrop Gillis**, Celia Beron, Shay Neufeld, Keira Robertson, Minsuk Hyun, Emalee Peterson, Neha Bhagat, Scott Linderman, Bernardo Sabatini, Sandeep Datta.
@@ -100,6 +120,10 @@ Sandeep Robert Datta, **Winthrop Gillis**, Jeffrey Evan. [**IMAGE PROCESSING FOR
 
 ## Press
 
+[**Hooked on Neuroscience**](https://magazine.hms.harvard.edu/articles/hooked-neuroscience)
+
+[**Guess Which Sex Behaves More Erratically (at Least in Mice)**](https://www.nytimes.com/2023/03/07/science/female-mice-hormones.html)
+
 [**Decoding Body Language Reveals How the Brain Organizes Behavior**](https://web.archive.org/web/20190928120118/https://www.simonsfoundation.org/2018/07/11/decoding-body-language-reveals-how-the-brain-organizes-behavior/)
 
 [**Scientists Unraveling How Movement is Translated Into Desired Action**](https://parkinsonsnewstoday.com/2018/05/24/scientists-unraveling-how-movement-translated-into-desired-action/)
@@ -110,4 +134,4 @@ Sandeep Robert Datta, **Winthrop Gillis**, Jeffrey Evan. [**IMAGE PROCESSING FOR
 
 [**Flash Nano: Electrical "nerve cuff" could help treat chronic disease**](https://web.archive.org/web/20171129094145/http://nanotechweb.org/cws/article/tech/68261)
 
-Note: some links may not work due to age. I used links from the [Wayback Machine](https://archive.org/web/) to preserve content.
+_Note: some links may not work due to age. I attempted to use the [Wayback Machine](https://archive.org/web/) to re-link to some of the content._

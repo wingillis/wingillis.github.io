@@ -3,7 +3,6 @@ title: Hammerspoon Vim Bindings
 description: Tutorial on how to give all applications vim-like capabilities
 date: 2017-08-08
 ---
-# Hammerspoon Vim Bindings
 
 If you're like me, you program a lot. And if you're like me, you program with
 vim a lot. I've grown so accustomed to the vim commands for navigating and

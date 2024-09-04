@@ -9,8 +9,7 @@ title: Software
 Back in 2012, I followed the newly constructed and free [Codecademy](https://www.codecademy.com/) course that taught the fundamentals of programming through javascript.
 The lessons were sparse and short, but enough to fuel my excitement to explore the new world of possibilities software development provided.
 
-Over the years, I've developed expertise programming with the following languages, ordered by comfort level:
-1) **python**, 2) **javascript**, 3) **julia**, 4) **c**, 5) **matlab**, and gathered experience in other languages such as lua, clojure, groovy, c# and go.
+Over the years, I've developed expertise programming with the following languages, ordered by comfort level: 1) **python**, 2) **javascript**, 3) **julia**, 4) **c**, 5) **matlab**, and gathered experience in other languages such as lua, clojure, groovy, c# and go.
 There are similarities many languages share making it easier to take up a new language, but also differences that make some
 languages a better choice to solve certain problems. I've had fun thinking about how languages and their accompanying frameworks
 are best suited to solve different problems.
@@ -20,12 +19,13 @@ I've continued to practice software engineering and other programming-adjacent s
 ## Graduate school projects
 
 The following software projects showcase some of the software engineering projects I have worked on and managed.
-In addition to writing software packages,
-- I've built circuits infused with [Arduino](https://store.arduino.cc/products/arduino-uno-rev3) and
+In addition to writing software packages, I have
+
+- built circuits infused with [Arduino](https://store.arduino.cc/products/arduino-uno-rev3) and
 [Teensy](https://www.pjrc.com/store/teensy40.html) microcontrollers to talk with experimental equipment
 like lasers or to synchronize independent streams of data like neural recordings and videos of mouse behavior.
-- I've developed modeling pipelines to fit deep neural networks from a large pool of training samples.
-- I've developed analysis and visualization pipelines to produce the figures in my publications (example
+- developed modeling pipelines to fit deep neural networks from a large pool of training samples.
+- produced robust analysis and visualization pipelines to generate the figures in my publications (example
 [here](https://github.com/dattalab/dopamine-reinforces-spontaneous-behavior)).
 
 ### MoSeq v2
@@ -36,12 +36,12 @@ a probabilistic model that decomposes mouse behavior into stereotyped motifs of 
 and model the data. However, as with all research code written to publish a paper, the first version was quite
 difficult for other labs to use and install.
 
-
 {{< image-figure src="images/crowd_movie_example.gif" caption="Example set of stereotyped motifs of action learned using MoSeq." >}}
 
 Building off of [Jeff's](https://bme.gatech.edu/bme/faculty/Jeffrey-Markowitz) work laying out the scaffolding
 for an easy-to-use version of the MoSeq pipeline, I lead a team of software engineers to turn the MoSeq pipeline
 into a user-friendly ecosystem that includes:
+
 - a suite of python packages to go from video recordings all the way to labeled actions
 - expansive documentation (in the form of a wiki) that describes each step of the pipeline, along with formal
 documentation for each function defined in the package suite
@@ -79,7 +79,7 @@ to the app.
 
 ## Hobby projects and other
 
-- I created [this website](https://github.com/wingillis/wingillis.github.io) using jekyll and github pages. I also designed the theming (check out the cool skulls in the background)!
+- I created [this website (plus the styling)](https://github.com/wingillis/wingillis.github.io) using Hugo and github pages.
 - [Tic-Toc](/tic-toc/) (made **BEFORE** TikTok was big) is a web app for making serial timers (user guide [here](https://wingillis.github.io/blog/tic-toc/)).
 - I created a system to automatically parse sound files for birdsong as they were generated – it heavily relies on [Jeff Markowitz's scripts](https://github.com/jmarkow/zftftb) which does the sound processing heavy-lifting
 - A web-based timer utilizing [Trello](https://trello.com) for task management [source](https://github.com/wingillis/trelloAlarm)

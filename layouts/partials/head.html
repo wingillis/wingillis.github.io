@@ -17,6 +17,10 @@
 
 <script language="javascript" src="{{ $darkmode.Permalink }}"></script>
 
+{{- if .Params.plotly -}}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{{- end -}}
+
 {{- with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{- end -}}

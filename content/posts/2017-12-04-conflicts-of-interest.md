@@ -1,9 +1,8 @@
 ---
-title: The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest.
+title: The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest
 description: Examples of scientific conflicts of interest and a proposal to improve the situation.
 date: 2017-12-04
 ---
-# The growing influence of large companies on the science conducted in an academic setting, and its impacts on conflicts of interest
 
 Quite a few trends are currently occurring in the academic world that are having a strong impact on the prevalence of conflicts of interest.
 These include: a higher number of professors founding startups, a larger portion of research funds coming from private sector sources, and a decreasing pool of funding from government sources.However, the rules governing the regulation of money and the current philosophy of valuable research have not evolved as rapidly. A growing concern within the scientific community is the increasing pressure these money sources create on the professors when they are faced with difficult and large decisions.

@@ -1,12 +1,7 @@
-# Hello!
+Hello!
 
 I'm glad you took some time to stop by.
-Here is the source code for my [website](https://wingillis.github.io/).
+This is the source code for my [website](https://wingillis.github.io/).
+It's built with [Hugo](https://gohugo.io), and some additional components are built with [vue.js](https://vuejs.org/v2/guide/).
 
-It's built with [jekyll](https://jekyllrb.com/), plus a lot of additional components, like [vue.js](http://vuejs.org/v2/guide/).
-
-To publish the blog, first run `./deploy.sh` and then run `./remaster.sh`
-
-## 2022-11-19
-
-I believe the blog compiles correctly with the newest version of jekyll.
+It was originally built with Jekyll, but I found it difficult to maintain and update.
