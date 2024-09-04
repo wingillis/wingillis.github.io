@@ -1,5 +1,5 @@
 ---
-title: Dr. Winthrop Gillis
+title: Winthrop Gillis, PhD
 ---
 
 # About me
