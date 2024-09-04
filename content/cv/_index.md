@@ -6,6 +6,10 @@ title: CV
 
 ## Papers
 
+Dana Rubi Levy<sup>1</sup>, **Winthrop F Gillis**<sup>1</sup>, Caleb Weinreb<sup>1</sup>, Minhua Mei, David Brann, Nigel Hunter, J'Kayla Anthis, Rockwell Anyoha, Scott W Linderman, Sandeep Robert Datta.
+[**Natural behavior embodies a continuous aging clock.**]()
+_In review._ September 2024. <sup>1</sup>These authors contributed equally.
+
 Jack Lindsey, Jeffrey E Markowitz, **Winthrop F Gillis**, Sandeep Robert Datta, Ashok Litwin-Kumar.
 [**Dynamics of striatal action selection and reinforcement learning.**](https://www.biorxiv.org/content/10.1101/2024.02.14.580408v2)
 bioRxiv. 25 July 2024.
