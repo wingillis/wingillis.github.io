@@ -9,3 +9,4 @@ node_modules/
 .jekyll-cache
 .bundle
 public/
+_gen/
