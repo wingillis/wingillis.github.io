@@ -264,6 +264,10 @@ figcaption {
   border-bottom: 2px dashed darken($background-color, 50%);
 }
 
+b, strong {
+  font-weight: bold;
+}
+
 .article-footer {
   font-size: 0.77em;
   color: lighten($text-color, 30%);
