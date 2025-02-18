@@ -63,12 +63,12 @@ Exploring the embedding space used in the final classification step.
 
 ### Embeddings
 
-I want to understand how the contents of each email relate to the others, and if there are clear categories that can be extracted from the structure of the data. To do this, I need to represent each email numerically. There are multiple ways to do this, but the approach I'm going to take here is to use a [language embedding model](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/). Embedding models take a block of text and transform it into a multidimensional vector. The combination of values the vector contains assigns semantic meaning (often multiple meanings) to the vectors, and vectors that are close together in the embedding space share similar semantic meanings (i.e., "child" is similar to "kid" but "child" is very different from "sun"). Embedding models are often trained to specialize in different subtasks, so it is unclear which model will produce the best embedding for this task. Therefore, I selected two embedding models, each embedding text into a 768-dimensional vector with a maximum context window of ~8k tokens (which is large enough to encapsulate the majority of the emails):
+I want to understand how the contents of each email relate to the others, and if there are clear categories that can be extracted from the structure of the data. To do this, I need to represent each email numerically. There are multiple ways to do this, but the approach I'm going to take here is to use a [language embedding model](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/). Embedding models take a block of text and transform it into a multidimensional vector. The combination of values the vector contains assigns semantic meaning (often multiple meanings) to the vectors, and vectors that are close together in the embedding space share similar semantic meanings (i.e., "child" is similar to "kid" but "child" is very different from "sun"). Embedding models are often trained to specialize in different subtasks, so it is unclear which model will produce the best embedding for this task. Therefore, I selected two embedding models, each embedding text into a 768-dimensional vector with a maximum context window of ~8,000 tokens (which is large enough to encapsulate the majority of the emails):
 
 - [snowflake-arctic-embed-m-v2.0](https://huggingface.co/Snowflake/snowflake-arctic-embed-m-v2.0)
 - [gte-base-en-v1.5](https://huggingface.co/Alibaba-NLP/gte-base-en-v1.5)
 
-Any email longer than 8k tokens will be truncated when fed into the embedding model, which is not ideal. To reduce this likelihood, I can do a bit of email sanitization. Many emails are written with html and we can assume the html tags and styling don't provide useful contextual information for categorization. Thus, the html markup can be removed using [beautifulsoup4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-beautiful-soup), a great Python package to remove markup and extract the relevant text. Sanitizing the emails reduces the token count by an order of magnitude (see the table below).
+Any email longer than 8,000 tokens will be truncated when fed into the embedding model, which is not ideal. To reduce this likelihood, I can do a bit of email sanitization. Many emails are written with html and we can assume the html tags and styling don't provide useful contextual information for categorization. Thus, the html markup can be removed using [beautifulsoup4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-beautiful-soup), a great Python package to remove markup and extract the relevant text. Sanitizing the emails reduces the token count by an order of magnitude (see the table below).
 
 | Statistic          | Token count before cleaning | Token count after cleaning |
 | ------------------ | --------------------------- | -------------------------- |
@@ -76,7 +76,7 @@ Any email longer than 8k tokens will be truncated when fed into the embedding mo
 | 99.5-th percentile | ~52,000                     | ~4,300                     |
 {class="pure-table-horizontal pure-table pure-table-striped"}
 
-After cleaning, most emails have fewer than 5k tokens and thus truncation is rare. Now if an email is truncated, there is enough contextual information to generate a useful embedding (i.e., the email is not saturated with markup noise).
+After cleaning, most emails have fewer than 5,000 tokens and thus truncation is rare. Now if an email is truncated, there is enough contextual information to generate a useful embedding (i.e., the email is not saturated with markup noise).
 
 Each email is then embedded with the models above using the [SentenceTransformers](https://sbert.net/docs/quickstart.html) python package. I assigned **pseudo-labels** to the emails using [agglomerative clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html) on the embeddings. I set the number of clusters to be similar to the number of pre-defined categories I will eventually create.
 
@@ -533,7 +533,7 @@ Shared Ollama parameters for all LLM-based text generation:
 
 | Parameter                                   | Value         |
 | ------------------------------------------- | ------------- |
-| Context size                                | 13k tokens    |
+| Context size                                | 13,000 tokens    |
 | Temperature (default value used)            | 0             |
 | Temperature (only for consistency analysis) | 0.75          |
 | JSON schema for structured output           | **TODO** (insert link) |
