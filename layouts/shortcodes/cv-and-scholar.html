@@ -1,0 +1,9 @@
+{{- $cv := resources.Get (.Get "cv") -}}
+<div class="pure-g">
+    <div class="pure-u-1-2 centered">
+        <a href="{{ $cv.Permalink }}" target="_blank">Download Resume</a>
+    </div>
+    <div class="pure-u-1-2 centered">
+        <a href="{{ .Get "scholar" }}" target="_blank">Google Scholar</a>
+    </div>
+</div>
