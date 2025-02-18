@@ -2,8 +2,7 @@
 title: CV
 ---
 
-### [Google scholar](https://scholar.google.com/citations?user=hxoCF_cAAAAJ)
-{.centered}
+{{< cv-and-scholar scholar="https://scholar.google.com/citations?user=hxoCF_cAAAAJ" cv="documents/WinthropGillis2025.pdf" >}}
 
 ## Papers
 
