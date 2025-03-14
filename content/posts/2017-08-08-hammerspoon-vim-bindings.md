@@ -59,12 +59,10 @@ Below are a list of commands that you should know for application control:
 - `0`: go to the beginning of a line
 - `$`: go to the end of a line
 
-<figure>
-<img src="https://i.imgur.com/C9Hdhkc.gif">
-<figcaption>
-Activating vim mode
-</figcaption>
-</figure>
+{{< image-figure
+    src="https://i.imgur.com/C9Hdhkc.gif"
+    caption="Activating vim mode"
+>}}
 
 Other things that work are basic navigation in visual mode, with copying,
 pasting, and deleting. If you want to get out of visual mode, you just have
