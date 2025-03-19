@@ -11,7 +11,7 @@
         <figcaption>
             {{ with .title }}<h4>{{ . }}</h4>{{ end }}
             {{ if or .caption .attr }}
-                {{ .caption }}
+                {{ .caption | markdownify }}
                 {{ with .attrlink }}<a href="{{ . }}">{{ end }}
                     {{ .attr }}
                 {{ if .attrlink }}</a>{{ end }}
