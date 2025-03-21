@@ -80,17 +80,8 @@ to the app.
 ## Hobby projects and other
 
 - I created [this website (plus the styling)](https://github.com/wingillis/wingillis.github.io) using Hugo and github pages.
-- [Tic-Toc](/tic-toc/) (made **BEFORE** TikTok was big) is a web app for making serial timers (user guide [here](https://wingillis.github.io/blog/tic-toc/)).
 - I created a system to automatically parse sound files for birdsong as they were generated – it heavily relies on [Jeff Markowitz's scripts](https://github.com/jmarkow/zftftb) which does the sound processing heavy-lifting
-- A web-based timer utilizing [Trello](https://trello.com) for task management [source](https://github.com/wingillis/trelloAlarm)
-
-{{< image-figure src="images/trello.png" caption="How the timer looks when inactive." >}}
-
-- A [fun little art project](/software/fireworks/) that shoots small circles around the webpage
-
-{{< image-figure src="images/fireworks.png" caption="Screenshot of the art project." attrlink="/software/fireworks.html" attr="Link to page" >}}
-
-- A free Android app called Maybe Later (**NOTE**: I haven't updated the app in years - thus, it's not available on the Android app store any more)
-  - If you ever find yourself wanting to remember small things here-and-there, but you don't want to schedule a time to remember it, this app is for you! It will randomly remind you what you want in around a day, week, or month.
+- A free Android app called Maybe Later (**NOTE**: it's not available on the Android app store any more)
+  - If you ever find yourself wanting to remember small things but don't want to schedule a time to remember it, then this app is for you! It will randomly send your reminder any time within a day, week, or month.
 
 <!-- ## Small, fun, and silly projects -->
