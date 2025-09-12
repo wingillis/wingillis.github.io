@@ -6,7 +6,7 @@ title: Winthrop Gillis, PhD
 
 <!-- TODO: add current interests -->
 
-I recevied a PhD from the [Program in Neuroscience](https://www.proquest.com/openview/309703ec077ee2add7bb400c0d20f156/1) at Harvard Medical School.
+I received a PhD from the [Program in Neuroscience](https://www.proquest.com/openview/309703ec077ee2add7bb400c0d20f156/1) at Harvard Medical School.
 I studied how the [basal ganglia](https://www.cell.com/cell/fulltext/S0092-8674(18)30512-9) organizes [animal behavior](https://www.nature.com/articles/s41586-022-05611-2).
 
 <!-- TODO: incorporate some of the technical skills here - like closed-loop behavior detection and brain manipulation system -->
