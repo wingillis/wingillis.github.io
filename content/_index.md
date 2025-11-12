@@ -13,4 +13,4 @@ I studied how the [basal ganglia](https://www.cell.com/cell/fulltext/S0092-8674(
 
 Before that, I was a research technician at Boston University, where I developed [nerve cuff electrode arrays](https://iopscience.iop.org/article/10.1088/1741-2552/aa5a5b) to record and stimulate peripheral nerves.
 
-Check out [my blog](posts/) or [CV](cv/) to learn more about me.
+Check out [my blog](posts/) or [CV](cv/) to learn more about me, or email me at **win.gillis[at]gmail.com**.
