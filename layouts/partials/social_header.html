@@ -2,10 +2,9 @@
 {{- $email := resources.Get "images/email.svg" -}}
 {{- $github := resources.Get "images/github.svg" -}}
 {{- $rss := resources.Get "images/rss.svg" -}}
-{{- $pocket := resources.Get "images/pocket.svg" -}}
 
 <div id="svg-social-icons">
-  <a href="https://www.linkedin.com/in/wingillis">
+  <a href="https://www.linkedin.com/in/wingillis" target="_blank">
     <div class="icon" id="linkedin-icon">
       {{ $linkedin.Content | safeHTML }}
     </div>
@@ -23,14 +22,6 @@
   <a href="/index.xml">
     <div class="icon" id="rss-icon">
       {{ $rss.Content | safeHTML }}
-    </div>
-  </a>
-  <div>
-    Save:
-  </div>
-  <a href="https://getpocket.com/save?url={{ .Page.Permalink }}" target="_blank">
-    <div class="icon" id="pocket-icon">
-      {{ $pocket.Content | safeHTML }}
     </div>
   </a>
 </div>
