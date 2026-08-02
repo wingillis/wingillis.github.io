@@ -1,0 +1,105 @@
+identity:
+  name: Winthrop Gillis
+  initials: WG
+  role: Computational neuroscientist and research engineer
+  eyebrow: Neuroscience · applied AI · systems engineering
+  headline: I build models and systems for understanding behavior.
+  short_headline:
+    - Modeling behavior.
+    - Building systems.
+    - Driving discovery.
+  summary: I connect machine learning, scientific software, and experimental hardware to turn complex behavioral data into useful models and real-time tools.
+  availability: Open to ambitious research, product, and consulting collaborations.
+
+links:
+  email: mailto:win.gillis@gmail.com
+  github: https://github.com/wingillis
+  scholar: https://scholar.google.com/citations?user=hxoCF_cAAAAJ
+  linkedin: https://www.linkedin.com/in/wingillis
+
+metrics:
+  - value: 10+
+    label: Peer-reviewed publications
+    detail: Nature, Cell, NeurIPS, and more
+  - value: 200+ TB
+    label: Behavioral video processed
+    detail: Research pipelines built to scale
+  - value: 50+
+    label: Compounds screened
+    detail: ML-powered behavioral phenotyping
+  - value: "~50 ms"
+    label: Closed-loop latency
+    detail: Real-time behavior classification
+
+projects:
+  - title: Real-Time MoSeq
+    kicker: Closed-loop behavioral manipulation
+    description: Built a system that identifies natural behavior in tens of milliseconds and triggers precisely timed optogenetic interventions.
+    impact: From live depth video to experimental action in approximately 50 milliseconds.
+    image: images/closed-loop-rl.svg
+    url: https://www.nature.com/articles/s41586-022-05611-2
+    link_label: Read the Nature paper
+    tags:
+      - Real-time ML
+      - Embedded systems
+      - Neuroscience
+  - title: MoSeq v2 Ecosystem
+    kicker: Open-source scientific software
+    description: Led development of a user-friendly Python ecosystem spanning acquisition, modeling, visualization, documentation, and researcher training.
+    impact: Turned research code into a platform other laboratories could adopt.
+    image: images/syllables_small.png
+    url: https://moseq4all.org
+    link_label: Explore MoSeq
+    tags:
+      - Python
+      - Data pipelines
+      - Developer experience
+  - title: Behavioral Modeling at Scale
+    kicker: Statistical and deep learning systems
+    description: Developed models that reveal structure, identity, age, and variability in large behavioral datasets.
+    impact: Connected rigorous quantitative models to interpretable biological questions.
+    image: images/pca_clusters.png
+    url: /cv/
+    link_label: View the research
+    tags:
+      - Probabilistic models
+      - Deep learning
+      - Data visualization
+  - title: Neural Interface Engineering
+    kicker: Hardware-software prototyping
+    description: Co-developed peripheral nerve electrodes and interfaces for monitoring and controlling wireless stimulation systems.
+    impact: Bridged microfabrication, firmware, Bluetooth, and user-facing controls.
+    image: images/stim.png
+    url: https://iopscience.iop.org/article/10.1088/1741-2552/aa5a5b
+    link_label: Read the engineering paper
+    tags:
+      - Neural interfaces
+      - Prototyping
+      - Hardware integration
+
+capabilities:
+  - title: Behavioral AI
+    description: Probabilistic modeling, representation learning, computer vision, and interpretable analysis for high-dimensional behavior.
+  - title: Research systems
+    description: Reliable Python pipelines, scientific tooling, documentation, visualization, and workflows designed for other people to use.
+  - title: Closed-loop engineering
+    description: Low-latency inference connected to cameras, microcontrollers, lasers, neural recording, and stimulation hardware.
+  - title: Technical leadership
+    description: Translating open-ended research questions into shippable systems while coordinating scientists and engineers.
+
+interests:
+  - Behavioral foundation models
+  - Human-centered scientific tools
+  - Real-time adaptive systems
+  - Research-to-product translation
+  - Neural interfaces
+  - Creative computation
+
+about:
+  title: Researcher, engineer, and builder
+  body: My work lives where models meet the physical world. I like hard problems that require scientific judgment, careful engineering, and tools that help a team discover something genuinely new.
+  background: I earned my PhD through Harvard Medical School's Program in Neuroscience, studying how neural circuits organize natural behavior. Earlier, I developed microelectrodes for recording from and stimulating peripheral nerves.
+
+quote:
+  text: Spontaneous behaviour is structured by reinforcement without explicit reward.
+  source: Nature, 2023 · Co-first author

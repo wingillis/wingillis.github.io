@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+{{- $homeLayout := default "editorial" site.Params.homeLayout -}}
+<html lang="{{ site.Language.Locale }}"{{ if .IsHome }} data-layout="{{ $homeLayout }}"{{ end }}>
   <head>
     {{ partial "head.html" . }}
   </head>
-  <body>
-    {{ partial "navbar.html" }}
-    {{ partial "social_header.html" . }}
+  <body{{ if .IsHome }} class="home-page"{{ end }}>
+    {{- if not .IsHome -}}
+      {{ partial "navbar.html" }}
+      {{ partial "social_header.html" . }}
+    {{- end -}}
     {{- block "main" . -}}
     {{- end -}}
-    {{ partial "javascripts.html" . }}
-    {{ partial "footer.html" }}
+    {{- if not .IsHome -}}
+      {{ partial "javascripts.html" . }}
+      {{ partial "footer.html" }}
+    {{- end -}}
   </body>
 </html>
-
