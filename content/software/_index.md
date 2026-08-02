@@ -2,7 +2,7 @@
 title: Software
 ---
 
-# Software, firmware, hardware
+
 
 ## Background
 

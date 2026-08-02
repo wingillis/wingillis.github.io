@@ -7,26 +7,14 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 
-{{- if .IsHome -}}
-  {{- $base := resources.Get "stylesheets/homepage_base.scss" | css.Sass | resources.Minify -}}
-  <link rel="stylesheet" href="{{ $base.Permalink }}">
-  {{- $aurora := resources.Get "stylesheets/designs/aurora.scss" | css.Sass | resources.Minify -}}
-  <link rel="stylesheet" href="{{ $aurora.Permalink }}">
-{{- else -}}
+{{- if not .IsHome -}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-  {{- $grid := resources.Get "stylesheets/grid-sys.css" -}}
-  {{- $navbar := resources.Get "stylesheets/navbar.scss" | css.Sass | resources.Minify -}}
-  {{- $siteStyling := resources.Get "stylesheets/site_styling.scss" | css.Sass | resources.Minify -}}
-  {{- $darkmode := resources.Get "scripts/darkmode.js" -}}
-
-  <link rel="stylesheet" href="{{ $grid.Permalink }}">
-  <link rel="stylesheet" href="{{ $navbar.Permalink }}">
-  <link rel="stylesheet" href="{{ $siteStyling.Permalink }}">
-
-  <script src="{{ $darkmode.Permalink }}"></script>
 {{- end -}}
+
+{{- $base := resources.Get "stylesheets/homepage_base.scss" | css.Sass | resources.Minify -}}
+<link rel="stylesheet" href="{{ $base.RelPermalink }}">
+{{- $aurora := resources.Get "stylesheets/designs/aurora.scss" | css.Sass | resources.Minify -}}
+<link rel="stylesheet" href="{{ $aurora.RelPermalink }}">
 
 {{- if .Params.plotly -}}
 <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->

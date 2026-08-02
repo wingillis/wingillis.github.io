@@ -1,0 +1,11 @@
+{{- $home := hugo.Data.homepage -}}
+<header class="aurora-nav shell">
+  <a class="aurora-nav__name" href="/">{{ $home.identity.name }} <span>/ {{ $home.identity.role }}</span></a>
+  <nav aria-label="Primary navigation">
+    <a href="/software/">Software</a>
+    <a href="/cv/">Science</a>
+    <a href="/posts/">Writing</a>
+    <a href="/gallery/">Art</a>
+    <a href="{{ $home.links.email }}">Contact</a>
+  </nav>
+</header>

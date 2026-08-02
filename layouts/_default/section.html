@@ -1,9 +1,11 @@
 {{ define "main" }}
-<div class="extra-padding">
-  <div class="content pure-g text-content">
-    <div class="pure-u-1">
-      {{ .Content }}
-    </div>
-  </div>
-</div>
+<main class="aurora-page-main shell">
+  <header class="aurora-page-hero">
+    <p class="aurora-kicker">{{ .Section | default "Profile" }}</p>
+    <h1>{{ .Title }}</h1>
+  </header>
+  <article class="aurora-prose">
+    {{ .Content }}
+  </article>
+</main>
 {{ end }}

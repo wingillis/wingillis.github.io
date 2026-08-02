@@ -1,37 +1,26 @@
-{{ define "main"}}
-<div class="centered">
-  <h1>Posts</h1>
-</div>
+{{ define "main" }}
+<main class="aurora-page-main aurora-posts shell">
+  <header class="aurora-page-hero">
+    <p class="aurora-kicker">Notes and projects</p>
+    <h1>Writing</h1>
+  </header>
 
-<div class="article-list content">
-  {{ range .Paginator.Pages }}
-    <a href="{{ .Permalink }}" title="{{ .Title }}" class="article-item-link">
-      <div class="article-item">
-        <h3>
-          {{ .Title }}
-        </h3>
-        <div class="indent">
-          <p style="padding: 0px;">
-            {{ .Description }}
-          </p>
-          <div class="article-footer">
-              Posted:
-              {{ .Date.Format "Jan 02, 2006"}}
-              {{ printf "Estimated %d minute read" .ReadingTime }}
-          </div>
-        </div>
-      </div>
-    </a>
-  {{ end }}
-  {{ if .Paginator.HasPrev }}
-    <div class="article-pagination">
-        <a href="{{ .Paginator.Prev.URL }}" class="article-pagination-right">Newer posts <span class="icon icon-ios-arrow-thin-right"></span></a>
-    </div>
-  {{ end }}
-  {{ if .Paginator.HasNext }}
-    <div class="article-pagination">
-        <a href="{{ .Paginator.Next.URL }}"><span class="icon icon-ios-arrow-thin-left"></span> Older posts</a>
-    </div>
+  <div class="aurora-post-list">
+    {{ range .Paginator.Pages }}
+      <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="aurora-post-card">
+        <p class="aurora-post-card__meta">{{ .Date.Format "Jan 02, 2006" }} · {{ printf "%d min read" .ReadingTime }}</p>
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Description }}</p>
+        <span>Read article →</span>
+      </a>
     {{ end }}
-</div>
+  </div>
+
+  {{ if or .Paginator.HasPrev .Paginator.HasNext }}
+    <nav class="aurora-pagination" aria-label="Post pagination">
+      {{ with .Paginator.Prev }}<a href="{{ .URL }}">← Newer posts</a>{{ end }}
+      {{ with .Paginator.Next }}<a href="{{ .URL }}">Older posts →</a>{{ end }}
+    </nav>
+  {{ end }}
+</main>
 {{ end }}

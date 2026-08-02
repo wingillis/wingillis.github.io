@@ -3,16 +3,19 @@
   <head>
     {{ partial "head.html" . }}
   </head>
-  <body{{ if .IsHome }} class="home-page"{{ end }}>
-    {{- if not .IsHome -}}
-      {{ partial "navbar.html" }}
-      {{ partial "social_header.html" . }}
-    {{- end -}}
-    {{- block "main" . -}}
-    {{- end -}}
-    {{- if not .IsHome -}}
+  <body class="{{ if .IsHome }}home-page{{ else }}aurora-page{{ end }}">
+    {{- if .IsHome -}}
+      {{- block "main" . -}}{{- end -}}
+    {{- else -}}
+      <div class="aurora-site aurora-page-layout">
+        <div class="aurora-field" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        {{ partial "aurora-nav.html" . }}
+        {{- block "main" . -}}{{- end -}}
+        {{ partial "aurora-footer.html" . }}
+      </div>
       {{ partial "javascripts.html" . }}
-      {{ partial "footer.html" }}
     {{- end -}}
   </body>
 </html>
