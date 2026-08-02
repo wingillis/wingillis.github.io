@@ -1,11 +1,17 @@
 {{- $home := hugo.Data.homepage -}}
+{{- $cv := resources.Get "documents/WinthropGillis2025.pdf" -}}
 <header class="aurora-nav shell">
   <a class="aurora-nav__name" href="/">{{ $home.identity.name }} <span>/ {{ $home.identity.role }}</span></a>
-  <nav aria-label="Primary navigation">
-    <a href="/software/">Software</a>
-    <a href="/cv/">Science</a>
-    <a href="/posts/">Writing</a>
-    <a href="/gallery/">Art</a>
-    <a href="{{ $home.links.email }}">Contact</a>
-  </nav>
+  <div class="aurora-nav__actions">
+    {{- if eq .Section "cv" -}}
+      {{- with $cv }}<a class="aurora-nav__cv" href="{{ .RelPermalink }}" target="_blank" rel="noopener">CV PDF ↗</a>{{ end -}}
+    {{- end -}}
+    <nav aria-label="Primary navigation">
+      <a href="/software/">Software</a>
+      <a href="/cv/">Science</a>
+      <a href="/posts/">Writing</a>
+      <a href="/gallery/">Art</a>
+      <a href="{{ $home.links.email }}">Contact</a>
+    </nav>
+  </div>
 </header>

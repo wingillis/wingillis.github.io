@@ -1,8 +1,7 @@
 ---
-title: CV
+title: Scientific work
 ---
 
-{{< cv-and-scholar scholar="https://scholar.google.com/citations?user=hxoCF_cAAAAJ" cv="documents/WinthropGillis2025.pdf" >}}
 
 ## Papers
 

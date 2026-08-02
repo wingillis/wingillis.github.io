@@ -113,6 +113,29 @@ $line: rgba(144, 183, 255, 0.2);
   }
 }
 
+.aurora-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(17px, 3vw, 38px);
+}
+
+.aurora-nav__cv {
+  padding: 7px 10px;
+  border: 1px solid rgba(105, 180, 255, 0.46);
+  background: rgba(75, 213, 198, 0.1);
+  color: $text;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: border-color 160ms ease, background 160ms ease;
+
+  &:hover {
+    border-color: $aqua;
+    background: rgba(75, 213, 198, 0.18);
+  }
+}
+
 .aurora-hero {
   position: relative;
   z-index: 1;
@@ -514,6 +537,13 @@ $line: rgba(144, 183, 255, 0.2);
 
   .aurora-nav__name span { display: none; }
 
+  .aurora-nav__actions { gap: 10px; }
+
+  .aurora-nav__cv {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
   .aurora-hero {
     padding-block: 80px 56px;
   }
@@ -587,7 +617,6 @@ $line: rgba(144, 183, 255, 0.2);
 }
 
 .aurora-page-hero {
-  max-width: 940px;
   margin-bottom: clamp(42px, 7vw, 76px);
 
   h1 {
@@ -623,7 +652,6 @@ $line: rgba(144, 183, 255, 0.2);
 }
 
 .aurora-prose {
-  max-width: 850px;
   color: $muted;
   font-size: 16px;
   line-height: 1.75;
