@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-{{- $homeLayout := default "editorial" site.Params.homeLayout -}}
-<html lang="{{ site.Language.Locale }}"{{ if .IsHome }} data-layout="{{ $homeLayout }}"{{ end }}>
+<html lang="{{ site.Language.Locale }}">
   <head>
     {{ partial "head.html" . }}
   </head>

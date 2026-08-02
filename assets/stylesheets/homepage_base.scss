@@ -27,85 +27,9 @@ body.home-page .shell {
   margin-inline: auto;
 }
 
-[data-layout-view] {
-  display: none;
-}
-
-html[data-layout="terminal"] [data-layout-view="terminal"],
-html[data-layout="editorial"] [data-layout-view="editorial"],
-html[data-layout="aurora"] [data-layout-view="aurora"] {
-  display: block;
-}
-
-.layout-preview {
-  position: fixed;
-  z-index: 1000;
-  top: 12px;
-  right: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
-  background: rgba(10, 13, 19, 0.9);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
-  color: #fff;
-  font: 600 11px/1.1 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-}
-
-.layout-preview__label {
-  padding-left: 8px;
-  opacity: 0.65;
-}
-
-.layout-preview__controls {
-  display: flex;
-  gap: 3px;
-}
-
-.layout-preview button {
-  border: 0;
-  border-radius: 999px;
-  padding: 7px 10px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  cursor: pointer;
-}
-
-.layout-preview button:hover,
-.layout-preview button:focus-visible {
-  outline: none;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.layout-preview button[aria-pressed="true"] {
-  background: #fff;
-  color: #111;
-}
-
 @media (max-width: 700px) {
   body.home-page .shell {
     width: calc(100% - 28px);
-  }
-
-  .layout-preview {
-    top: auto;
-    right: 8px;
-    bottom: 8px;
-    left: 8px;
-    justify-content: center;
-  }
-
-  .layout-preview__label {
-    display: none;
   }
 }
 

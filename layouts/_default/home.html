@@ -1,36 +1,5 @@
 {{- define "main" -}}
-{{- if hugo.IsDevelopment -}}
-  <aside class="layout-preview" aria-label="Development layout preview">
-    <span class="layout-preview__label">Preview</span>
-    <div class="layout-preview__controls" role="group" aria-label="Choose homepage layout">
-      <button type="button" data-layout-choice="terminal">Terminal</button>
-      <button type="button" data-layout-choice="editorial">Editorial</button>
-      <button type="button" data-layout-choice="aurora">Aurora</button>
-    </div>
-  </aside>
   <main id="homepage">
-    <div data-layout-view="terminal">
-      {{ partial "home/layouts/terminal.html" . }}
-    </div>
-    <div data-layout-view="editorial">
-      {{ partial "home/layouts/editorial.html" . }}
-    </div>
-    <div data-layout-view="aurora">
-      {{ partial "home/layouts/aurora.html" . }}
-    </div>
+    {{ partial "home/layouts/aurora.html" . }}
   </main>
-{{- else -}}
-  <main id="homepage">
-    {{- $layout := default "editorial" site.Params.homeLayout -}}
-    {{- if eq $layout "terminal" -}}
-      {{ partial "home/layouts/terminal.html" . }}
-    {{- else if eq $layout "aurora" -}}
-      {{ partial "home/layouts/aurora.html" . }}
-    {{- else if eq $layout "editorial" -}}
-      {{ partial "home/layouts/editorial.html" . }}
-    {{- else -}}
-      {{ errorf "Unknown params.homeLayout %q; expected terminal, editorial, or aurora" $layout }}
-    {{- end -}}
-  </main>
-{{- end -}}
 {{- end -}}

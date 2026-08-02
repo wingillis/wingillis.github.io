@@ -10,20 +10,8 @@
 {{- if .IsHome -}}
   {{- $base := resources.Get "stylesheets/homepage_base.scss" | css.Sass | resources.Minify -}}
   <link rel="stylesheet" href="{{ $base.Permalink }}">
-  {{- if hugo.IsDevelopment -}}
-    {{- range slice "terminal" "editorial" "aurora" -}}
-      {{- $stylePath := printf "stylesheets/designs/%s.scss" . -}}
-      {{- $style := resources.Get $stylePath | css.Sass | resources.Minify -}}
-      <link rel="stylesheet" href="{{ $style.Permalink }}">
-    {{- end -}}
-    {{- $preview := resources.Get "scripts/layout-preview.js" | resources.Minify -}}
-    <script src="{{ $preview.Permalink }}"></script>
-  {{- else -}}
-    {{- $layout := default "editorial" site.Params.homeLayout -}}
-    {{- $stylePath := printf "stylesheets/designs/%s.scss" $layout -}}
-    {{- $style := resources.Get $stylePath | css.Sass | resources.Minify -}}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-  {{- end -}}
+  {{- $aurora := resources.Get "stylesheets/designs/aurora.scss" | css.Sass | resources.Minify -}}
+  <link rel="stylesheet" href="{{ $aurora.Permalink }}">
 {{- else -}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">

@@ -4,9 +4,6 @@ title = 'Winthrop Gillis'
 buildDrafts = true
 enableEmoji = true
 
-[params]
-homeLayout = 'editorial'
-
 [markup]
 defaultMarkdownHandler = "goldmark"
 
