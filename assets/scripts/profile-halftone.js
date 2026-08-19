@@ -8,27 +8,12 @@
   const FRAME_INTERVAL = 1000 / 30;
   const BREATH_DURATION = 5600;
   const BREATH_STRENGTH = 0.012;
-  const WAVE_DURATION = 8200;
-  const WAVE_BANDWIDTH = 0.075;
+  const WAVE_SWEEP_DURATION = 11000;
+  const WAVE_PAUSE_DURATION = 8000;
+  const WAVE_CYCLE_DURATION = WAVE_SWEEP_DURATION + WAVE_PAUSE_DURATION;
+  const WAVE_BANDWIDTH = 0.068;
   const WAVE_MAX_SCALE = 2;
-  const WAVE_VISIBILITY_THRESHOLD = 0.012;
-
-  const parseHexColor = (value) => {
-    const raw = value.replace("#", "").trim();
-    const hex = raw.length === 3
-      ? raw.split("").map((character) => character + character).join("")
-      : raw;
-
-    if (!/^[0-9a-f]{6}$/i.test(hex)) {
-      return [85, 203, 211];
-    }
-
-    return [
-      parseInt(hex.slice(0, 2), 16),
-      parseInt(hex.slice(2, 4), 16),
-      parseInt(hex.slice(4, 6), 16)
-    ];
-  };
+  const COLOR_REVEAL_EXTENT = 2.5;
 
   const drawHalftone = (portrait) => {
     const image = portrait.querySelector(".home-halftone__source");
@@ -46,8 +31,10 @@
     const sampleCanvas = document.createElement("canvas");
     const sampleContext = sampleCanvas.getContext("2d", { willReadFrequently: true });
     const context = canvas.getContext("2d");
+    const waveCanvas = document.createElement("canvas");
+    const waveContext = waveCanvas.getContext("2d");
 
-    if (!sampleContext || !context) {
+    if (!sampleContext || !context || !waveContext) {
       return;
     }
 
@@ -55,11 +42,12 @@
     canvas.height = height;
     sampleCanvas.width = width;
     sampleCanvas.height = height;
+    waveCanvas.width = width;
+    waveCanvas.height = height;
     sampleContext.drawImage(image, 0, 0, width, height);
 
     const pixels = sampleContext.getImageData(0, 0, width, height).data;
     const dotColor = portrait.dataset.dotColor || "#55cbd3";
-    const dotColorRgb = parseHexColor(dotColor);
     const diagonalLengthSquared = width * width + height * height;
     const dots = [];
 
@@ -88,13 +76,9 @@
 
         dots.push({
           alpha: alpha * (0.62 + tone * 0.38),
-          blue: pixels[offset + 2],
           diagonal: (x * width + y * height) / diagonalLengthSquared,
-          green: pixels[offset + 1],
           radius,
-          red: pixels[offset],
           scale: 1,
-          wave: 0,
           x,
           y
         });
@@ -109,13 +93,48 @@
     let isVisible = true;
     let lastFrameAt = 0;
 
+    const drawPhotoWave = (wavePosition) => {
+      const revealWidth = WAVE_BANDWIDTH * COLOR_REVEAL_EXTENT;
+
+      waveContext.clearRect(0, 0, width, height);
+      waveContext.globalCompositeOperation = "source-over";
+      waveContext.drawImage(sampleCanvas, 0, 0);
+      waveContext.globalCompositeOperation = "destination-in";
+
+      const gradient = waveContext.createLinearGradient(
+        (wavePosition - revealWidth) * width,
+        (wavePosition - revealWidth) * height,
+        (wavePosition + revealWidth) * width,
+        (wavePosition + revealWidth) * height
+      );
+
+      gradient.addColorStop(0, "rgba(255, 255, 255, 0)");
+      gradient.addColorStop(0.1, "rgba(255, 255, 255, 0.05)");
+      gradient.addColorStop(0.2, "rgba(255, 255, 255, 0.25)");
+      gradient.addColorStop(0.3, "rgba(255, 255, 255, 0.66)");
+      gradient.addColorStop(0.4, "rgba(255, 255, 255, 0.96)");
+      gradient.addColorStop(0.5, "rgba(255, 255, 255, 1)");
+      gradient.addColorStop(0.6, "rgba(255, 255, 255, 0.96)");
+      gradient.addColorStop(0.7, "rgba(255, 255, 255, 0.66)");
+      gradient.addColorStop(0.8, "rgba(255, 255, 255, 0.25)");
+      gradient.addColorStop(0.9, "rgba(255, 255, 255, 0.05)");
+      gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+      waveContext.fillStyle = gradient;
+      waveContext.fillRect(0, 0, width, height);
+      waveContext.globalCompositeOperation = "source-over";
+      context.drawImage(waveCanvas, 0, 0);
+    };
+
     const drawFrame = (now, animate) => {
       const elapsed = now - startedAt;
       const breath = animate
         ? 1 + Math.sin(elapsed / BREATH_DURATION * Math.PI * 2) * BREATH_STRENGTH
         : 1;
-      const wavePosition = animate
-        ? (elapsed % WAVE_DURATION) / WAVE_DURATION * 1.5 - 0.25
+      const waveElapsed = elapsed % WAVE_CYCLE_DURATION;
+      const waveActive = animate && waveElapsed < WAVE_SWEEP_DURATION;
+      const wavePosition = waveActive
+        ? waveElapsed / WAVE_SWEEP_DURATION * 1.5 - 0.25
         : -1;
 
       context.clearRect(0, 0, width, height);
@@ -123,34 +142,13 @@
 
       dots.forEach((dot) => {
         const distance = dot.diagonal - wavePosition;
-        const wave = animate
+        const wave = waveActive
           ? Math.exp(-0.5 * Math.pow(distance / WAVE_BANDWIDTH, 2))
           : 0;
         const easedWave = wave * wave * (3 - 2 * wave);
 
-        dot.wave = easedWave;
         dot.scale = breath + (WAVE_MAX_SCALE - breath) * easedWave;
 
-        if (easedWave >= WAVE_VISIBILITY_THRESHOLD) {
-          return;
-        }
-
-        context.globalAlpha = dot.alpha;
-        context.beginPath();
-        context.arc(dot.x, dot.y, dot.radius * dot.scale, 0, Math.PI * 2);
-        context.fill();
-      });
-
-      dots.forEach((dot) => {
-        if (dot.wave < WAVE_VISIBILITY_THRESHOLD) {
-          return;
-        }
-
-        const red = Math.round(dotColorRgb[0] + (dot.red - dotColorRgb[0]) * dot.wave);
-        const green = Math.round(dotColorRgb[1] + (dot.green - dotColorRgb[1]) * dot.wave);
-        const blue = Math.round(dotColorRgb[2] + (dot.blue - dotColorRgb[2]) * dot.wave);
-
-        context.fillStyle = `rgb(${red}, ${green}, ${blue})`;
         context.globalAlpha = dot.alpha;
         context.beginPath();
         context.arc(dot.x, dot.y, dot.radius * dot.scale, 0, Math.PI * 2);
@@ -158,6 +156,10 @@
       });
 
       context.globalAlpha = 1;
+
+      if (waveActive) {
+        drawPhotoWave(wavePosition);
+      }
     };
 
     const stop = () => {
