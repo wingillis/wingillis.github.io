@@ -169,7 +169,8 @@ body.home {
   &::before {
     background:
       radial-gradient(circle at 12% 12%, rgba(#a7d9b3, 0.33), transparent 34rem),
-      radial-gradient(circle at 88% 76%, rgba(#087e97, 0.48), transparent 42rem),
+      radial-gradient(circle at 70% 38%, rgba(#8ac5ad, 0.28), transparent 29rem),
+      radial-gradient(circle at 88% 76%, rgba(#087e97, 0.38), transparent 42rem),
       radial-gradient(circle at 73% 8%, rgba(#69b5a0, 0.17), transparent 26rem),
       linear-gradient(132deg, #175d5f 0%, #0c5660 42%, #084552 100%);
     z-index: -2;
@@ -228,6 +229,18 @@ body.home {
   min-height: calc(100vh - 161px);
   padding: 28px 30px 45px;
   position: relative;
+}
+
+.home-hero::after {
+  background-image: radial-gradient(rgba(#e4fff2, 0.75) 0.55px, transparent 0.65px);
+  background-size: 4px 4px;
+  content: "";
+  inset: 0;
+  mix-blend-mode: soft-light;
+  opacity: 0.17;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
 }
 
 .home-hero__content {
@@ -325,32 +338,24 @@ body.home {
 .home-hero__portrait {
   align-self: end;
   justify-self: center;
-  max-width: 510px;
+  max-width: 560px;
   min-height: 500px;
   overflow: hidden;
   position: relative;
+  transform: translate(24px, 38px);
   width: 100%;
-}
-
-.home-hero__portrait-glow {
-  background: radial-gradient(ellipse at center, rgba(#d1f7cf, 0.38) 0%, rgba(#70c0a1, 0.12) 43%, transparent 70%);
-  border-radius: 50%;
-  bottom: 1%;
-  filter: blur(5px);
-  height: 72%;
-  left: 1%;
-  position: absolute;
-  width: 98%;
 }
 
 .home-hero__portrait-image {
   display: block;
-  filter: drop-shadow(-14px 22px 25px rgba(#022e36, 0.25));
+  aspect-ratio: 2481 / 3508;
+  height: auto;
   margin: 0 auto;
   max-height: 710px;
-  max-width: 503px;
+  max-width: 112%;
+  object-fit: contain;
   position: relative;
-  width: 100%;
+  width: auto;
 }
 
 @media screen and (max-width: 48em) {
@@ -374,9 +379,12 @@ body.home {
     margin-top: 10px;
     max-width: 430px;
     min-height: 0;
+    transform: none;
   }
 
   .home-hero__portrait-image {
+    aspect-ratio: auto;
+    height: auto;
     max-height: none;
     max-width: 430px;
     width: 100%;
