@@ -9,13 +9,10 @@
 {{- $grid := resources.Get "stylesheets/grid-sys.css" -}}
 {{- $navbar := resources.Get "stylesheets/navbar.scss" | css.Sass | resources.Minify -}}
 {{ $site_styling := resources.Get "stylesheets/site_styling.scss" | css.Sass | resources.Minify }}
-{{ $darkmode := resources.Get "scripts/darkmode.js" }}
 
 <link rel="stylesheet" href="{{ $grid.Permalink }}">
 <link rel="stylesheet" href="{{ $navbar.Permalink }}">
 <link rel="stylesheet" href="{{ $site_styling.Permalink }}">
-
-<script language="javascript" src="{{ $darkmode.Permalink }}"></script>
 
 {{- if .Params.plotly -}}
 <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->

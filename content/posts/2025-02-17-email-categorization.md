@@ -4,7 +4,7 @@ date: 2025-03-01
 title: Email categorization using local language models
 Version: 1
 plotly: true
-_build:
+build:
   render: true
   list: true
 ---
