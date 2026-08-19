@@ -12,7 +12,7 @@
   const WAVE_PAUSE_DURATION = 8000;
   const WAVE_CYCLE_DURATION = WAVE_SWEEP_DURATION + WAVE_PAUSE_DURATION;
   const WAVE_BANDWIDTH = 0.068;
-  const WAVE_MAX_SCALE = 2;
+  const DOT_RADIUS_MAX = DOT_SPACING / 2;
   const PHOTO_DOT_THRESHOLD = 0.012;
   const PHOTO_DOT_OUTLINE_WIDTH = 1;
 
@@ -83,7 +83,7 @@
           alpha: alpha * (0.62 + tone * 0.38),
           diagonal: (x * width + y * height) / diagonalLengthSquared,
           radius,
-          scale: 1,
+          renderedRadius: radius,
           wave: 0,
           x,
           y
@@ -110,7 +110,7 @@
 
         maskContext.globalAlpha = dot.wave;
         maskContext.beginPath();
-        maskContext.arc(dot.x, dot.y, dot.radius * dot.scale, 0, Math.PI * 2);
+        maskContext.arc(dot.x, dot.y, dot.renderedRadius, 0, Math.PI * 2);
         maskContext.fill();
       });
 
@@ -135,7 +135,7 @@
 
         context.globalAlpha = dot.wave;
         context.beginPath();
-        context.arc(dot.x, dot.y, dot.radius * dot.scale, 0, Math.PI * 2);
+        context.arc(dot.x, dot.y, dot.renderedRadius, 0, Math.PI * 2);
         context.stroke();
       });
 
@@ -163,13 +163,17 @@
           ? Math.exp(-0.5 * Math.pow(distance / WAVE_BANDWIDTH, 2))
           : 0;
         const easedWave = wave * wave * (3 - 2 * wave);
+        const restingRadius = dot.radius * breath;
 
         dot.wave = easedWave;
-        dot.scale = breath + (WAVE_MAX_SCALE - breath) * easedWave;
+        dot.renderedRadius = Math.min(
+          DOT_RADIUS_MAX,
+          restingRadius + (DOT_RADIUS_MAX - restingRadius) * easedWave
+        );
 
         context.globalAlpha = dot.alpha;
         context.beginPath();
-        context.arc(dot.x, dot.y, dot.radius * dot.scale, 0, Math.PI * 2);
+        context.arc(dot.x, dot.y, dot.renderedRadius, 0, Math.PI * 2);
         context.fill();
       });
 

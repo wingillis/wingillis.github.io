@@ -6,7 +6,7 @@
 }
 
 .header {
-  background-color: rgba(#052d35, 0.78);
+  background-color: rgba(#052d35, 0.64);
   border-bottom: 1px solid rgba(#d1e6db, 0.11);
 }
 
@@ -33,8 +33,8 @@ a.pure-menu-heading.pure-menu-link {
   color: #f4fbf7;
 }
 
-a.pure-menu-link {
-  color: #d9eee4;
+nav a.pure-menu-link {
+  color: #f4fbf7;
   padding-bottom: 18px;
   padding-top: 18px;
   transition: background-color 0.2s;
