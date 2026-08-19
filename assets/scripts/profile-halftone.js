@@ -12,8 +12,8 @@
   const WAVE_PAUSE_DURATION = 8000;
   const WAVE_CYCLE_DURATION = WAVE_SWEEP_DURATION + WAVE_PAUSE_DURATION;
   const WAVE_BANDWIDTH = 0.068;
-  const POINTER_WAVE_RADIUS = 0.16;
-  const POINTER_WAVE_EDGE = 0.035;
+  const POINTER_WAVE_RADIUS = 0.05;
+  const POINTER_WAVE_TAPER = 0.15;
   const DOT_RADIUS_MAX = DOT_SPACING / 2;
   const PHOTO_DOT_THRESHOLD = 0.012;
   const PHOTO_DOT_OUTLINE_WIDTH = 1;
@@ -158,8 +158,7 @@
         : -1;
       const pointerSize = Math.min(pointer.width, pointer.height);
       const pointerWaveRadius = pointerSize * POINTER_WAVE_RADIUS;
-      const pointerWaveEdge = pointerSize * POINTER_WAVE_EDGE;
-      const pointerWaveStart = pointerWaveRadius - pointerWaveEdge;
+      const pointerWaveTaper = pointerSize * POINTER_WAVE_TAPER;
 
       context.clearRect(0, 0, width, height);
       context.fillStyle = dotColor;
@@ -180,7 +179,7 @@
             1,
             Math.max(
               0,
-              (pointerDistance - pointerWaveStart) / pointerWaveEdge
+              (pointerDistance - pointerWaveRadius) / pointerWaveTaper
             )
           )
           : 0;
