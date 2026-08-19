@@ -7,10 +7,6 @@
         <a class="home-hero__button" href="/cv/">Explore my science</a>
         <a class="home-hero__text-link" href="/posts/">Read the blog <span aria-hidden="true">→</span></a>
       </div>
-      <button class="home-hero__depth-toggle" id="portrait-depth-toggle" type="button" aria-pressed="true">
-        <span>Portrait depth</span>
-        <span class="home-hero__depth-toggle-state">Puffy</span>
-      </button>
     </section>
     <div class="home-hero__portrait">
       {{- with resources.Get "images/profile-nobg.webp" -}}
@@ -19,7 +15,4 @@
     </div>
   </div>
 </main>
-{{- with resources.Get "scripts/puffy-toggle.js" -}}
-  <script defer src="{{ .RelPermalink }}"></script>
-{{- end -}}
 {{- end -}}
