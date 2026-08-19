@@ -10,7 +10,10 @@
     </section>
     <div class="home-hero__portrait">
       {{- with resources.Get "images/profile-nobg.webp" -}}
-        <img src="{{ .RelPermalink }}" class="home-hero__portrait-image" alt="Portrait of Winthrop Gillis">
+        <div class="home-halftone" data-halftone-portrait data-dot-color="#55cbd3">
+          <img src="{{ .RelPermalink }}" class="home-hero__portrait-image home-halftone__source" alt="Portrait of Winthrop Gillis">
+          <canvas class="home-halftone__canvas" aria-hidden="true"></canvas>
+        </div>
       {{- end -}}
     </div>
   </div>

@@ -13,3 +13,9 @@
     im.style.paddingBottom = Math.round(Math.random() * 29 + 18) + 'px';
   });
 </script>
+
+{{- if .IsHome -}}
+  {{- with resources.Get "scripts/profile-halftone.js" | resources.Minify -}}
+<script defer src="{{ .RelPermalink }}"></script>
+  {{- end -}}
+{{- end -}}
