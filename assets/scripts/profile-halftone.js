@@ -13,7 +13,8 @@
   const WAVE_CYCLE_DURATION = WAVE_SWEEP_DURATION + WAVE_PAUSE_DURATION;
   const WAVE_BANDWIDTH = 0.068;
   const WAVE_MAX_SCALE = 2;
-  const COLOR_REVEAL_EXTENT = 2.5;
+  const PHOTO_DOT_THRESHOLD = 0.012;
+  const PHOTO_DOT_OUTLINE_WIDTH = 1;
 
   const drawHalftone = (portrait) => {
     const image = portrait.querySelector(".home-halftone__source");
@@ -31,10 +32,12 @@
     const sampleCanvas = document.createElement("canvas");
     const sampleContext = sampleCanvas.getContext("2d", { willReadFrequently: true });
     const context = canvas.getContext("2d");
+    const maskCanvas = document.createElement("canvas");
+    const maskContext = maskCanvas.getContext("2d");
     const waveCanvas = document.createElement("canvas");
     const waveContext = waveCanvas.getContext("2d");
 
-    if (!sampleContext || !context || !waveContext) {
+    if (!sampleContext || !context || !maskContext || !waveContext) {
       return;
     }
 
@@ -42,6 +45,8 @@
     canvas.height = height;
     sampleCanvas.width = width;
     sampleCanvas.height = height;
+    maskCanvas.width = width;
+    maskCanvas.height = height;
     waveCanvas.width = width;
     waveCanvas.height = height;
     sampleContext.drawImage(image, 0, 0, width, height);
@@ -79,6 +84,7 @@
           diagonal: (x * width + y * height) / diagonalLengthSquared,
           radius,
           scale: 1,
+          wave: 0,
           x,
           y
         });
@@ -93,37 +99,48 @@
     let isVisible = true;
     let lastFrameAt = 0;
 
-    const drawPhotoWave = (wavePosition) => {
-      const revealWidth = WAVE_BANDWIDTH * COLOR_REVEAL_EXTENT;
+    const drawPhotoDots = () => {
+      maskContext.clearRect(0, 0, width, height);
+      maskContext.fillStyle = "#ffffff";
+
+      dots.forEach((dot) => {
+        if (dot.wave < PHOTO_DOT_THRESHOLD) {
+          return;
+        }
+
+        maskContext.globalAlpha = dot.wave;
+        maskContext.beginPath();
+        maskContext.arc(dot.x, dot.y, dot.radius * dot.scale, 0, Math.PI * 2);
+        maskContext.fill();
+      });
+
+      maskContext.globalAlpha = 1;
 
       waveContext.clearRect(0, 0, width, height);
       waveContext.globalCompositeOperation = "source-over";
       waveContext.drawImage(sampleCanvas, 0, 0);
       waveContext.globalCompositeOperation = "destination-in";
-
-      const gradient = waveContext.createLinearGradient(
-        (wavePosition - revealWidth) * width,
-        (wavePosition - revealWidth) * height,
-        (wavePosition + revealWidth) * width,
-        (wavePosition + revealWidth) * height
-      );
-
-      gradient.addColorStop(0, "rgba(255, 255, 255, 0)");
-      gradient.addColorStop(0.1, "rgba(255, 255, 255, 0.05)");
-      gradient.addColorStop(0.2, "rgba(255, 255, 255, 0.25)");
-      gradient.addColorStop(0.3, "rgba(255, 255, 255, 0.66)");
-      gradient.addColorStop(0.4, "rgba(255, 255, 255, 0.96)");
-      gradient.addColorStop(0.5, "rgba(255, 255, 255, 1)");
-      gradient.addColorStop(0.6, "rgba(255, 255, 255, 0.96)");
-      gradient.addColorStop(0.7, "rgba(255, 255, 255, 0.66)");
-      gradient.addColorStop(0.8, "rgba(255, 255, 255, 0.25)");
-      gradient.addColorStop(0.9, "rgba(255, 255, 255, 0.05)");
-      gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-      waveContext.fillStyle = gradient;
-      waveContext.fillRect(0, 0, width, height);
+      waveContext.drawImage(maskCanvas, 0, 0);
       waveContext.globalCompositeOperation = "source-over";
       context.drawImage(waveCanvas, 0, 0);
+
+      context.globalCompositeOperation = "destination-out";
+      context.strokeStyle = "#000000";
+      context.lineWidth = PHOTO_DOT_OUTLINE_WIDTH;
+
+      dots.forEach((dot) => {
+        if (dot.wave < PHOTO_DOT_THRESHOLD) {
+          return;
+        }
+
+        context.globalAlpha = dot.wave;
+        context.beginPath();
+        context.arc(dot.x, dot.y, dot.radius * dot.scale, 0, Math.PI * 2);
+        context.stroke();
+      });
+
+      context.globalCompositeOperation = "source-over";
+      context.globalAlpha = 1;
     };
 
     const drawFrame = (now, animate) => {
@@ -147,6 +164,7 @@
           : 0;
         const easedWave = wave * wave * (3 - 2 * wave);
 
+        dot.wave = easedWave;
         dot.scale = breath + (WAVE_MAX_SCALE - breath) * easedWave;
 
         context.globalAlpha = dot.alpha;
@@ -158,7 +176,7 @@
       context.globalAlpha = 1;
 
       if (waveActive) {
-        drawPhotoWave(wavePosition);
+        drawPhotoDots();
       }
     };
 
