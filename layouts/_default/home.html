@@ -10,15 +10,9 @@
     </section>
     <div class="home-hero__portrait">
       {{- with resources.Get "images/profile-nobg.webp" -}}
-        <div class="home-hologram" style="--hologram-mask: url('{{ .RelPermalink }}');">
-          <span class="home-hologram__beam" aria-hidden="true"></span>
-          <div class="home-hologram__figure">
-            <img src="{{ .RelPermalink }}" class="home-hero__portrait-image home-hologram__image home-hologram__image--core" alt="Portrait of Winthrop Gillis">
-            <img src="{{ .RelPermalink }}" class="home-hero__portrait-image home-hologram__image home-hologram__image--echo-a" alt="" aria-hidden="true">
-            <img src="{{ .RelPermalink }}" class="home-hero__portrait-image home-hologram__image home-hologram__image--echo-b" alt="" aria-hidden="true">
-            <span class="home-hologram__scan" aria-hidden="true"></span>
-          </div>
-          <span class="home-hologram__emitter" aria-hidden="true"></span>
+        <div class="home-halftone" data-halftone-portrait data-dot-color="#55cbd3">
+          <img src="{{ .RelPermalink }}" class="home-hero__portrait-image home-halftone__source" alt="Portrait of Winthrop Gillis">
+          <canvas class="home-halftone__canvas" aria-hidden="true"></canvas>
         </div>
       {{- end -}}
     </div>
