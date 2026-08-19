@@ -12,6 +12,8 @@
   const WAVE_PAUSE_DURATION = 8000;
   const WAVE_CYCLE_DURATION = WAVE_SWEEP_DURATION + WAVE_PAUSE_DURATION;
   const WAVE_BANDWIDTH = 0.068;
+  const POINTER_WAVE_RADIUS = 0.16;
+  const POINTER_WAVE_EDGE = 0.035;
   const DOT_RADIUS_MAX = DOT_SPACING / 2;
   const PHOTO_DOT_THRESHOLD = 0.012;
   const PHOTO_DOT_OUTLINE_WIDTH = 1;
@@ -95,6 +97,7 @@
 
     const startedAt = performance.now();
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const pointer = { active: false, height: 0, width: 0, x: 0, y: 0 };
     let animationFrame = null;
     let isVisible = true;
     let lastFrameAt = 0;
@@ -153,6 +156,10 @@
       const wavePosition = waveActive
         ? waveElapsed / WAVE_SWEEP_DURATION * 1.5 - 0.25
         : -1;
+      const pointerSize = Math.min(pointer.width, pointer.height);
+      const pointerWaveRadius = pointerSize * POINTER_WAVE_RADIUS;
+      const pointerWaveEdge = pointerSize * POINTER_WAVE_EDGE;
+      const pointerWaveStart = pointerWaveRadius - pointerWaveEdge;
 
       context.clearRect(0, 0, width, height);
       context.fillStyle = dotColor;
@@ -162,7 +169,26 @@
         const wave = waveActive
           ? Math.exp(-0.5 * Math.pow(distance / WAVE_BANDWIDTH, 2))
           : 0;
-        const easedWave = wave * wave * (3 - 2 * wave);
+        const pointerDistance = pointer.active
+          ? Math.hypot(
+            dot.x / width * pointer.width - pointer.x,
+            dot.y / height * pointer.height - pointer.y
+          )
+          : Infinity;
+        const pointerWave = pointer.active
+          ? 1 - Math.min(
+            1,
+            Math.max(
+              0,
+              (pointerDistance - pointerWaveStart) / pointerWaveEdge
+            )
+          )
+          : 0;
+        const easedPointerWave = pointerWave * pointerWave * (3 - 2 * pointerWave);
+        const easedWave = Math.max(
+          wave * wave * (3 - 2 * wave),
+          easedPointerWave
+        );
         const restingRadius = dot.radius * breath;
 
         dot.wave = easedWave;
@@ -179,7 +205,7 @@
 
       context.globalAlpha = 1;
 
-      if (waveActive) {
+      if (waveActive || pointer.active) {
         drawPhotoDots();
       }
     };
@@ -218,8 +244,46 @@
       start();
     };
 
+    const updatePointer = (event) => {
+      if (event.pointerType !== "mouse" && event.pointerType !== "pen") {
+        return;
+      }
+
+      const bounds = portrait.getBoundingClientRect();
+
+      if (!bounds.width || !bounds.height) {
+        return;
+      }
+
+      pointer.active = true;
+      pointer.width = bounds.width;
+      pointer.height = bounds.height;
+      pointer.x = Math.max(0, Math.min(bounds.width, event.clientX - bounds.left));
+      pointer.y = Math.max(0, Math.min(bounds.height, event.clientY - bounds.top));
+
+      if (motionPreference.matches) {
+        drawFrame(performance.now(), false);
+      }
+    };
+
+    const clearPointer = (event) => {
+      if (event.pointerType !== "mouse" && event.pointerType !== "pen") {
+        return;
+      }
+
+      pointer.active = false;
+
+      if (motionPreference.matches) {
+        drawFrame(performance.now(), false);
+      }
+    };
+
     drawFrame(performance.now(), false);
     portrait.classList.add("is-rendered");
+    portrait.addEventListener("pointermove", updatePointer);
+    portrait.addEventListener("pointerenter", updatePointer);
+    portrait.addEventListener("pointerleave", clearPointer);
+    portrait.addEventListener("pointercancel", clearPointer);
 
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(([entry]) => {

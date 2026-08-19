@@ -218,24 +218,27 @@ body::after {
 }
 
 .home-halftone {
+  aspect-ratio: 2481 / 3508;
   display: grid;
   grid-template-areas: "portrait";
+  height: auto;
   justify-items: center;
+  max-width: 502px;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .home-hero__portrait-image {
   aspect-ratio: 2481 / 3508;
   display: block;
   grid-area: portrait;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
-  max-height: 710px;
-  max-width: 112%;
+  max-height: none;
+  max-width: none;
   object-fit: contain;
   position: relative;
-  width: auto;
+  width: 100%;
 }
 
 .home-halftone__source,
@@ -292,10 +295,9 @@ body::after {
   }
 
   .home-hero__portrait-image {
-    aspect-ratio: auto;
-    height: auto;
-    max-height: none;
-    max-width: 430px;
+    aspect-ratio: 2481 / 3508;
+    height: 100%;
+    max-width: none;
     width: 100%;
   }
 
