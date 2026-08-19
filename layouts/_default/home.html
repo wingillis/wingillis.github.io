@@ -1,16 +1,19 @@
 {{- define "main" -}}
-<div class="content pure-g text-content">
-  <div class="pure-u-1">
+<main class="home-hero">
+  <div class="home-hero__content">
+    <section class="home-hero__copy">
       {{ .Content }}
-  </div>
-  <div class="pure-u-md-1-3 pure-u-sm-1-2" style="margin: auto;">
-    <div class="min-padding">
-    {{- $filter := images.Process "webp" -}}
-    {{- with resources.Get "images/headshot-2024.png" | images.Filter $filter -}}
-      <img src="{{ .Permalink }}" class="pure-img">
-    {{- end -}}
+      <div class="home-hero__links" aria-label="Explore">
+        <a class="home-hero__button" href="/cv/">Explore my science</a>
+        <a class="home-hero__text-link" href="/posts/">Read the blog <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <div class="home-hero__portrait">
+      <div class="home-hero__portrait-glow"></div>
+      {{- with resources.Get "images/profile-nobg.webp" -}}
+        <img src="{{ .RelPermalink }}" class="home-hero__portrait-image" alt="Portrait of Winthrop Gillis">
+      {{- end -}}
     </div>
   </div>
-  <br>
-</div>
+</main>
 {{- end -}}
