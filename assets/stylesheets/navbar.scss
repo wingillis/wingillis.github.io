@@ -6,7 +6,8 @@
 }
 
 .header {
-  background-color: darken($background-color, 3%);
+  background-color: rgba(#052d35, 0.78);
+  border-bottom: 1px solid rgba(#d1e6db, 0.11);
 }
 
 .adjust-height {
@@ -20,7 +21,7 @@ nav {
     height: auto;
   }
   ul.pure-menu-children {
-    background-color: darken($background-color, 8%);
+    background-color: #083842;
   }
 }
 
@@ -29,18 +30,19 @@ nav {
 }
 
 a.pure-menu-heading.pure-menu-link {
-  color: $text-color;
+  color: #f4fbf7;
 }
 
 a.pure-menu-link {
-  color: $link-color;
+  color: #d9eee4;
   padding-bottom: 18px;
   padding-top: 18px;
   transition: background-color 0.2s;
 }
 
 a.pure-menu-link:hover {
-  background-color: $menu-link-hover;
+  background-color: rgba(#d4eee2, 0.09);
+  color: #ffffff;
 }
 
 .pure-menu-horizontal.pure-menu-scrollable {

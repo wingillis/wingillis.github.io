@@ -1,69 +1,4 @@
 @import "base";
-@import "switch";
-
-body.dark {
-  background-color: $dark-background;
-  background-image: $dark-bg-img;
-  a:link {
-    color: lighten($link-color, 30%);
-  }
-  a:visited {
-    color: lighten($link-color, 30%);
-    text-decoration: none;
-  }
-  a:hover {
-    color: lighten($link-color, 50%);
-  }
-  nav {
-    background-color: darken($dark-background, 12%);
-    a.pure-menu-heading.pure-menu-link {
-      color: $dark-text-color;
-    }
-    ul {
-
-      background-color: darken($dark-background, 12%);
-    }
-    // a.pure-menu-link {
-    //   color: darken($link-color, 20%);
-    // }
-  }
-}
-.dark {
-  color: $dark-text-color;
-  h1, h2, h3, h4, h5, h6, p, li, small {
-    color: $dark-text-color;
-  }
-  figcaption {
-    color: lighten($caption-color, 50%);
-  }
-  figure {
-    background-color: rgba(darken($dark-background, 15%), 0.6);
-  }
-  b, strong {
-    color: lighten($dark-text-color, 5%);
-  }
-  .article-item {
-    background-color: rgba(darken($dark-background, 15%), 0.6);
-    border-color: rgba(lighten($dark-background, 12%), 0.6);
-  }
-  .pure-table-striped tr:nth-child(2n-1) td {
-    background-color: rgba(darken($dark-background, 15%), 0.5);
-  }
-  blockquote {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  .article-item:hover {
-    background-color: rgba(darken($dark-background, 5%), 0.6);
-  }
-  div.post {
-    h2 {
-      border-bottom: 4px solid rgba($dark-text-color, 1);
-    }
-    h3 {
-      border-bottom: 2px solid rgba($dark-text-color, 0.65);
-    }
-  }
-}
 
 strong {
   font-family: 'Roboto', sans-serif;
@@ -116,7 +51,7 @@ a:hover {
 }
 
 a.pure-menu-link:hover {
-  color: darken($link-color, 20%);
+  color: #ffffff;
 }
 
 .centered {
@@ -124,13 +59,13 @@ a.pure-menu-link:hover {
 }
 
 .button-success {
-  background: $link-color;
-  color: lighten($dark-text-color, 15%);
+  background: #b8d894;
+  color: #082f36;
   transition: background 0.2s;
 }
 
 .button-success:hover {
-  background: lighten($link-color, 10%);
+  background: #d7eab9;
 }
 
 code {
@@ -142,10 +77,15 @@ code {
 }
 
 body {
-	background-color: $background-color;
-	background-image: $bg-img;
-  background-position: center, center;
-  background-attachment: fixed, scroll;
+  background-color: $background-color;
+  background-image:
+    radial-gradient(circle at 11% 12%, rgba(#7e955d, 0.12), transparent 32rem),
+    radial-gradient(circle at 72% 40%, rgba(#23777d, 0.16), transparent 30rem),
+    radial-gradient(circle at 86% 86%, rgba(#a36f3b, 0.035), transparent 24rem),
+    linear-gradient(132deg, #10474a 0%, #0a414b 43%, #062f3c 100%);
+  background-attachment: fixed;
+  background-position: center;
+  color: $text-color;
   font-weight: 300;
   font-family: 'Roboto', sans-serif;
 }
@@ -208,17 +148,6 @@ body.home {
     z-index: 1;
   }
 
-  &.dark {
-    background: #05272f;
-
-    &::before {
-      background:
-        radial-gradient(circle at 11% 12%, rgba(#62784c, 0.1), transparent 32rem),
-        radial-gradient(circle at 72% 40%, rgba(#185b65, 0.15), transparent 30rem),
-        radial-gradient(circle at 86% 86%, rgba(#81572f, 0.03), transparent 24rem),
-        linear-gradient(132deg, #09383b 0%, #062f3a 46%, #041f2b 100%);
-    }
-  }
 }
 
 .home-hero {
