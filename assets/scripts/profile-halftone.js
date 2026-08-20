@@ -12,6 +12,12 @@
   const WAVE_PAUSE_DURATION = 8000;
   const WAVE_CYCLE_DURATION = WAVE_SWEEP_DURATION + WAVE_PAUSE_DURATION;
   const WAVE_BANDWIDTH = 0.068;
+  const POINTER_WAVE_RADIUS = 0.04;
+  const POINTER_WAVE_TAPER = 0.15;
+  const POINTER_FOLLOW_DURATION = 140;
+  const POINTER_TRAIL_DURATION = 1500;
+  const POINTER_STREAK_DURATION = 1500;
+  const POINTER_STREAK_SAMPLE_INTERVAL = 60;
   const DOT_RADIUS_MAX = DOT_SPACING / 2;
   const PHOTO_DOT_THRESHOLD = 0.012;
   const PHOTO_DOT_OUTLINE_WIDTH = 1;
@@ -95,6 +101,22 @@
 
     const startedAt = performance.now();
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const pointer = {
+      active: false,
+      hasPosition: false,
+      height: 0,
+      lastStreakAt: 0,
+      lastUpdatedAt: 0,
+      leftAt: 0,
+      streaks: [],
+      streakX: 0,
+      streakY: 0,
+      targetX: 0,
+      targetY: 0,
+      width: 0,
+      x: 0,
+      y: 0
+    };
     let animationFrame = null;
     let isVisible = true;
     let lastFrameAt = 0;
@@ -143,6 +165,62 @@
       context.globalAlpha = 1;
     };
 
+    const updatePointerSpotlight = (now, animate) => {
+      if (!pointer.hasPosition) {
+        return 0;
+      }
+
+      if (!animate) {
+        pointer.x = pointer.targetX;
+        pointer.y = pointer.targetY;
+        pointer.lastUpdatedAt = now;
+        return pointer.active ? 1 : 0;
+      }
+
+      const elapsed = Math.min(now - pointer.lastUpdatedAt, 100);
+      const followAmount = 1 - Math.exp(-elapsed / POINTER_FOLLOW_DURATION);
+
+      pointer.x += (pointer.targetX - pointer.x) * followAmount;
+      pointer.y += (pointer.targetY - pointer.y) * followAmount;
+      pointer.lastUpdatedAt = now;
+
+      if (pointer.active) {
+        return 1;
+      }
+
+      const trailElapsed = now - pointer.leftAt;
+
+      if (trailElapsed >= POINTER_TRAIL_DURATION) {
+        pointer.hasPosition = false;
+        return 0;
+      }
+
+      const trailProgress = 1 - trailElapsed / POINTER_TRAIL_DURATION;
+      return trailProgress * trailProgress;
+    };
+
+    const recordPointerStreak = (now, x, y, force = false) => {
+      const deltaX = x - pointer.streakX;
+      const deltaY = y - pointer.streakY;
+      const lengthSquared = deltaX * deltaX + deltaY * deltaY;
+
+      if (lengthSquared < 1 || (!force && now - pointer.lastStreakAt < POINTER_STREAK_SAMPLE_INTERVAL)) {
+        return;
+      }
+
+      pointer.streaks.push({
+        fromX: pointer.streakX,
+        fromY: pointer.streakY,
+        lengthSquared,
+        startedAt: now,
+        toX: x,
+        toY: y
+      });
+      pointer.streakX = x;
+      pointer.streakY = y;
+      pointer.lastStreakAt = now;
+    };
+
     const drawFrame = (now, animate) => {
       const elapsed = now - startedAt;
       const breath = animate
@@ -153,6 +231,17 @@
       const wavePosition = waveActive
         ? waveElapsed / WAVE_SWEEP_DURATION * 1.5 - 0.25
         : -1;
+      const pointerSize = Math.min(pointer.width, pointer.height);
+      const pointerWaveRadius = pointerSize * POINTER_WAVE_RADIUS;
+      const pointerWaveTaper = pointerSize * POINTER_WAVE_TAPER;
+      const pointerStrength = updatePointerSpotlight(now, animate);
+      const pointerStreaks = animate
+        ? pointer.streaks.filter((streak) => now - streak.startedAt < POINTER_STREAK_DURATION)
+        : [];
+      const pointerStreakRadius = pointerWaveRadius;
+      const pointerStreakTaper = pointerWaveTaper;
+
+      pointer.streaks = pointerStreaks;
 
       context.clearRect(0, 0, width, height);
       context.fillStyle = dotColor;
@@ -162,7 +251,49 @@
         const wave = waveActive
           ? Math.exp(-0.5 * Math.pow(distance / WAVE_BANDWIDTH, 2))
           : 0;
-        const easedWave = wave * wave * (3 - 2 * wave);
+        const pointerX = dot.x / width * pointer.width;
+        const pointerY = dot.y / height * pointer.height;
+        const pointerDistance = pointerStrength > 0
+          ? Math.hypot(pointerX - pointer.x, pointerY - pointer.y)
+          : Infinity;
+        const pointerWave = pointerStrength > 0
+          ? pointerStrength * (1 - Math.min(
+            1,
+            Math.max(
+              0,
+              (pointerDistance - pointerWaveRadius) / pointerWaveTaper
+            )
+          ))
+          : 0;
+        let streakWave = 0;
+
+        pointerStreaks.forEach((streak) => {
+          const progress = 1 - (now - streak.startedAt) / POINTER_STREAK_DURATION;
+          const toPointerX = pointerX - streak.fromX;
+          const toPointerY = pointerY - streak.fromY;
+          const position = Math.max(
+            0,
+            Math.min(1, (toPointerX * (streak.toX - streak.fromX) + toPointerY * (streak.toY - streak.fromY)) / streak.lengthSquared)
+          );
+          const closestX = streak.fromX + (streak.toX - streak.fromX) * position;
+          const closestY = streak.fromY + (streak.toY - streak.fromY) * position;
+          const streakDistance = Math.hypot(pointerX - closestX, pointerY - closestY);
+          const streakCoverage = 1 - Math.min(
+            1,
+            Math.max(0, (streakDistance - pointerStreakRadius) / pointerStreakTaper)
+          );
+          const strength = progress * progress * streakCoverage;
+
+          streakWave = Math.max(streakWave, strength);
+        });
+
+        const easedPointerWave = pointerWave * pointerWave * (3 - 2 * pointerWave);
+        const easedStreakWave = streakWave * streakWave * (3 - 2 * streakWave);
+        const easedWave = Math.max(
+          wave * wave * (3 - 2 * wave),
+          easedPointerWave,
+          easedStreakWave
+        );
         const restingRadius = dot.radius * breath;
 
         dot.wave = easedWave;
@@ -179,7 +310,7 @@
 
       context.globalAlpha = 1;
 
-      if (waveActive) {
+      if (waveActive || pointerStrength > 0 || pointerStreaks.length) {
         drawPhotoDots();
       }
     };
@@ -218,8 +349,68 @@
       start();
     };
 
+    const updatePointer = (event) => {
+      if (event.pointerType !== "mouse" && event.pointerType !== "pen") {
+        return;
+      }
+
+      const bounds = portrait.getBoundingClientRect();
+
+      if (!bounds.width || !bounds.height) {
+        return;
+      }
+
+      const x = Math.max(0, Math.min(bounds.width, event.clientX - bounds.left));
+      const y = Math.max(0, Math.min(bounds.height, event.clientY - bounds.top));
+      const now = performance.now();
+
+      if (!pointer.hasPosition || !pointer.active) {
+        pointer.x = x;
+        pointer.y = y;
+        pointer.lastUpdatedAt = now;
+        pointer.streaks = [];
+        pointer.streakX = x;
+        pointer.streakY = y;
+        pointer.lastStreakAt = now;
+      } else {
+        recordPointerStreak(now, x, y);
+      }
+
+      pointer.active = true;
+      pointer.hasPosition = true;
+      pointer.width = bounds.width;
+      pointer.height = bounds.height;
+      pointer.targetX = x;
+      pointer.targetY = y;
+
+      if (motionPreference.matches) {
+        pointer.streaks = [];
+        drawFrame(performance.now(), false);
+      }
+    };
+
+    const clearPointer = (event) => {
+      if (event.pointerType !== "mouse" && event.pointerType !== "pen") {
+        return;
+      }
+
+      const now = performance.now();
+
+      recordPointerStreak(now, pointer.targetX, pointer.targetY, true);
+      pointer.active = false;
+      pointer.leftAt = now;
+
+      if (motionPreference.matches) {
+        drawFrame(performance.now(), false);
+      }
+    };
+
     drawFrame(performance.now(), false);
     portrait.classList.add("is-rendered");
+    portrait.addEventListener("pointermove", updatePointer);
+    portrait.addEventListener("pointerenter", updatePointer);
+    portrait.addEventListener("pointerleave", clearPointer);
+    portrait.addEventListener("pointercancel", clearPointer);
 
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(([entry]) => {
