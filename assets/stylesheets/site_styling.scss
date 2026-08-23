@@ -387,17 +387,40 @@ body::after {
   }
 
   .home-hero__portrait {
-    height: 185px;
+    background-color: rgba(#55cbd3, 0.055);
+    border-radius: 3px;
+    box-sizing: border-box;
+    height: 170px;
     justify-self: center;
     margin: 0 auto;
-    mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
-    max-width: 230px;
-    width: 230px;
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
+    mask-image: none;
+    max-width: 290px;
+    width: 100%;
+    -webkit-mask-image: none;
   }
 
   .home-halftone {
-    transform: translateY(-30px);
+    margin: 0 auto;
+    transform: translateY(-18px);
+    width: 210px;
+  }
+
+  .home-halftone__source {
+    filter:
+      saturate(0.82)
+      contrast(1.03)
+      brightness(0.96)
+      drop-shadow(0 8px 8px rgba(#011f29, 0.28));
+  }
+
+  .home-halftone.is-rendered {
+    .home-halftone__source {
+      opacity: 1;
+    }
+
+    .home-halftone__canvas {
+      display: none;
+    }
   }
 }
 
