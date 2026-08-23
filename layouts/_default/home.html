@@ -3,9 +3,23 @@
   <div class="home-hero__content">
     <section class="home-hero__copy">
       {{ .Content }}
-      <div class="home-hero__links" aria-label="Explore">
-        <a class="home-hero__button" href="/cv/">Explore my science</a>
-        <a class="home-hero__text-link" href="/posts/">Read the blog <span aria-hidden="true">→</span></a>
+      <div class="home-capabilities" aria-label="Core capabilities">
+        <div class="home-capability home-capability--model">
+          <span class="home-capability__label">Model</span>
+          <span class="home-capability__skills">Machine learning<br>Deep learning<br>Statistics</span>
+        </div>
+        <div class="home-capability home-capability--build">
+          <span class="home-capability__label">Build</span>
+          <span class="home-capability__skills">Scientific software<br>Data pipelines<br>Distributed computing</span>
+        </div>
+        <div class="home-capability home-capability--integrate">
+          <span class="home-capability__label">Integrate</span>
+          <span class="home-capability__skills">Real-time inference<br>Agentic systems<br>Experimental design</span>
+        </div>
+      </div>
+      <div class="home-hero__links" aria-label="Professional links">
+        <a class="home-hero__button" href="/software/">Explore my work</a>
+        <a class="home-hero__text-link" href="/cv/">Résumé &amp; publications <span aria-hidden="true">→</span></a>
       </div>
     </section>
     <div class="home-hero__portrait">

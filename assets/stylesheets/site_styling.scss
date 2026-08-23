@@ -171,7 +171,56 @@ body::after {
   display: flex;
   flex-wrap: wrap;
   gap: 18px 25px;
-  margin-top: 30px;
+  margin-top: 24px;
+}
+
+.home-capabilities {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 24px;
+}
+
+.home-capability {
+  border: 1px solid rgba(#d5f1d4, 0.2);
+  border-radius: 12px;
+  box-sizing: border-box;
+  min-height: 112px;
+  padding: 31px 14px 13px;
+  position: relative;
+
+  &--model {
+    background: linear-gradient(145deg, rgba(#55cbd3, 0.14), rgba(#55cbd3, 0.055));
+    border-color: rgba(#71d6dc, 0.28);
+  }
+
+  &--build {
+    background: linear-gradient(145deg, rgba(#8fbd84, 0.13), rgba(#8fbd84, 0.05));
+    border-color: rgba(#a8d19d, 0.25);
+  }
+
+  &--integrate {
+    background: linear-gradient(145deg, rgba(#d0ad6c, 0.12), rgba(#d0ad6c, 0.04));
+    border-color: rgba(#d8bd88, 0.23);
+  }
+}
+
+.home-capability__label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  left: 13px;
+  letter-spacing: 0.16em;
+  opacity: 0.58;
+  position: absolute;
+  text-transform: uppercase;
+  top: 10px;
+}
+
+.home-capability__skills {
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.55;
 }
 
 .home-hero__button {
@@ -270,7 +319,7 @@ body::after {
   }
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (max-width: 58em) {
   .home-hero {
     align-items: flex-start;
     min-height: auto;
@@ -282,9 +331,7 @@ body::after {
   }
 
   .home-hero__copy {
-    h1 {
-      font-size: clamp(2.55rem, 13vw, 4rem);
-    }
+    max-width: none;
   }
 
   .home-hero__portrait {
@@ -303,6 +350,22 @@ body::after {
 
   .home-halftone {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .home-hero__copy {
+    h1 {
+      font-size: clamp(2.55rem, 13vw, 4rem);
+    }
+  }
+
+  .home-capabilities {
+    grid-template-columns: 1fr;
+  }
+
+  .home-capability {
+    min-height: 0;
   }
 }
 
@@ -495,6 +558,16 @@ figcaption {
 b, strong {
   color: #ffffff;
   font-weight: bold;
+}
+
+a {
+  &:link,
+  &:visited {
+    b,
+    strong {
+      color: inherit;
+    }
+  }
 }
 
 .article-footer {
