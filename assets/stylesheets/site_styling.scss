@@ -220,9 +220,14 @@ body::after {
 
 .home-capability__skills {
   color: #ffffff;
+  display: block;
   font-size: 0.84rem;
   font-weight: 500;
   line-height: 1.55;
+}
+
+.home-capability__skill {
+  display: block;
 }
 
 .home-hero__button {
@@ -376,14 +381,10 @@ body::after {
     h1 {
       font-size: clamp(2.55rem, 13vw, 4rem);
     }
-  }
 
-  .home-capabilities {
-    grid-template-columns: 1fr;
-  }
-
-  .home-capability {
-    min-height: 0;
+    p {
+      max-width: none;
+    }
   }
 
   .home-hero__portrait {
@@ -420,6 +421,36 @@ body::after {
 
     .home-halftone__canvas {
       display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .home-capabilities {
+    grid-template-columns: 1fr;
+  }
+
+  .home-capability {
+    min-height: 0;
+  }
+
+  .home-capability__skills {
+    align-items: center;
+    column-gap: 14px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    row-gap: 4px;
+  }
+
+  .home-capability__skill {
+    display: inline;
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+
+    &:last-child {
+      text-align: right;
     }
   }
 }
