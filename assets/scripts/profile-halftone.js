@@ -6,8 +6,6 @@
   const DOT_RADIUS_BASE = 0.085;
   const DOT_RADIUS_TONE = 0.315;
   const FRAME_INTERVAL = 1000 / 30;
-  const BREATH_DURATION = 5600;
-  const BREATH_STRENGTH = 0.012;
   const WAVE_SWEEP_DURATION = 11000;
   const WAVE_PAUSE_DURATION = 8000;
   const WAVE_CYCLE_DURATION = WAVE_SWEEP_DURATION + WAVE_PAUSE_DURATION;
@@ -22,7 +20,7 @@
   const PHOTO_DOT_THRESHOLD = 0.012;
   const PHOTO_DOT_OUTLINE_WIDTH = 1;
 
-  const drawHalftone = (portrait) => {
+  const drawHalftone = (portrait, compactViewport) => {
     const image = portrait.querySelector(".home-halftone__source");
     const canvas = portrait.querySelector(".home-halftone__canvas");
 
@@ -38,12 +36,14 @@
     const sampleCanvas = document.createElement("canvas");
     const sampleContext = sampleCanvas.getContext("2d", { willReadFrequently: true });
     const context = canvas.getContext("2d");
+    const baseCanvas = document.createElement("canvas");
+    const baseContext = baseCanvas.getContext("2d");
     const maskCanvas = document.createElement("canvas");
     const maskContext = maskCanvas.getContext("2d");
     const waveCanvas = document.createElement("canvas");
     const waveContext = waveCanvas.getContext("2d");
 
-    if (!sampleContext || !context || !maskContext || !waveContext) {
+    if (!sampleContext || !context || !baseContext || !maskContext || !waveContext) {
       return;
     }
 
@@ -51,6 +51,8 @@
     canvas.height = height;
     sampleCanvas.width = width;
     sampleCanvas.height = height;
+    baseCanvas.width = width;
+    baseCanvas.height = height;
     maskCanvas.width = width;
     maskCanvas.height = height;
     waveCanvas.width = width;
@@ -118,18 +120,29 @@
       y: 0
     };
     let animationFrame = null;
+    let animationTimer = null;
     let isVisible = true;
     let lastFrameAt = 0;
 
-    const drawPhotoDots = () => {
+    const drawBase = () => {
+      baseContext.clearRect(0, 0, width, height);
+      baseContext.fillStyle = dotColor;
+
+      dots.forEach((dot) => {
+        baseContext.globalAlpha = dot.alpha;
+        baseContext.beginPath();
+        baseContext.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+        baseContext.fill();
+      });
+
+      baseContext.globalAlpha = 1;
+    };
+
+    const drawPhotoDots = (activeDots) => {
       maskContext.clearRect(0, 0, width, height);
       maskContext.fillStyle = "#ffffff";
 
-      dots.forEach((dot) => {
-        if (dot.wave < PHOTO_DOT_THRESHOLD) {
-          return;
-        }
-
+      activeDots.forEach((dot) => {
         maskContext.globalAlpha = dot.wave;
         maskContext.beginPath();
         maskContext.arc(dot.x, dot.y, dot.renderedRadius, 0, Math.PI * 2);
@@ -150,11 +163,7 @@
       context.strokeStyle = "#000000";
       context.lineWidth = PHOTO_DOT_OUTLINE_WIDTH;
 
-      dots.forEach((dot) => {
-        if (dot.wave < PHOTO_DOT_THRESHOLD) {
-          return;
-        }
-
+      activeDots.forEach((dot) => {
         context.globalAlpha = dot.wave;
         context.beginPath();
         context.arc(dot.x, dot.y, dot.renderedRadius, 0, Math.PI * 2);
@@ -223,9 +232,6 @@
 
     const drawFrame = (now, animate) => {
       const elapsed = now - startedAt;
-      const breath = animate
-        ? 1 + Math.sin(elapsed / BREATH_DURATION * Math.PI * 2) * BREATH_STRENGTH
-        : 1;
       const waveElapsed = elapsed % WAVE_CYCLE_DURATION;
       const waveActive = animate && waveElapsed < WAVE_SWEEP_DURATION;
       const wavePosition = waveActive
@@ -243,8 +249,17 @@
 
       pointer.streaks = pointerStreaks;
 
-      context.clearRect(0, 0, width, height);
+      context.globalAlpha = 1;
+      context.globalCompositeOperation = "copy";
+      context.drawImage(baseCanvas, 0, 0);
+      context.globalCompositeOperation = "source-over";
+
+      if (!waveActive && pointerStrength === 0 && pointerStreaks.length === 0) {
+        return;
+      }
+
       context.fillStyle = dotColor;
+      const activeDots = [];
 
       dots.forEach((dot) => {
         const distance = dot.diagonal - wavePosition;
@@ -294,14 +309,17 @@
           easedPointerWave,
           easedStreakWave
         );
-        const restingRadius = dot.radius * breath;
-
         dot.wave = easedWave;
         dot.renderedRadius = Math.min(
           DOT_RADIUS_MAX,
-          restingRadius + (DOT_RADIUS_MAX - restingRadius) * easedWave
+          dot.radius + (DOT_RADIUS_MAX - dot.radius) * easedWave
         );
 
+        if (easedWave < PHOTO_DOT_THRESHOLD) {
+          return;
+        }
+
+        activeDots.push(dot);
         context.globalAlpha = dot.alpha;
         context.beginPath();
         context.arc(dot.x, dot.y, dot.renderedRadius, 0, Math.PI * 2);
@@ -310,22 +328,49 @@
 
       context.globalAlpha = 1;
 
-      if (waveActive || pointerStrength > 0 || pointerStreaks.length) {
-        drawPhotoDots();
+      if (activeDots.length) {
+        drawPhotoDots(activeDots);
       }
     };
+
+    const pointerAnimationActive = (now) => pointer.active || (
+      pointer.hasPosition && now - pointer.leftAt < POINTER_TRAIL_DURATION
+    );
+
+    const waveAnimationActive = (now) => (
+      (now - startedAt) % WAVE_CYCLE_DURATION < WAVE_SWEEP_DURATION
+    );
 
     const stop = () => {
       if (animationFrame !== null) {
         cancelAnimationFrame(animationFrame);
         animationFrame = null;
       }
+
+      if (animationTimer !== null) {
+        window.clearTimeout(animationTimer);
+        animationTimer = null;
+      }
+    };
+
+    const scheduleNextWave = (now) => {
+      if (animationTimer !== null || !isVisible || motionPreference.matches || compactViewport.matches) {
+        return;
+      }
+
+      const waveElapsed = (now - startedAt) % WAVE_CYCLE_DURATION;
+      const delay = Math.max(0, WAVE_CYCLE_DURATION - waveElapsed);
+
+      animationTimer = window.setTimeout(() => {
+        animationTimer = null;
+        start();
+      }, delay);
     };
 
     const tick = (now) => {
       animationFrame = null;
 
-      if (!isVisible || motionPreference.matches) {
+      if (!isVisible || motionPreference.matches || compactViewport.matches) {
         return;
       }
 
@@ -334,11 +379,20 @@
         lastFrameAt = now;
       }
 
-      animationFrame = requestAnimationFrame(tick);
+      if (waveAnimationActive(now) || pointerAnimationActive(now)) {
+        animationFrame = requestAnimationFrame(tick);
+      } else {
+        scheduleNextWave(now);
+      }
     };
 
     const start = () => {
-      if (animationFrame === null && isVisible && !motionPreference.matches) {
+      if (animationTimer !== null) {
+        window.clearTimeout(animationTimer);
+        animationTimer = null;
+      }
+
+      if (animationFrame === null && isVisible && !motionPreference.matches && !compactViewport.matches) {
         animationFrame = requestAnimationFrame(tick);
       }
     };
@@ -346,6 +400,18 @@
     const handleMotionPreference = () => {
       stop();
       drawFrame(performance.now(), false);
+      start();
+    };
+
+    const handleViewportChange = () => {
+      if (compactViewport.matches) {
+        stop();
+        portrait.classList.remove("is-rendered");
+        return;
+      }
+
+      drawFrame(performance.now(), false);
+      portrait.classList.add("is-rendered");
       start();
     };
 
@@ -386,6 +452,8 @@
       if (motionPreference.matches) {
         pointer.streaks = [];
         drawFrame(performance.now(), false);
+      } else {
+        start();
       }
     };
 
@@ -402,9 +470,12 @@
 
       if (motionPreference.matches) {
         drawFrame(performance.now(), false);
+      } else {
+        start();
       }
     };
 
+    drawBase();
     drawFrame(performance.now(), false);
     portrait.classList.add("is-rendered");
     portrait.addEventListener("pointermove", updatePointer);
@@ -432,20 +503,47 @@
       motionPreference.addListener(handleMotionPreference);
     }
 
+    if (typeof compactViewport.addEventListener === "function") {
+      compactViewport.addEventListener("change", handleViewportChange);
+    } else if (typeof compactViewport.addListener === "function") {
+      compactViewport.addListener(handleViewportChange);
+    }
+
     start();
   };
 
   document.querySelectorAll("[data-halftone-portrait]").forEach((portrait) => {
     const image = portrait.querySelector(".home-halftone__source");
+    const compactViewport = window.matchMedia("(max-width: 48em)");
+
+    const initialize = () => {
+      if (
+        compactViewport.matches ||
+        !image.complete ||
+        !image.naturalWidth ||
+        portrait.dataset.halftoneInitialized === "true"
+      ) {
+        return;
+      }
+
+      portrait.dataset.halftoneInitialized = "true";
+      drawHalftone(portrait, compactViewport);
+    };
 
     if (!image) {
       return;
     }
 
     if (image.complete) {
-      drawHalftone(portrait);
+      initialize();
     } else {
-      image.addEventListener("load", () => drawHalftone(portrait), { once: true });
+      image.addEventListener("load", initialize, { once: true });
+    }
+
+    if (typeof compactViewport.addEventListener === "function") {
+      compactViewport.addEventListener("change", initialize);
+    } else if (typeof compactViewport.addListener === "function") {
+      compactViewport.addListener(initialize);
     }
   });
 })();

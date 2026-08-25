@@ -414,6 +414,10 @@ body::after {
       drop-shadow(0 8px 8px rgba(#011f29, 0.28));
   }
 
+  .home-halftone__canvas {
+    display: none;
+  }
+
   .home-halftone.is-rendered {
     .home-halftone__source {
       opacity: 1;
