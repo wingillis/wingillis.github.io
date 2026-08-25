@@ -26,7 +26,7 @@
     const canvas = portrait.querySelector(".home-halftone__canvas");
 
     if (!image || !canvas || !image.naturalWidth || !image.naturalHeight) {
-      return;
+      return false;
     }
 
     const renderedWidth = image.getBoundingClientRect().width;
@@ -45,7 +45,7 @@
     const waveContext = waveCanvas.getContext("2d");
 
     if (!sampleContext || !context || !baseContext || !maskContext || !waveContext) {
-      return;
+      return false;
     }
 
     canvas.width = width;
@@ -511,11 +511,15 @@
     }
 
     start();
+    return true;
   };
 
   document.querySelectorAll("[data-halftone-portrait]").forEach((portrait) => {
     const image = portrait.querySelector(".home-halftone__source");
     const compactViewport = window.matchMedia("(max-width: 48em)");
+    const showFallback = () => {
+      portrait.classList.add("is-fallback");
+    };
 
     const initialize = () => {
       if (
@@ -527,8 +531,17 @@
         return;
       }
 
-      portrait.dataset.halftoneInitialized = "true";
-      drawHalftone(portrait, compactViewport);
+      try {
+        if (!drawHalftone(portrait, compactViewport)) {
+          showFallback();
+          return;
+        }
+
+        portrait.classList.remove("is-fallback");
+        portrait.dataset.halftoneInitialized = "true";
+      } catch {
+        showFallback();
+      }
     };
 
     if (!image) {
