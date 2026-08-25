@@ -308,6 +308,10 @@ body::after {
   filter: saturate(0.75) contrast(1.03);
 }
 
+html.js .home-halftone__source {
+  opacity: 0;
+}
+
 .home-halftone__canvas {
   filter: drop-shadow(5px 17px 27px rgba(#011f29, 0.3));
   height: 100%;
@@ -326,6 +330,10 @@ body::after {
   .home-halftone__canvas {
     opacity: 1;
   }
+}
+
+html.js .home-halftone.is-fallback .home-halftone__source {
+  opacity: 1;
 }
 
 @media screen and (max-width: 58em) {
@@ -412,6 +420,10 @@ body::after {
       contrast(1.03)
       brightness(0.96)
       drop-shadow(0 8px 8px rgba(#011f29, 0.28));
+  }
+
+  html.js .home-halftone__source {
+    opacity: 1;
   }
 
   .home-halftone__canvas {
