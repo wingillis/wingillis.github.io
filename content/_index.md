@@ -2,15 +2,10 @@
 title: Winthrop Gillis, PhD
 ---
 
-# About me
+# Hi, I'm Win
 
-<!-- TODO: add current interests -->
+Research scientist and engineer building machine-learning systems for scientific discovery. I design models, data pipelines, scientific software, and real-time systems interfacing with experimental hardware. My work spans neuroscience, drug discovery, and agentic systems that learn through interaction.
 
-I received a PhD from the [Program in Neuroscience](https://www.proquest.com/openview/309703ec077ee2add7bb400c0d20f156/1) at Harvard Medical School.
-I studied how the [basal ganglia](https://www.cell.com/cell/fulltext/S0092-8674(18)30512-9) organizes [animal behavior](https://www.nature.com/articles/s41586-022-05611-2).
+I lead open-source development and help research teams turn complex methods into working tools.
 
-<!-- TODO: incorporate some of the technical skills here - like closed-loop behavior detection and brain manipulation system -->
-
-Before that, I was a research technician at Boston University, where I developed [nerve cuff electrode arrays](https://iopscience.iop.org/article/10.1088/1741-2552/aa5a5b) to record and stimulate peripheral nerves.
-
-Check out [my blog](posts/) or [CV](cv/) to learn more about me, or email me at **win.gillis[at]gmail.com**.
+Outside work, I make art and pursue side projects. See my [art](/gallery/) and [writing](/posts/).
