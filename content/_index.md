@@ -4,8 +4,8 @@ title: Winthrop Gillis, PhD
 
 # Hi, I'm Win
 
-I'm a research scientist and engineer who builds machine-learning systems for real-world scientific problems. My work spans applied ML, scientific software, and experimental technology, particularly in neuroscience and drug discovery. I'm also building agentic systems that learn as they interact with the world.
+Research scientist and engineer building machine-learning systems for scientific discovery. I design models, data pipelines, scientific software, and real-time systems interfacing with experimental hardware. My work spans neuroscience, drug discovery, and agentic systems that learn through interaction.
 
-I like working on complex problems that span multiple domains. I've built neural networks and statistical models, large-scale data pipelines, and real-time classifiers that directly interact with custom hardware to drive neuroscience experiments. I've also led open-source software development and helped research teams put those tools to work.
+I lead open-source development and help research teams turn complex methods into working tools.
 
-I like to get engrossed in various side projects. See my [art](/gallery/) and [blog posts](/posts/) for some examples.
+Outside work, I make art and pursue side projects. See my [art](/gallery/) and [writing](/posts/).
