@@ -9,7 +9,8 @@
   const WAVE_SWEEP_DURATION = 11000;
   const WAVE_PAUSE_DURATION = 8000;
   const WAVE_CYCLE_DURATION = WAVE_SWEEP_DURATION + WAVE_PAUSE_DURATION;
-  const WAVE_BANDWIDTH = 0.068;
+  const WAVE_CORE_HALF_WIDTH = 0.035;
+  const WAVE_TAPER_WIDTH = 0.06;
   const POINTER_WAVE_RADIUS = 0.04;
   const POINTER_WAVE_TAPER = 0.15;
   const POINTER_FOLLOW_DURATION = 140;
@@ -262,9 +263,9 @@
       const activeDots = [];
 
       dots.forEach((dot) => {
-        const distance = dot.diagonal - wavePosition;
+        const distance = Math.abs(dot.diagonal - wavePosition);
         const wave = waveActive
-          ? Math.exp(-0.5 * Math.pow(distance / WAVE_BANDWIDTH, 2))
+          ? Math.max(0, 1 - Math.max(0, distance - WAVE_CORE_HALF_WIDTH) / WAVE_TAPER_WIDTH)
           : 0;
         const pointerX = dot.x / width * pointer.width;
         const pointerY = dot.y / height * pointer.height;
